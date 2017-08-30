@@ -1,5 +1,3 @@
-# Enumeración: Capture
-
 Tipo de Captura solicitada en la intención.
 
 | Nombre        | Descripción     |

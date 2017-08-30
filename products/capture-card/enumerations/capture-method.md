@@ -1,5 +1,3 @@
-# Enumeración: Capture Method
-
 Método de Captura para la tarjeta
 
 | Nombre        | Descripción     |

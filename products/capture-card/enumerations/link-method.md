@@ -1,5 +1,3 @@
-# Enumeración: Link.method
-
 Verbo HTTP solicitado para la ejecución de la operación
 
 | Nombre        | Descripción     |

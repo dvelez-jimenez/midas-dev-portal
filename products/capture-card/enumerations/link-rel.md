@@ -1,5 +1,3 @@
-# Enumeración: Link.href
-
 Relación de la operación sobre una intención.
 
 | Nombre        | Descripción     |

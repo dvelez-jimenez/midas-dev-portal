@@ -1,5 +1,3 @@
-# Enumeración: State
-
 Estado actual de la intención
 
 | Nombre        | Descripción     |

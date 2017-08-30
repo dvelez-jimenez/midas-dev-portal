@@ -39,3 +39,63 @@ curl -v -X POST 'https://api-capture-card-quickpay.azurewebsites.net/captures' \
 | redirect_urls | Object      | Url de redirección dependiendo del estado de la captura una vez finalizado el proceso de captura | Sí |
 | redirect_urls.return_url | String (Url)      | Url de redirección al producirse una captura exitosa | Sí |
 | redirect_urls.cancel_url | String (Url)      | Url de redirección al producirse una captura fallida | Sí |
+
+## Procesamiento de una Intención de Captura
+
+El resultado de la llamada a la API de captura, será una intención de captura en su estado inicial (**creada**), que contendrá el, o los links HATEOAS relacionados con la llamada, como por ejemplo , el link que se deberá ejecutar para proceder con la **captura de la tarjeta** y finalizar el proceso de captura. 
+
+A continuación se presenta ejemplo de un JSON como respuesta al crear una intención de captura a través de la API RESTful de captura:
+
+````bash
+{
+  "id": "ab6d3734-5dc6-7ba0-1a57-f73e6102efc1",
+  "capture": "CREDIT_CARD",
+  "capture_method": "TOKENIZATION",
+  "cardholder": {
+    "reference_id": "Merchant_id_reference",
+    "country": "CL"
+  },
+  "create_time": "2017-07-14T02:25:18.928Z",
+  "update_time": "2017-07-14T02:25:18.928Z",
+  "state": "created",
+  "capture_number": "INCA-0000000007",
+  "redirect_urls": {
+    "return_url": "http://www.mysite.cl/success",
+    "cancel_url": "http://www.mysite.cl/cancel"
+  },
+  "links": [
+    {
+      "href": "https://api-capture-card-quickpay.azurewebsites.net/captures/ab6d3734-5dc6-7ba0-1a57-f73e6102efc1",
+      "rel": "self",
+      "method": "GET"
+    },
+    {
+      "href": "https://api-capture-card-quickpay.azurewebsites.net/captures/gateways/credit/card/ab6d3734-5dc6-7ba0-1a57-f73e6102efc1/capture",
+      "rel": "capture_url",
+      "method": "REDIRECT"
+    }
+  ]
+
+````
+
+| Nombre        | Tipo            | Descripción  | Requerido |
+| ------------- | --------------- | ------------ | --------- |
+| id            | String (Guid)   | Identificador único de la intención              | Sí |
+| capture       | Enum            | Tipo de Captura establecida en la intención.             | Sí |
+| capture_method| Enum            | Método de Captura que se usará   | Sí |
+| cardholder | Object        | Datos del tarjeta habiente | Sí |
+| cardholder.reference_id | String        | Identificador externo del comercio | No |
+| cardholder.country | String (ISO 3166-1)        | País de residencia del tarjeta habiente | Sí |
+| cardholder.name | String      | Nombre del tarjeta habiente tal como se muestra en la tarjeta | Sí |
+| create_time | String (ISO 8601) | Fecha de creación de la intención | Sí |
+| update_time | String (ISO 8601) | Fecha de actualización de la intención | Sí |
+| state | Enum [:arrow_upper_right:](enumerations/state.md) | Estado actual de la intención | Sí |
+| capture_number | String (Correlativo) | Identificador legible de la intención | Sí |
+| links | Array[ link ] | Arreglo de Link HATEOAS para la ejecución de operaciones disponibles sobre la intención | Sí |
+| link | Object | Enlace bajo formato HATEOAS, sobre la definición de una operación disponible en una intención | Sí |
+| link.href | String (Url) | Dirección URL de la operación | Sí |
+| link.rel | Enum [:arrow_upper_right:](enumerations/link-rel.md) | Relación de la operación sobre una intención | Sí |
+| link.method | Enum [:arrow_upper_right:](enumerations/link-method.md) | Verbo HTTP solicitado para la ejecución de la operación | Sí |
+| redirect_urls | Object      | Url de redirección dependiendo del estado de la captura una vez finalizado el proceso de captura | Sí |
+| redirect_urls.return_url | String (Url)      | Url de redirección al producirse una captura exitosa | Sí |
+| redirect_urls.cancel_url | String (Url)      | Url de redirección al producirse una captura fallida | Sí |

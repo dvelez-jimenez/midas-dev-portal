@@ -1,4 +1,4 @@
-#Crear una Intención de Captura
+# Crear una Intención de Captura
 Luego de obtener la autorización de captura del cliente a través su plataforma en línea, es necesario crear una intención de captura para comenzar con el proceso de captura a través de la plataforma Quickpay Connect. 
 
 Para crear una intención de captura, se debe ejecutar una llamada a la api de captura **/captures** con al menos la siguiente información: 
@@ -9,3 +9,21 @@ Para crear una intención de captura, se debe ejecutar una llamada a la api de c
 - El **método de captura** de acuerdo a la selección de la plataforma en línea.
 - Un identificador del comercio asociado al tarjeta habiente para asociar la captura a un dato único que pertenece al comercio **reference_id**
 - La información de **transaccion(es)** a pagar definida(s) de acuerdo a la compra de productos seleccionados por el cliente.
+
+````bash
+curl -v -X POST 'https://api-capture-card-quickpay.azurewebsites.net/captures' \
+ -H "Content-Type: application/json" \
+ -H "Authorization: Bearer Your-Valid-Access-Token" \
+ -d '{
+  "capture": "CREDIT_CARD",
+  "capture_method": "TOKENIZATION",
+  "cardholder": {
+    "reference_id": "Merchant_id_reference",
+    "country": "CL"
+  },
+  "redirect_urls": {
+    "return_url": "http://www.mysite.cl/success",
+    "cancel_url": "http://www.mysite.cl/cancel"
+  }
+}'
+````

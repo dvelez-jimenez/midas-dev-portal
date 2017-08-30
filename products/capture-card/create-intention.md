@@ -81,8 +81,8 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 | Nombre        | Tipo            | Descripción  | Requerido |
 | ------------- | --------------- | ------------ | --------- |
 | id            | String (Guid)   | Identificador único de la intención              | Sí |
-| capture       | Enum            | Tipo de Captura establecida en la intención.             | Sí |
-| capture_method| Enum            | Método de Captura que se usará   | Sí |
+| capture       | Enum [:arrow_upper_right:](enumerations/capture.md)           | Tipo de Captura establecida en la intención.             | Sí |
+| capture_method| Enum [:arrow_upper_right:](enumerations/capture-method.md)            | Método de Captura que se usará   | Sí |
 | cardholder | Object        | Datos del tarjeta habiente | Sí |
 | cardholder.reference_id | String        | Identificador externo del comercio | No |
 | cardholder.country | String (ISO 3166-1)        | País de residencia del tarjeta habiente | Sí |

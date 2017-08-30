@@ -34,7 +34,7 @@ curl -v -X POST 'https://api-capture-card-quickpay.azurewebsites.net/captures' \
 | capture_method| Enum [:arrow_upper_right:](enumeration-capture-method.md)       | Método de Captura para la tarjeta   | Sí |
 | cardholder | Object        | Datos del tarjeta habiente | Sí |
 | cardholder.reference_id | String        | Identificador externo del comercio | No |
-| cardholder.country | String (ISO 3166-1)        | País de residencia del tarjeta habiente | Sí |
+| cardholder.country | String ([ISO 3166-1 alpha-2](https://es.wikipedia.org/wiki/ISO_3166-1#Tabla_de_c.C3.B3digos_alfa-2_asignados_o_reservados))        | País de residencia del tarjeta habiente | Sí |
 | cardholder.name | String      | Nombre del tarjeta habiente tal como se muestra en la tarjeta | Sí |
 | redirect_urls | Object      | Url de redirección dependiendo del estado de la captura una vez finalizado el proceso de captura | Sí |
 | redirect_urls.return_url | String (Url)      | Url de redirección al producirse una captura exitosa | Sí |

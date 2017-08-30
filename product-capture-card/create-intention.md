@@ -30,8 +30,8 @@ curl -v -X POST 'https://api-capture-card-quickpay.azurewebsites.net/captures' \
 
 | Nombre        | Tipo            | Descripción  | Requerido |
 | ------------- | --------------- | ------------ | --------- |
-| capture      | Enum [:arrow_upper_right:](enumerations/capture.md)    | Tipo de Captura solicitada en la intención.             | Sí |
-| capture_method| Enum [:arrow_upper_right:](enumerations/capture-method.md)       | Método de Captura para la tarjeta   | Sí |
+| capture      | Enum [:arrow_upper_right:](enumeration-capture.md)    | Tipo de Captura solicitada en la intención.             | Sí |
+| capture_method| Enum [:arrow_upper_right:](enumeration-capture-method.md)       | Método de Captura para la tarjeta   | Sí |
 | cardholder | Object        | Datos del tarjeta habiente | Sí |
 | cardholder.reference_id | String        | Identificador externo del comercio | No |
 | cardholder.country | String (ISO 3166-1)        | País de residencia del tarjeta habiente | Sí |
@@ -81,21 +81,21 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 | Nombre        | Tipo            | Descripción  | Requerido |
 | ------------- | --------------- | ------------ | --------- |
 | id            | String (Guid)   | Identificador único de la intención              | Sí |
-| capture       | Enum [:arrow_upper_right:](enumerations/capture.md)           | Tipo de Captura establecida en la intención.             | Sí |
-| capture_method| Enum [:arrow_upper_right:](enumerations/capture-method.md)            | Método de Captura que se usará   | Sí |
+| capture       | Enum [:arrow_upper_right:](enumeration-capture.md)           | Tipo de Captura establecida en la intención.             | Sí |
+| capture_method| Enum [:arrow_upper_right:](enumeration-capture-method.md)            | Método de Captura que se usará   | Sí |
 | cardholder | Object        | Datos del tarjeta habiente | Sí |
 | cardholder.reference_id | String        | Identificador externo del comercio | No |
 | cardholder.country | String (ISO 3166-1)        | País de residencia del tarjeta habiente | Sí |
 | cardholder.name | String      | Nombre del tarjeta habiente tal como se muestra en la tarjeta | Sí |
 | create_time | String (ISO 8601) | Fecha de creación de la intención | Sí |
 | update_time | String (ISO 8601) | Fecha de actualización de la intención | Sí |
-| state | Enum [:arrow_upper_right:](enumerations/state.md) | Estado actual de la intención | Sí |
+| state | Enum [:arrow_upper_right:](enumeration-state.md) | Estado actual de la intención | Sí |
 | capture_number | String (Correlativo) | Identificador legible de la intención | Sí |
 | links | Array[ link ] | Arreglo de Link HATEOAS para la ejecución de operaciones disponibles sobre la intención | Sí |
 | link | Object | Enlace bajo formato HATEOAS, sobre la definición de una operación disponible en una intención | Sí |
 | link.href | String (Url) | Dirección URL de la operación | Sí |
-| link.rel | Enum [:arrow_upper_right:](enumerations/link-rel.md) | Relación de la operación sobre una intención | Sí |
-| link.method | Enum [:arrow_upper_right:](enumerations/link-method.md) | Verbo HTTP solicitado para la ejecución de la operación | Sí |
+| link.rel | Enum [:arrow_upper_right:](enumeration-link-rel.md) | Relación de la operación sobre una intención | Sí |
+| link.method | Enum [:arrow_upper_right:](enumeration-link-method.md) | Verbo HTTP solicitado para la ejecución de la operación | Sí |
 | redirect_urls | Object      | Url de redirección dependiendo del estado de la captura una vez finalizado el proceso de captura | Sí |
 | redirect_urls.return_url | String (Url)      | Url de redirección al producirse una captura exitosa | Sí |
 | redirect_urls.cancel_url | String (Url)      | Url de redirección al producirse una captura fallida | Sí |

@@ -27,3 +27,12 @@ curl -v -X POST 'https://api-capture-card-quickpay.azurewebsites.net/captures' \
   }
 }'
 ````
+
+| Nombre        | Tipo            | Descripción  |
+| ------------- | --------------- | ------------ |
+| capture       | Enumeración     | Tipo de Captura solicitada en la intención.             |
+| capture_method| Enumeración        | Método de Captura para la tarjeta   |
+| cardholder | Object        | Datos del tarjeta habiente |
+| cardholder.reference_id | String        | Identificador externo del comercio |
+| cardholder.country | String (ISO 3166-1)        | País de residencia del tarjeta habiente |
+| cardholder.name | String      | Nombre del tarjeta habiente tal como se muestra en la tarjeta |

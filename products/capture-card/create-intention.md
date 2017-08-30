@@ -36,3 +36,6 @@ curl -v -X POST 'https://api-capture-card-quickpay.azurewebsites.net/captures' \
 | cardholder.reference_id | String        | Identificador externo del comercio | No |
 | cardholder.country | String (ISO 3166-1)        | País de residencia del tarjeta habiente | Sí |
 | cardholder.name | String      | Nombre del tarjeta habiente tal como se muestra en la tarjeta | Sí |
+| redirect_urls | Object      | Url de redirección dependiendo del estado de la captura una vez finalizado el proceso de captura | Sí |
+| redirect_urls.return_url | String (Url)      | Url de redirección al producirse una captura exitosa | Sí |
+| redirect_urls.cancel_url | String (Url)      | Url de redirección al producirse una captura fallida | Sí |

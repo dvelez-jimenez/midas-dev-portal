@@ -22,17 +22,17 @@ Enlaces:
 
 @must-fail
 Escenario: Bloqueo de API por acceso no autorizado (Sin token de acceso) 
-  Dado la dirección URL a la api de captura
-  Cuando yo solicite una petición a la api de capture "{api-capture-url}/captures"
-       Y con el verbo POST
-       Y se ingrese en el cuerpo del mensaje:
-         | Nombre                   | Valor                           |
-         | capture                  | CREDIT_CARD                     |
-         | capture_method           | TOKENIZATION                    |
-         | cardholder.reference_id  | 163875593                       |
-         | cardholder.country       | CL                              |
-         | redirect_urls.return_url | http://www.mysite.cl/success    |
-         | redirect_urls.cancel_url | http://www.mysite.cl/success    |
+      Dado la dirección URL a la api de captura
+    Cuando yo solicite una petición a la api de capture "{api-capture-url}/captures"
+         Y con el verbo POST
+         Y se ingrese en el cuerpo del mensaje:
+           | Nombre                   | Valor                           |
+           | capture                  | CREDIT_CARD                     |
+           | capture_method           | TOKENIZATION                    |
+           | cardholder.reference_id  | 163875593                       |
+           | cardholder.country       | CL                              |
+           | redirect_urls.return_url | http://www.mysite.cl/success    |
+           | redirect_urls.cancel_url | http://www.mysite.cl/success    |
   Entonces Deberia ver una respuesta de error en formato JSON 
            con el siguiente cuerpo
            | Nombre            | Valor               |
@@ -42,18 +42,18 @@ Escenario: Bloqueo de API por acceso no autorizado (Sin token de acceso)
 
 @must-fail
 Escenario: Bloqueo de API por encabezado de autorización mal formado
-  Dado la dirección URL a la api de captura
-  Cuando yo solicite una petición a la api de capture "{api-capture-url}/captures"
-       Y con el verbo POST
-       Y establecer en el encabezado "Authorization" el valor de "Bearer "
-       Y se ingrese en el cuerpo del mensaje:
-         | Nombre                   | Valor                           |
-         | capture                  | CREDIT_CARD                     |
-         | capture_method           | TOKENIZATION                    |
-         | cardholder.reference_id  | 163875593                       |
-         | cardholder.country       | CL                              |
-         | redirect_urls.return_url | http://www.mysite.cl/success    |
-         | redirect_urls.cancel_url | http://www.mysite.cl/success    |
+      Dado la dirección URL a la api de captura
+    Cuando yo solicite una petición a la api de capture "{api-capture-url}/captures"
+         Y con el verbo POST
+         Y establecer en el encabezado "Authorization" el valor de "Bearer "
+         Y se ingrese en el cuerpo del mensaje:
+           | Nombre                   | Valor                           |
+           | capture                  | CREDIT_CARD                     |
+           | capture_method           | TOKENIZATION                    |
+           | cardholder.reference_id  | 163875593                       |
+           | cardholder.country       | CL                              |
+           | redirect_urls.return_url | http://www.mysite.cl/success    |
+           | redirect_urls.cancel_url | http://www.mysite.cl/success    |
   Entonces Deberia ver una respuesta de error en formato JSON 
            con el siguiente cuerpo
            | Nombre            | Valor               |
@@ -63,18 +63,18 @@ Escenario: Bloqueo de API por encabezado de autorización mal formado
 
 @must-fail
 Escenario: Bloqueo de API por token de acceso invalido 
-  Dado la dirección URL a la api de captura
-  Cuando yo solicite una petición a la api de capture "{api-capture-url}/captures"
-       Y con el verbo POST
-       Y establecer en el encabezado "Authorization" el valor de "Bearer d7wndi2y3"
-       Y se ingrese en el cuerpo del mensaje:
-         | Nombre                   | Valor                           |
-         | capture                  | CREDIT_CARD                     |
-         | capture_method           | TOKENIZATION                    |
-         | cardholder.reference_id  | 163875593                       |
-         | cardholder.country       | CL                              |
-         | redirect_urls.return_url | http://www.mysite.cl/success    |
-         | redirect_urls.cancel_url | http://www.mysite.cl/success    |
+      Dado la dirección URL a la api de captura
+    Cuando yo solicite una petición a la api de capture "{api-capture-url}/captures"
+         Y con el verbo POST
+         Y establecer en el encabezado "Authorization" el valor de "Bearer d7wndi2y3"
+         Y se ingrese en el cuerpo del mensaje:
+           | Nombre                   | Valor                           |
+           | capture                  | CREDIT_CARD                     |
+           | capture_method           | TOKENIZATION                    |
+           | cardholder.reference_id  | 163875593                       |
+           | cardholder.country       | CL                              |
+           | redirect_urls.return_url | http://www.mysite.cl/success    |
+           | redirect_urls.cancel_url | http://www.mysite.cl/success    |
   Entonces Deberia ver una respuesta de error en formato JSON 
            con el siguiente cuerpo
            | Nombre            | Valor               |
@@ -84,18 +84,18 @@ Escenario: Bloqueo de API por token de acceso invalido
 
 @success
 Escenario: Creación de una intención de captura al enviar token de acceso valido
-  Dado la dirección URL a la api de captura
-  Cuando yo solicite una petición a la api de capture "{api-capture-url}/captures"
-       Y con el verbo POST
-       Y establecer en el encabezado "Authorization" el valor de "Bearer d7wndi2y3"
-       Y se ingrese en el cuerpo del mensaje:
-         | Nombre                   | Valor                           |
-         | capture                  | CREDIT_CARD                     |
-         | capture_method           | TOKENIZATION                    |
-         | cardholder.reference_id  | 163875593                       |
-         | cardholder.country       | CL                              |
-         | redirect_urls.return_url | http://www.mysite.cl/success    |
-         | redirect_urls.cancel_url | http://www.mysite.cl/success    |
+      Dado la dirección URL a la api de captura
+    Cuando yo solicite una petición a la api de capture "{api-capture-url}/captures"
+         Y con el verbo POST
+         Y establecer en el encabezado "Authorization" el valor de "Bearer d7wndi2y3"
+         Y se ingrese en el cuerpo del mensaje:
+           | Nombre                   | Valor                           |
+           | capture                  | CREDIT_CARD                     |
+           | capture_method           | TOKENIZATION                    |
+           | cardholder.reference_id  | 163875593                       |
+           | cardholder.country       | CL                              |
+           | redirect_urls.return_url | http://www.mysite.cl/success    |
+           | redirect_urls.cancel_url | http://www.mysite.cl/success    |
   Entonces Deberia ver una respuesta de error en formato JSON 
            con el siguiente cuerpo
            | Nombre            | Valor               |

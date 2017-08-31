@@ -99,3 +99,8 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 | redirect_urls | Object      | Url de redirección dependiendo del estado de la captura una vez finalizado el proceso de captura | Sí |
 | redirect_urls.return_url | String (Url)      | Url de redirección al producirse una captura exitosa | Sí |
 | redirect_urls.cancel_url | String (Url)      | Url de redirección al producirse una captura fallida | Sí |
+
+> Algunos medios de pago, entregan links de funcionalidades mayores a las descritas en el ejemplo de respuesta indicado arriba, como por ejemplo el link opcional **"silent_charge"** que permite ejecutar transacciones inmediatas sin requerir aprobación previa del cliente.
+
+## Pasos Siguientes
+**Información:** Al crear una intención de pago , ya es posible comenzar con el proceso de aprobación del mismo por el cliente y actualizar una intención de pago a un pago completado para finalizar el proceso.

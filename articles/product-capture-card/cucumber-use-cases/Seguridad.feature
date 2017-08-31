@@ -1,4 +1,4 @@
-@tokenizer @must-fail
+@tokenizer
 Feature: Seguridad y acceso a API RESTful
 Para aumentar la seguridad de acceso al tokenizador debido a que es un 
 sistema que trabaja con datos sensibles de los usuarios que lo utilicen,
@@ -20,7 +20,8 @@ Enlaces:
   Least Privilege: https://en.wikipedia.org/wiki/Principle_of_least_privilege
   JWT (RFC 7519):  https://jwt.io/introduction/
 
-Escenario: Bloqueo de API por aceso no autorizado 
+@must-fail
+Escenario: Bloqueo de API por acceso no autorizado (Sin token de acceso) 
   Dado la dirección URL a la api de captura
   Cuando yo solicite una petición a la api de capture "{api-capture-url}/captures"
        Y con el verbo POST
@@ -32,5 +33,72 @@ Escenario: Bloqueo de API por aceso no autorizado
          | cardholder.country       | CL                              |
          | redirect_urls.return_url | http://www.mysite.cl/success    |
          | redirect_urls.cancel_url | http://www.mysite.cl/success    |
-  Entonces Deberia ver una respuesta de error en formato JSON con un campo "code" con valor "InvalidCredentials"
-         Y con un código de estado 401 (Unauthorized)
+  Entonces Deberia ver una respuesta de error en formato JSON 
+           con el siguiente cuerpo
+           | Nombre            | Valor               |
+           | code              | InvalidCredentials  |
+           | message           | No authorization token was found |
+         Y con un código de estado HTTP:401 (Unauthorized)
+
+@must-fail
+Escenario: Bloqueo de API por encabezado de autorización mal formado
+  Dado la dirección URL a la api de captura
+  Cuando yo solicite una petición a la api de capture "{api-capture-url}/captures"
+       Y con el verbo POST
+       Y establecer en el encabezado "Authorization" el valor de "Bearer "
+       Y se ingrese en el cuerpo del mensaje:
+         | Nombre                   | Valor                           |
+         | capture                  | CREDIT_CARD                     |
+         | capture_method           | TOKENIZATION                    |
+         | cardholder.reference_id  | 163875593                       |
+         | cardholder.country       | CL                              |
+         | redirect_urls.return_url | http://www.mysite.cl/success    |
+         | redirect_urls.cancel_url | http://www.mysite.cl/success    |
+  Entonces Deberia ver una respuesta de error en formato JSON 
+           con el siguiente cuerpo
+           | Nombre            | Valor               |
+           | code              | InvalidCredentials  |
+           | message           | Format is Authorization: Bearer [token] |
+         Y con un código de estado HTTP:401 (Unauthorized)
+
+@must-fail
+Escenario: Bloqueo de API por token de acceso invalido 
+  Dado la dirección URL a la api de captura
+  Cuando yo solicite una petición a la api de capture "{api-capture-url}/captures"
+       Y con el verbo POST
+       Y establecer en el encabezado "Authorization" el valor de "Bearer d7wndi2y3"
+       Y se ingrese en el cuerpo del mensaje:
+         | Nombre                   | Valor                           |
+         | capture                  | CREDIT_CARD                     |
+         | capture_method           | TOKENIZATION                    |
+         | cardholder.reference_id  | 163875593                       |
+         | cardholder.country       | CL                              |
+         | redirect_urls.return_url | http://www.mysite.cl/success    |
+         | redirect_urls.cancel_url | http://www.mysite.cl/success    |
+  Entonces Deberia ver una respuesta de error en formato JSON 
+           con el siguiente cuerpo
+           | Nombre            | Valor               |
+           | code              | InvalidCredentials  |
+           | message           | A valid credential in the Authorization header is required |
+         Y con un código de estado HTTP:401 (Unauthorized)
+
+@success
+Escenario: Creación de una intención de captura al enviar token de acceso valido
+  Dado la dirección URL a la api de captura
+  Cuando yo solicite una petición a la api de capture "{api-capture-url}/captures"
+       Y con el verbo POST
+       Y establecer en el encabezado "Authorization" el valor de "Bearer d7wndi2y3"
+       Y se ingrese en el cuerpo del mensaje:
+         | Nombre                   | Valor                           |
+         | capture                  | CREDIT_CARD                     |
+         | capture_method           | TOKENIZATION                    |
+         | cardholder.reference_id  | 163875593                       |
+         | cardholder.country       | CL                              |
+         | redirect_urls.return_url | http://www.mysite.cl/success    |
+         | redirect_urls.cancel_url | http://www.mysite.cl/success    |
+  Entonces Deberia ver una respuesta de error en formato JSON 
+           con el siguiente cuerpo
+           | Nombre            | Valor               |
+           | code              | InvalidCredentials  |
+           | message           | A valid credential in the Authorization header is required |
+         Y con un código de estado HTTP:201 (Created)

@@ -6,7 +6,7 @@ es que se debe aplicar por defecto una restricción a las funcionalidades
 expuestas a través de la API de Captura ([Least Privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)).
 
 Para ello es necesario aplicar un sistema de control de seguridad basado en 
-Token ((JWT RFC 7519](https://jwt.io/introduction/)), que restringa el acceso a los servicios y con un tiempo de 
+Token ([JWT RFC 7519](https://jwt.io/introduction/)), que restringa el acceso a los servicios y con un tiempo de 
 duración finita (X min) antes de expirar.
 
 Para obtener este token es necesario usar un sistema de credenciales expuesta 

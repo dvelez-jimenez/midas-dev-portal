@@ -106,4 +106,4 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 
 **Información:** Al crear una intención de pago , ya es posible comenzar con el proceso de aprobación del mismo por el cliente y actualizar una intención de pago a un pago completado para finalizar el proceso.
 
-[Obtener aprobación del pago >](get-approva.md)
+[Obtener aprobación del pago >](get-capture.md)

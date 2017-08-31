@@ -7,9 +7,7 @@ Una vez obtenidas las credenciales del aplicativo, deberás obtener un **token d
 
 El servidor de autorización intercambiara las llaves del aplicativo por un token de acceso valido para ejecutar requerimientos a la API RESTful de Pagos. 
 
-
 > Para mayor información sobre este topico en particular, favor dirijete a nuestra sección [comó hacer tu primera llamada](http://TODO)
-
 
 ````bash
  curl -v -X POST https://api-sso-quickpay.azurewebsites.net/oauth2/v2/token \

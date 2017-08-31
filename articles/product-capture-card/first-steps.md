@@ -9,5 +9,5 @@ Para comenzar a aceptar pagos a través de la plataforma de pagos **Quickpay Con
 
 
 1. Obtiene un **[token de acceso](get-access-token.md)** para usar la API de Pagos.
-2. Crea una intención de pago.
+2. **[Crea una intención de pago.](create-intention.md)**
 3. Obtiene la aprobación del pago.

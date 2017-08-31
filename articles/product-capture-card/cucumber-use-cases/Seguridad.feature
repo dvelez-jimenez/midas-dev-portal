@@ -3,22 +3,17 @@ Feature: Seguridad y acceso a API RESTful
 Para aumentar la seguridad de acceso al tokenizador debido a que es un 
 sistema que trabaja con datos sensibles de los usuarios que lo utilicen,
 es que se debe aplicar por defecto una restricción a las funcionalidades
-expuestas a través de la API de Captura (Least Privilege).
+expuestas a través de la API de Captura ([Least Privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)).
 
 Para ello es necesario aplicar un sistema de control de seguridad basado en 
-Token (JWT), que restringa el acceso a los servicios y con un tiempo de 
+Token ((JWT RFC 7519](https://jwt.io/introduction/)), que restringa el acceso a los servicios y con un tiempo de 
 duración finita (X min) antes de expirar.
 
 Para obtener este token es necesario usar un sistema de credenciales expuesta 
 en cada flujo de pago (aplicación) creada en una cuenta de comercio.
 
 Esta autenticación tendra un sistema de protocolo de seguridad estandar para
-facilitar la integración con los desarrolladores (Oauth2: client_credentials).
-
-Enlaces:
-  Oauth2:          https://tools.ietf.org/html/rfc6749#section-1.3.4
-  Least Privilege: https://en.wikipedia.org/wiki/Principle_of_least_privilege
-  JWT (RFC 7519):  https://jwt.io/introduction/
+facilitar la integración con los desarrolladores ([Oauth2: client_credentials](https://tools.ietf.org/html/rfc6749#section-1.3.4)).
 
 @must-fail
 Escenario: Bloqueo de API por acceso no autorizado (Sin token de acceso) 

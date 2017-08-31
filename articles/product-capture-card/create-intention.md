@@ -75,7 +75,7 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
       "method": "REDIRECT"
     }
   ]
-
+}
 ````
 
 | Nombre        | Tipo            | Descripción  | Requerido |

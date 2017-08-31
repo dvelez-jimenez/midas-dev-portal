@@ -22,7 +22,7 @@ You can create reusable content sections to be included in one or more articles.
 ## How to use markdown to format your topic
 All the articles in this repository use GitHub flavored markdown.  Here's a list of resources.
 
-* [Markdown basics](https://help.github.com/articles/markdown-basics/))
+* [Markdown basics](https://help.github.com/articles/markdown-basics/)
 
 
 ## Labels

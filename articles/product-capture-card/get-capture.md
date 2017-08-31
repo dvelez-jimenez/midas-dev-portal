@@ -15,22 +15,22 @@ A continuación se presenta un ejemplo de un JSON de respuesta al consultar el s
 
 ````javascript
 {
+  "id": "6b89dfb5-230e-e2a2-5e13-b5582d455061",
   "capture": "CREDIT_CARD",
   "capture_method": "TOKENIZATION",
   "application": "acb361cc-e4e7-24fb-d4e2-17bb3aa74066",
-  "redirect_urls": {
-    "return_url": "http://www.mysite.cl/success",
-    "cancel_url": "http://www.mysite.cl/cancel"
-  },
   "cardholder": {
     "reference_id": "Merchant_id_reference",
     "country": "CL"
   },
-  "id": "6b89dfb5-230e-e2a2-5e13-b5582d455061",
   "create_time": "2017-07-14T02:50:38.007Z",
   "update_time": "2017-07-14T02:50:38.007Z",
   "state": "captured",
   "capture_number": "INCA-0000000009",
+  "redirect_urls": {
+    "return_url": "http://www.mysite.cl/success",
+    "cancel_url": "http://www.mysite.cl/cancel"
+  },
   "gateway": {
     "panFirst4": "4111",
     "panLast6": "111111",
@@ -46,6 +46,25 @@ A continuación se presenta un ejemplo de un JSON de respuesta al consultar el s
   }
 }
 ````
+
+| Nombre        | Tipo            | Descripción  | Requerido |
+| ------------- | --------------- | ------------ | --------- |
+| id            | String (Guid)   | Identificador único de la intención              | Sí |
+| capture       | Enum [:arrow_upper_right:](enumeration-capture.md)           | Tipo de Captura establecida en la intención.             | Sí |
+| capture_method| Enum [:arrow_upper_right:](enumeration-capture-method.md)            | Método de Captura que se usará   | Sí |
+| application   | String (Guid)   | Identificador de la aplicación del comercio quien solicito la captura              | Sí |
+| cardholder | Object        | Datos del tarjeta habiente | Sí |
+| cardholder.reference_id | String        | Identificador externo del comercio | No |
+| cardholder.country | String (ISO 3166-1)        | País de residencia del tarjeta habiente | Sí |
+| cardholder.name | String      | Nombre del tarjeta habiente tal como se muestra en la tarjeta | Sí |
+| create_time | String (ISO 8601) | Fecha de creación de la intención | Sí |
+| update_time | String (ISO 8601) | Fecha de actualización de la intención | Sí |
+| state | Enum [:arrow_upper_right:](enumeration-state.md) | Estado actual de la intención | Sí |
+| capture_number | String (Correlativo) | Identificador legible de la intención | Sí |
+| redirect_urls | Object      | Url de redirección dependiendo del estado de la captura una vez finalizado el proceso de captura | Sí |
+| redirect_urls.return_url | String (Url)      | Url de redirección al producirse una captura exitosa | Sí |
+| redirect_urls.cancel_url | String (Url)      | Url de redirección al producirse una captura fallida | Sí |
+| gateway | Object      | Datos de la captura (varía dependiendo del metodo de captura establecido ) | Sí |
 
 >**Nota:**
 >El campo **gateway** varía dependiendo del método de captura seleccionado por el comercio para realizar la captura y puede variar en el tiempo dependiendo de las modificaciones que realize cada provedor de captura especifico en su plataforma.

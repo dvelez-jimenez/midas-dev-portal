@@ -53,4 +53,4 @@ A continuación se presenta un ejemplo de un JSON de respuesta al consultar el s
 ## Pasos Siguientes
 Al crear una intención de captura , ya es posible comenzar con el proceso de captura del mismo por el cliente y actualizar una intención de captura a una captura completada para finalizar el proceso y comenzar con el proceso de ejecución de cobros a una tarjeta.
 
-[Ejecutar un cobro a una tarjeta >](create-charge.md)**
+[Ejecutar un cobro a una tarjeta >](create-charge.md)

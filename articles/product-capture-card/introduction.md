@@ -6,4 +6,4 @@ Express Checkout le otorga a sus compradores una **plataforma simplificada** dur
 
 Aumente la **experiencia de compra de sus usuarios** con nuestra guía de integración:
 
-[Ver guía de integración: Primeros Pasos](first-steps.md)
+[Ver guía de integración: Primeros Pasos >](first-steps.md)

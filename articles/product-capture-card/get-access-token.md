@@ -19,4 +19,4 @@ El servidor de autorización intercambiara las llaves del aplicativo por un toke
 ## Pasos Siguientes
 Una vez obtenido un token de acceso , ya puedes comenzar a usar los servicios RESTful de la API de pagos para generar las intenciones de pago a través de tu comercio.
 
-[Crear una intención de pago >](get-access-token.md)
+[Crear una intención de pago >](create-intention.md)

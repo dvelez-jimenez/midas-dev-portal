@@ -103,4 +103,7 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 > Algunos medios de pago, entregan links de funcionalidades mayores a las descritas en el ejemplo de respuesta indicado arriba, como por ejemplo el link opcional **"silent_charge"** que permite ejecutar transacciones inmediatas sin requerir aprobación previa del cliente.
 
 ## Pasos Siguientes
+
 **Información:** Al crear una intención de pago , ya es posible comenzar con el proceso de aprobación del mismo por el cliente y actualizar una intención de pago a un pago completado para finalizar el proceso.
+
+[Obtener aprobación del pago](get-approva.md)

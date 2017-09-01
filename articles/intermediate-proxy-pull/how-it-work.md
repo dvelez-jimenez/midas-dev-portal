@@ -78,9 +78,9 @@ curl -v -X POST 'https://{api-capture-card}/captures/tokenization/webhook_callba
 | Nombre        | Tipo            | Descripción  | Requerido |
 | ------------- | --------------- | ------------ | --------- |
 | id            | String (Guid)   | Identificador único de la intención              | Sí |
-| capture       | Enum [:arrow_upper_right:](enumeration-capture.md)           | Tipo de Captura establecida en la intención.             | Sí |
-| capture_method| Enum [:arrow_upper_right:](enumeration-capture-method.md)            | Método de Captura que se usará   | Sí |
-| application   | String (Guid)   | Identificador de la aplicación del comercio quien solicito la captura              | Sí |
+| capture       | Enum [:arrow_upper_right:][enumeration-capture] | Tipo de Captura establecida en la intención. | Sí |
+| capture_method| Enum [:arrow_upper_right:][enumeration-capture-method] | Método de Captura que se usará  | Sí |
+| application   | String (Guid)   | Identificador de la aplicación del comercio quien solicito la captura | Sí |
 | cardholder | Object        | Datos del tarjeta habiente | Sí |
 | cardholder.reference_id | String        | Identificador externo del comercio | No |
 | cardholder.country | String (ISO 3166-1)        | País de residencia del tarjeta habiente | Sí |
@@ -93,7 +93,7 @@ curl -v -X POST 'https://{api-capture-card}/captures/tokenization/webhook_callba
 | billing.country | String ([ISO 3166-1 alpha-2][ISO 3166-1 alpha-2])     | País de facturación| Sí |
 | create_time | String (ISO 8601) | Fecha de creación de la intención | Sí |
 | update_time | String (ISO 8601) | Fecha de actualización de la intención | Sí |
-| state | Enum [:arrow_upper_right:](enumeration-state.md) | Estado actual de la intención | Sí |
+| state | Enum [:arrow_upper_right:][enumeration-state] | Estado actual de la intención | Sí |
 | capture_number | String (Correlativo) | Identificador legible de la intención | Sí |
 | redirect_urls | Object      | Url de redirección dependiendo del estado de la captura una vez finalizado el proceso de captura | Sí |
 | redirect_urls.return_url | String (Url)      | Url de redirección al producirse una captura exitosa | Sí |
@@ -113,7 +113,7 @@ curl -v -X POST 'https://{api-capture-card}/captures/tokenization/webhook_callba
  
 Un sistema resiliente son aquellos sistemas que estan pensados en las fallas, y que por ende, aunque un componente externo falle, la solicitud de envió quedara encolada para ser re-intentada mas tarde, por lo que si por algún problema interno la malla de conexión entre ambos componentes encapsulados en la infraestructura PCI falla, el sistema de tokenizador , dejará encolada el envio de información para un tiempo mas adelante, hasta que el código de respuesta HTTP entregado por el sistema subscrito (intermediate proxy pull), sea un código HTTP exitoso (200,201,203,204, etc).
 
-Mas Información: [The Reactive Manifesto](http://www.reactivemanifesto.org/es)
+Mas Información: [The Reactive Manifesto][the-reactive-manifesto]
 
 ---
 
@@ -123,3 +123,7 @@ Mas Información: [The Reactive Manifesto](http://www.reactivemanifesto.org/es)
 
 [secuence-diagram]: images/how-it-work-1.png
 [ISO 3166-1 alpha-2]: https://es.wikipedia.org/wiki/ISO_3166-1#Tabla_de_c.C3.B3digos_alfa-2_asignados_o_reservados
+[enumeration-state]: ../product-capture-card/enumeration-state
+[enumeration-capture]: ../product-capture-card/enumeration-capture.md
+[enumeration-capture-method]: ../product-capture-card/enumeration-capture-method.md
+[the-reactive-manifesto]: http://www.reactivemanifesto.org/es

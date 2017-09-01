@@ -14,11 +14,11 @@ Resumiendo lo anterior, para el correcto funcionamiento de este componente inter
 > **Nota:**
 > En el contexto de *Quickpay Connect*, es necesario configurar la URL base de recepcion del componente API *Checkout* a: **{api-checkout}/captures/tokenization/webhook_callback**.
 
-<p align="center">
+<center>
 
   ![diagrama de secuencia][secuence-diagram]
   *Diagrama de secuencias*
-</p>
+</center>
 
 # TLDR:
 

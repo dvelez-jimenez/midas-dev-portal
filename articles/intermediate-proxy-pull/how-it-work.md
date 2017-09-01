@@ -22,6 +22,9 @@ Resumiendo lo anterior, para el correcto funcionamiento de este componente inter
 > Solo por el hecho de sacar del alcance PCI a la plataforma checkout, y que esta pueda estar fuera de las altas restricciones de los ambientes PCI, ya que cómo bien se plantea, facilmente podria ser una sola llamada, directamente del tokenizdor -> checkout, pero esta definición produciría que checkout estuviera dentro del alcance PCI; y  es por ello que el planteamiento de envio de la información sea tokenizador -> intermediate proxy pull -> checkout.
 
 
+
+
+
 > **¿Qué pasa si al momento de captura de una tarjeta la conexión entre el tokenizador y el intermediate proxy pull se pierde?**
 > 
 > Un sistema resiliente son aquellos sistemas que estan pensados en las fallas, y que por ende, aunque un componente externo falle, la solicitud de envió quedara encolada para ser re-intentada mas tarde, por lo que si por algún problema interno la malla de conexión entre ambos componentes encapsulados en la infraestructura PCI falla, el sistema de tokenizador , dejará encolada el envio de información para un tiempo mas adelante, hasta que el código de respuesta HTTP entregado por el sistema subscrito (intermediate proxy pull), sea un código HTTP exitoso (200,201,203,204, etc).

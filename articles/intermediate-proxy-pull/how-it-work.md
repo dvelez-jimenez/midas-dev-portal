@@ -1,6 +1,6 @@
 # Estrategia de Funcionamiento
 
-La estrategia en la cual se basa este componente, se encuentra bajo el concepto de [Webhook](https://en.wikipedia.org/wiki/Webhook), que permite a un [Microservicio](https://es.wikipedia.org/wiki/Arquitectura_de_microservicios) eliminar el nivel de acoplamiento fuerte contra otros servicios / microservicios permitiendo seguir manteniendo su resilencia y [bajo acoplamiento](https://en.wikipedia.org/wiki/Loose_coupling), inclusive cuando alguna pieza externa de funcionamiento critico se haya detenido por algúna falla en su funcionamiento.
+La estrategia en la cual se basa este componente, se encuentra bajo el concepto de [Webhook][webhook], que permite a un [Microservicio][microservice] eliminar el nivel de acoplamiento fuerte contra otros servicios / microservicios permitiendo seguir manteniendo su resilencia y [bajo acoplamiento][loose-coupling], inclusive cuando alguna pieza externa de funcionamiento critico se haya detenido por algúna falla en su funcionamiento.
 
 Para lograr lo anterior, es necesario que el sistema de captura (tokenizador) implemente un sistema de eventos en que el componente **intermediate proxy pull** pueda subcribirse, y en el cual a su vez bajo el mismo concepto previamente explicado, permita que los componentes fuera de alcance PCI, puedan subscribirse para la comunicación de los datos no sensibles de captura a sus fuentes persistentes.
 
@@ -90,7 +90,7 @@ curl -v -X POST 'https://{api-capture-card}/captures/tokenization/webhook_callba
 | billing.line2 | String      | Dirección 2 de facturación | No |
 | billing.city | String      | Ciudad para facturación | Sí |
 | billing.state | String      | Comuna de facturación | Sí |
-| billing.country | String ([ISO 3166-1 alpha-2][ISO 3166-1 alpha-2])     | País de facturación| Sí |
+| billing.country | String ([ISO 3166-1 alpha-2][country-iso])     | País de facturación| Sí |
 | create_time | String (ISO 8601) | Fecha de creación de la intención | Sí |
 | update_time | String (ISO 8601) | Fecha de actualización de la intención | Sí |
 | state | Enum [:arrow_upper_right:][enumeration-state] | Estado actual de la intención | Sí |
@@ -117,13 +117,12 @@ Mas Información: [The Reactive Manifesto][the-reactive-manifesto]
 
 ---
 
-
-[Ver guía de funcionamiento](how-it-work.md)
-
-
 [secuence-diagram]: images/how-it-work-1.png
-[ISO 3166-1 alpha-2]: https://es.wikipedia.org/wiki/ISO_3166-1#Tabla_de_c.C3.B3digos_alfa-2_asignados_o_reservados
+[country-iso]: https://es.wikipedia.org/wiki/ISO_3166-1#Tabla_de_c.C3.B3digos_alfa-2_asignados_o_reservados
+[the-reactive-manifesto]: http://www.reactivemanifesto.org/es
+[webhook]: https://en.wikipedia.org/wiki/Webhook
+[microservice]: https://es.wikipedia.org/wiki/Arquitectura_de_microservicios
+[loose-coupling]: https://en.wikipedia.org/wiki/Loose_coupling
 [enumeration-state]: ../product-capture-card/enumeration-state.md
 [enumeration-capture]: ../product-capture-card/enumeration-capture.md
 [enumeration-capture-method]: ../product-capture-card/enumeration-capture-method.md
-[the-reactive-manifesto]: http://www.reactivemanifesto.org/es

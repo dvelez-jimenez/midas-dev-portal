@@ -123,7 +123,7 @@ Mas Información: [The Reactive Manifesto][the-reactive-manifesto]
 
 [secuence-diagram]: images/how-it-work-1.png
 [ISO 3166-1 alpha-2]: https://es.wikipedia.org/wiki/ISO_3166-1#Tabla_de_c.C3.B3digos_alfa-2_asignados_o_reservados
-[enumeration-state]: ../product-capture-card/enumeration-state
+[enumeration-state]: ../product-capture-card/enumeration-state.md
 [enumeration-capture]: ../product-capture-card/enumeration-capture.md
 [enumeration-capture-method]: ../product-capture-card/enumeration-capture-method.md
 [the-reactive-manifesto]: http://www.reactivemanifesto.org/es

@@ -28,16 +28,16 @@ curl -v -X POST 'https://{api-capture-card}/captures/tokenization/webhook_callba
   "capture": "CREDIT_CARD",
   "capture_method": "TOKENIZATION",
   "application": "acb361cc-e4e7-24fb-d4e2-17bb3aa74066",
-  "billing": {
-    "line1": "Miraflores 222",
-    "city": "Santiago",
-    "state": "Region Metropolitana",
-    "country": "CL"
-  },
   "cardholder": {
     "reference_id": "Merchant_id_reference",
     "name": "Jhon Doe",
     "email": "jhondoe@gmail.com",
+    "country": "CL"
+  },
+  "billing": {
+    "line1": "Miraflores 222",
+    "city": "Santiago",
+    "state": "Region Metropolitana",
     "country": "CL"
   },
   "id": "71230785-c66e-4c96-b2d9-658bfd41235b",
@@ -85,6 +85,12 @@ curl -v -X POST 'https://{api-capture-card}/captures/tokenization/webhook_callba
 | cardholder.reference_id | String        | Identificador externo del comercio | No |
 | cardholder.country | String (ISO 3166-1)        | País de residencia del tarjeta habiente | Sí |
 | cardholder.name | String      | Nombre del tarjeta habiente tal como se muestra en la tarjeta | Sí |
+| billing | String      | Dirección de facturación asociada a la tarjeta  | Sí |
+| billing.line1 | String      | Dirección de facturación | Sí |
+| billing.line2 | String      | Dirección 2 de facturación | No |
+| billing.city | String      | Ciudad para facturación | Sí |
+| billing.state | String      | Comuna de facturación | Sí |
+| billing.country | String ([ISO 3166-1 alpha-2](iso-3166-alpha2))     | País de facturación| Sí |
 | create_time | String (ISO 8601) | Fecha de creación de la intención | Sí |
 | update_time | String (ISO 8601) | Fecha de actualización de la intención | Sí |
 | state | Enum [:arrow_upper_right:](enumeration-state.md) | Estado actual de la intención | Sí |
@@ -116,3 +122,4 @@ Mas Información: [The Reactive Manifesto](http://www.reactivemanifesto.org/es)
 
 
 [secuence-diagram]: images/how-it-work-1.png
+[iso-3166-alpha2]: https://es.wikipedia.org/wiki/ISO_3166-1#Tabla_de_c.C3.B3digos_alfa-2_asignados_o_reservados

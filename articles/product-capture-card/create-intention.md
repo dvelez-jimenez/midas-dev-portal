@@ -21,6 +21,12 @@ curl -v -X POST 'https://api-capture-card-quickpay.azurewebsites.net/captures' \
     "reference_id": "Merchant_id_reference",
     "country": "CL"
   },
+  "billing": {
+    "line1": "Miraflores 222",
+    "city": "Santiago",
+    "state": "Region Metropolitana",
+    "country": "CL"
+  },
   "redirect_urls": {
     "return_url": "http://www.mysite.cl/success",
     "cancel_url": "http://www.mysite.cl/cancel"
@@ -34,8 +40,14 @@ curl -v -X POST 'https://api-capture-card-quickpay.azurewebsites.net/captures' \
 | capture_method| Enum [:arrow_upper_right:](enumeration-capture-method.md)       | Método de Captura para la tarjeta   | Sí |
 | cardholder | Object        | Datos del tarjeta habiente | Sí |
 | cardholder.reference_id | String        | Identificador externo del comercio | No |
-| cardholder.country | String ([ISO 3166-1 alpha-2](https://es.wikipedia.org/wiki/ISO_3166-1#Tabla_de_c.C3.B3digos_alfa-2_asignados_o_reservados))        | País de residencia del tarjeta habiente | Sí |
+| cardholder.country | String (![ISO 3166-1 alpha-2](iso-3166-alpha2))        | País de residencia del tarjeta habiente | Sí |
 | cardholder.name | String      | Nombre del tarjeta habiente tal como se muestra en la tarjeta | Sí |
+| billing | String      | Dirección de facturación asociada a la tarjeta  | Sí |
+| billing.line1 | String      | Dirección de facturación | Sí |
+| billing.line2 | String      | Dirección 2 de facturación | No |
+| billing.city | String      | Ciudad para facturación | Sí |
+| billing.state | String      | Comuna de facturación | Sí |
+| billing.country | String ([ISO 3166-1 alpha-2](iso-3166-alpha2))     | País de facturación| Sí |
 | redirect_urls | Object      | Url de redirección dependiendo del estado de la captura una vez finalizado el proceso de captura | Sí |
 | redirect_urls.return_url | String (Url)      | Url de redirección al producirse una captura exitosa | Sí |
 | redirect_urls.cancel_url | String (Url)      | Url de redirección al producirse una captura fallida | Sí |
@@ -53,6 +65,12 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
   "capture_method": "TOKENIZATION",
   "cardholder": {
     "reference_id": "Merchant_id_reference",
+    "country": "CL"
+  },
+  "billing": {
+    "line1": "Miraflores 222",
+    "city": "Santiago",
+    "state": "Region Metropolitana",
     "country": "CL"
   },
   "create_time": "2017-07-14T02:25:18.928Z",
@@ -85,8 +103,14 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 | capture_method| Enum [:arrow_upper_right:](enumeration-capture-method.md)            | Método de Captura que se usará   | Sí |
 | cardholder | Object        | Datos del tarjeta habiente | Sí |
 | cardholder.reference_id | String        | Identificador externo del comercio | No |
-| cardholder.country | String (ISO 3166-1)        | País de residencia del tarjeta habiente | Sí |
+| cardholder.country | String (![ISO 3166-1 alpha-2](iso-3166-alpha2))        | País de residencia del tarjeta habiente | Sí |
 | cardholder.name | String      | Nombre del tarjeta habiente tal como se muestra en la tarjeta | Sí |
+| billing | String      | Dirección de facturación asociada a la tarjeta  | Sí |
+| billing.line1 | String      | Dirección de facturación | Sí |
+| billing.line2 | String      | Dirección 2 de facturación | No |
+| billing.city | String      | Ciudad para facturación | Sí |
+| billing.state | String      | Comuna de facturación | Sí |
+| billing.country | String ([ISO 3166-1 alpha-2](iso-3166-alpha2))     | País de facturación| Sí |
 | create_time | String (ISO 8601) | Fecha de creación de la intención | Sí |
 | update_time | String (ISO 8601) | Fecha de actualización de la intención | Sí |
 | state | Enum [:arrow_upper_right:](enumeration-state.md) | Estado actual de la intención | Sí |
@@ -107,3 +131,6 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 **Información:** Al crear una intención de pago , ya es posible comenzar con el proceso de aprobación del mismo por el cliente y actualizar una intención de pago a un pago completado para finalizar el proceso.
 
 [Obtener aprobación del pago >](get-capture.md)
+
+
+[iso-3166-alpha2]: https://es.wikipedia.org/wiki/ISO_3166-1#Tabla_de_c.C3.B3digos_alfa-2_asignados_o_reservados

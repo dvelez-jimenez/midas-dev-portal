@@ -90,7 +90,7 @@ curl -v -X POST 'https://{api-capture-card}/captures/tokenization/webhook_callba
 | billing.line2 | String      | Dirección 2 de facturación | No |
 | billing.city | String      | Ciudad para facturación | Sí |
 | billing.state | String      | Comuna de facturación | Sí |
-| billing.country | String ([ISO 3166-1 alpha-2](iso-3166-alpha2))     | País de facturación| Sí |
+| billing.country | String ([ISO 3166-1 alpha-2][ISO 3166-1 alpha-2])     | País de facturación| Sí |
 | create_time | String (ISO 8601) | Fecha de creación de la intención | Sí |
 | update_time | String (ISO 8601) | Fecha de actualización de la intención | Sí |
 | state | Enum [:arrow_upper_right:](enumeration-state.md) | Estado actual de la intención | Sí |
@@ -122,4 +122,4 @@ Mas Información: [The Reactive Manifesto](http://www.reactivemanifesto.org/es)
 
 
 [secuence-diagram]: images/how-it-work-1.png
-[iso-3166-alpha2]: https://es.wikipedia.org/wiki/ISO_3166-1#Tabla_de_c.C3.B3digos_alfa-2_asignados_o_reservados
+[ISO 3166-1 alpha-2]: https://es.wikipedia.org/wiki/ISO_3166-1#Tabla_de_c.C3.B3digos_alfa-2_asignados_o_reservados

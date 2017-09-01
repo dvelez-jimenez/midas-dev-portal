@@ -12,8 +12,10 @@ Resumiendo lo anterior, para el correcto funcionamiento de este componente inter
 
 - **Subcripción** al evento de *intermediate proxy pull*, indicando la URL a la cual la información de captura, será enviada (pull).
 > **Nota:**
-> En el contexto de *Quickpay Connect*, es necesario configurar la URL base de recepcion del componente API *Checkout* a: **{api-checkout}/captures/tokenization/webhook_callback** 
+> En el contexto de *Quickpay Connect*, es necesario configurar la URL base de recepcion del componente API *Checkout* a: **{api-checkout}/captures/tokenization/webhook_callback**.
 
+![diagrama de secuencia][secuence-diagram]
+<p style="text-align: center;"> Diagrama de Secuencia</p>
 
 # TLDR:
 
@@ -27,10 +29,12 @@ Resumiendo lo anterior, para el correcto funcionamiento de este componente inter
  
 Un sistema resiliente son aquellos sistemas que estan pensados en las fallas, y que por ende, aunque un componente externo falle, la solicitud de envió quedara encolada para ser re-intentada mas tarde, por lo que si por algún problema interno la malla de conexión entre ambos componentes encapsulados en la infraestructura PCI falla, el sistema de tokenizador , dejará encolada el envio de información para un tiempo mas adelante, hasta que el código de respuesta HTTP entregado por el sistema subscrito (intermediate proxy pull), sea un código HTTP exitoso (200,201,203,204, etc).
 
-Mas Información sobre el manifiesto reactivo: [Reactive Manifesto](http://www.reactivemanifesto.org/es)
+Mas Información: [The Reactive Manifesto](http://www.reactivemanifesto.org/es)
 
 ---
 
 
-
 [Ver guía de funcionamiento](how-it-work.md)
+
+
+[secuence-diagram]: images/how-it-work-1.png

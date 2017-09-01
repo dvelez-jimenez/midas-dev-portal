@@ -1,6 +1,6 @@
 # Estrategia de Funcionamiento
 
-La estrategia en la cual se basa este componente, se encuentra bajo el concepto de [Webhook](https://en.wikipedia.org/wiki/Webhook), que permite a un [Micro servicio](https://es.wikipedia.org/wiki/Arquitectura_de_microservicios) eliminar el nivel de acoplamiento fuerte contra otros servicios / microservicios permitiendo seguir manteniendo su resilencia y [bajo acoplamiento](https://en.wikipedia.org/wiki/Loose_coupling), inclusive cuando alguna pieza externa de funcionamiento critico se haya detenido por algúna falla en su funcionamiento.
+La estrategia en la cual se basa este componente, se encuentra bajo el concepto de [Webhook](https://en.wikipedia.org/wiki/Webhook), que permite a un [Microservicio](https://es.wikipedia.org/wiki/Arquitectura_de_microservicios) eliminar el nivel de acoplamiento fuerte contra otros servicios / microservicios permitiendo seguir manteniendo su resilencia y [bajo acoplamiento](https://en.wikipedia.org/wiki/Loose_coupling), inclusive cuando alguna pieza externa de funcionamiento critico se haya detenido por algúna falla en su funcionamiento.
 
 Para lograr lo anterior, es necesario que el sistema de captura (tokenizador) implemente un sistema de eventos en que el componente **intermediate proxy pull** pueda subcribirse, y en el cual a su vez bajo el mismo concepto previamente explicado, permita que los componentes fuera de alcance PCI, puedan subscribirse para la comunicación de los datos no sensibles de captura a sus fuentes persistentes.
 
@@ -16,6 +16,84 @@ Resumiendo lo anterior, para el correcto funcionamiento de este componente inter
 
   ![diagrama de secuencia][secuence-diagram]
   ->*Diagrama de secuencias*<-
+
+---
+## Estructura de los datos tokenizador -> intermediate proxy pull
+
+````bash
+curl -v -X POST 'https://{api-capture-card}/captures/tokenization/webhook_callback' \
+ -H "Content-Type: application/json" \
+ -H "Authorization: Bearer Your-Valid-Access-Token" \
+ -d '{
+  "capture": "CREDIT_CARD",
+  "capture_method": "TOKENIZATION",
+  "application": "acb361cc-e4e7-24fb-d4e2-17bb3aa74066",
+  "billing": {
+    "line1": "Miraflores 222",
+    "city": "Santiago",
+    "state": "Region Metropolitana",
+    "country": "CL"
+  },
+  "cardholder": {
+    "reference_id": "Merchant_id_reference",
+    "name": "Jhon Doe",
+    "email": "jhondoe@gmail.com",
+    "country": "CL"
+  },
+  "id": "71230785-c66e-4c96-b2d9-658bfd41235b",
+  "create_time": "2017-09-01T04:41:22.220Z",
+  "update_time": "2017-09-01T04:41:31.458Z",
+  "state": "captured",
+  "capture_number": "INCA-0000000432",
+  "gateway": {
+    "utf8": "✓",
+    "req_card_number": "xxxxxxxxxxxx1111",
+    "payment_token": "5042408910336785404106",
+    "req_bill_to_surname": "Doe",
+    "req_bill_to_address_city": "Santiago",
+    "req_card_expiry_date": "02-2018",
+    "reason_code": "100",
+    "req_bill_to_forename": "Jhon",
+    "req_payment_method": "card",
+    "request_token": "AhjzbwSTEVl7HB+4nFDKigFP5x2KJkiYAOJcMmkmW6QHAX2gJgAAJQ9A",
+    "req_amount": "0",
+    "req_bill_to_email": "jhondoe@gmail.com",
+    "transaction_id": "5042408910336785404106",
+    "req_currency": "CLP",
+    "req_card_type": "001",
+    "decision": "ACCEPT",
+    "message": "Request was processed successfully.",
+    "req_transaction_uuid": "INCA-0000000432",
+    "req_bill_to_address_country": "CL",
+    "req_profile_id": "5D5F2A29-2428-4E8B-BFCE-D55043704C90",
+    "req_reference_number": "Merchant_id_reference",
+    "req_bill_to_address_state": "Region Metropolitana",
+    "signed_date_time": "2017-09-01T04:41:31Z",
+    "req_bill_to_address_line1": "Miraflores 222",
+    "panLast4": "1111"
+  }
+}'
+````
+
+| Nombre        | Tipo            | Descripción  | Requerido |
+| ------------- | --------------- | ------------ | --------- |
+| id            | String (Guid)   | Identificador único de la intención              | Sí |
+| capture       | Enum [:arrow_upper_right:](enumeration-capture.md)           | Tipo de Captura establecida en la intención.             | Sí |
+| capture_method| Enum [:arrow_upper_right:](enumeration-capture-method.md)            | Método de Captura que se usará   | Sí |
+| application   | String (Guid)   | Identificador de la aplicación del comercio quien solicito la captura              | Sí |
+| cardholder | Object        | Datos del tarjeta habiente | Sí |
+| cardholder.reference_id | String        | Identificador externo del comercio | No |
+| cardholder.country | String (ISO 3166-1)        | País de residencia del tarjeta habiente | Sí |
+| cardholder.name | String      | Nombre del tarjeta habiente tal como se muestra en la tarjeta | Sí |
+| create_time | String (ISO 8601) | Fecha de creación de la intención | Sí |
+| update_time | String (ISO 8601) | Fecha de actualización de la intención | Sí |
+| state | Enum [:arrow_upper_right:](enumeration-state.md) | Estado actual de la intención | Sí |
+| capture_number | String (Correlativo) | Identificador legible de la intención | Sí |
+| redirect_urls | Object      | Url de redirección dependiendo del estado de la captura una vez finalizado el proceso de captura | Sí |
+| redirect_urls.return_url | String (Url)      | Url de redirección al producirse una captura exitosa | Sí |
+| redirect_urls.cancel_url | String (Url)      | Url de redirección al producirse una captura fallida | Sí |
+| gateway | Object      | Datos de la captura (varía dependiendo del metodo de captura establecido ) | Sí |
+
 
 # TLDR:
 

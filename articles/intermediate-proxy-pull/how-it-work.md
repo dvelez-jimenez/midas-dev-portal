@@ -18,7 +18,7 @@ Resumiendo lo anterior, para el correcto funcionamiento de este componente inter
   ->*Diagrama de secuencias*<-
 
 ---
-## Estructura de los datos *Tokenizador -> Intermediate proxy pull*
+## *Estructura de los datos* Tokenizador -> Intermediate proxy pull
 
 ````bash
 curl -v -X POST 'https://{api-capture-card}/captures/tokenization/webhook_callback' \
@@ -100,10 +100,10 @@ curl -v -X POST 'https://{api-capture-card}/captures/tokenization/webhook_callba
 | redirect_urls.cancel_url | String (Url)      | Url de redirección al producirse una captura fallida | Sí |
 | gateway | Object      | Datos de la captura (varía dependiendo del metodo de captura establecido ) | Sí |
 
-## Estructura de los datos *Intermediate proxy pull -> Checkout*
+## *Estructura de los datos* Intermediate proxy pull -> Checkout
 
 ````bash
-curl -v -X POST 'https://{api-capture-card}/captures/tokenization/webhook_callback' \
+curl -v -X POST 'https://{api-checkout}/captures/tokenization/webhook_callback' \
  -H "Content-Type: application/json" \
  -H "Authorization: Bearer Your-Valid-Access-Token" \
  -d '{

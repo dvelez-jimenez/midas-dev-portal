@@ -78,12 +78,12 @@ curl -v -X POST 'https://{api-capture-card}/captures/tokenization/webhook_callba
 | Nombre        | Tipo            | Descripción  | Requerido |
 | ------------- | --------------- | ------------ | --------- |
 | id            | String (Guid)   | Identificador único de la intención              | Sí |
-| capture       | Enum [:arrow_upper_right:][enumeration-capture] | Tipo de Captura establecida en la intención. | Sí |
+| capture | Enum [:arrow_upper_right:][enumeration-capture] | Tipo de Captura establecida en la intención. | Sí |
 | capture_method| Enum [:arrow_upper_right:][enumeration-capture-method] | Método de Captura que se usará  | Sí |
 | application   | String (Guid)   | Identificador de la aplicación del comercio quien solicito la captura | Sí |
 | cardholder | Object        | Datos del tarjeta habiente | Sí |
 | cardholder.reference_id | String        | Identificador externo del comercio | No |
-| cardholder.country | String (ISO 3166-1)        | País de residencia del tarjeta habiente | Sí |
+| cardholder.country | String ([ISO 3166-1 alpha-2][country-iso]) | País de residencia del tarjeta habiente | Sí|
 | cardholder.name | String      | Nombre del tarjeta habiente tal como se muestra en la tarjeta | Sí |
 | billing | String      | Dirección de facturación asociada a la tarjeta  | Sí |
 | billing.line1 | String      | Dirección de facturación | Sí |
@@ -91,8 +91,8 @@ curl -v -X POST 'https://{api-capture-card}/captures/tokenization/webhook_callba
 | billing.city | String      | Ciudad para facturación | Sí |
 | billing.state | String      | Comuna de facturación | Sí |
 | billing.country | String ([ISO 3166-1 alpha-2][country-iso])     | País de facturación| Sí |
-| create_time | String (ISO 8601) | Fecha de creación de la intención | Sí |
-| update_time | String (ISO 8601) | Fecha de actualización de la intención | Sí |
+| create_time | String ([ISO 8601][datetime-iso]) | Fecha de creación de la intención | Sí |
+| update_time | String ([ISO 8601][datetime-iso]) | Fecha de actualización de la intención | Sí |
 | state | Enum [:arrow_upper_right:][enumeration-state] | Estado actual de la intención | Sí |
 | capture_number | String (Correlativo) | Identificador legible de la intención | Sí |
 | redirect_urls | Object      | Url de redirección dependiendo del estado de la captura una vez finalizado el proceso de captura | Sí |
@@ -118,11 +118,14 @@ Mas Información: [The Reactive Manifesto][the-reactive-manifesto]
 ---
 
 [secuence-diagram]: images/how-it-work-1.png
-[country-iso]: https://es.wikipedia.org/wiki/ISO_3166-1#Tabla_de_c.C3.B3digos_alfa-2_asignados_o_reservados
+
 [the-reactive-manifesto]: http://www.reactivemanifesto.org/es
 [webhook]: https://en.wikipedia.org/wiki/Webhook
 [microservice]: https://es.wikipedia.org/wiki/Arquitectura_de_microservicios
 [loose-coupling]: https://en.wikipedia.org/wiki/Loose_coupling
+
+[datetime-iso]: https://es.wikipedia.org/wiki/ISO_8601
+[country-iso]: https://es.wikipedia.org/wiki/ISO_3166-1#Tabla_de_c.C3.B3digos_alfa-2_asignados_o_reservados
 [enumeration-state]: ../product-capture-card/enumeration-state.md
 [enumeration-capture]: ../product-capture-card/enumeration-capture.md
 [enumeration-capture-method]: ../product-capture-card/enumeration-capture-method.md

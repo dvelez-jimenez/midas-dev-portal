@@ -18,6 +18,7 @@ Resumiendo lo anterior, para el correcto funcionamiento de este componente inter
 # TLDR:
 
 > **¿Porqué es necesario ejecutar dos envios de información (*tokenizador -> intermediate proxy pull -> checkout*) para finalmente enviar la información al componente checkout, cúando podriamos hacerlo directamente desde el tokenizador -> checkout?**
+> 
 > Solo por el hecho de sacar del alcance PCI a la plataforma checkout, y que esta pueda estar fuera de las altas restricciones de los ambientes PCI, ya que cómo bien se plantea, facilmente podria ser una sola llamada, directamente del tokenizdor -> checkout, pero esta definición produciría que checkout estuviera dentro del alcance PCI; y  es por ello que el planteamiento de envio de la información sea tokenizador -> intermediate proxy pull -> checkout.
 
 

@@ -39,8 +39,16 @@ Producto para tokenización de tarjetas bancarias para comercios.
 
 [Guía de Integración](articles/product-capture-card/introduction.md)
 
+----
 ## Intermediate Proxy Pull
 
 Componente Interno que permite la reducción PCI DSS hacia el producto Checkout.
 
 [Guía de Funcionamiento](articles/intermediate-proxy-pull/introduction.md)
+
+----
+## SDK Javascript
+
+SDK Javascript para integración de los productos checkout y capture card
+
+[Guía de Integración](articles/product-capture-card/introduction.md)

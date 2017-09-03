@@ -1,7 +1,3 @@
-# Instrucciones para contribuir
-- Mientras no tengamos el MVP listo, podemos hacer commits con nuestros propios usuarios, directo a *master*
-- Cuando terminemos el MVP, nos quitaremos los permitoss y empezaremos a trabajar con pull requests.
-
 ## About your contributions to Peinau content
 
 ### Minor corrections
@@ -34,4 +30,17 @@ In the public peinau-docs repository, automated labels are assigned to pull requ
 * Change sent to author: The author has been notified of the pending pull request.
 * ready-to-merge: Ready for review by our pull request review team.
 
-**CLA**: Contributor License Agremment
+**CLA**: Contributor License Agremment.
+
+----
+## Capture Card
+
+Producto para tokenización de tarjetas bancarias para comercios.
+
+[Guía de Integración](articles/product-capture-card/introduction.md)
+
+## Intermediate Proxy Pull
+
+Componente Interno que permite la reducción PCI DSS hacia el producto Checkout.
+
+[Guía de Funcionamiento](articles/intermediate-proxy-pull/introduction.md)

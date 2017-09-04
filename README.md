@@ -51,4 +51,4 @@ Componente Interno que permite la reducción PCI DSS hacia el producto Checkout.
 
 SDK Javascript para integración de los productos checkout y capture card
 
-[Guía de Integración](articles/product-capture-card/introduction.md)
+[Guía de Integración](https://github.com/Peinau/peinau-javascript/blob/master/README.md)

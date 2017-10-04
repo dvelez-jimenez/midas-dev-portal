@@ -44,6 +44,7 @@ curl -v -X POST 'https://api-capture-card-quickpay.azurewebsites.net/captures' \
 | cardholder.reference_id | String        | Identificador externo del comercio | No |
 | cardholder.country | String ([ISO 3166-1 alpha-2][ISO 3166-1 alpha-2])        | País de residencia del tarjeta habiente | Sí |
 | cardholder.name | String      | Nombre del tarjeta habiente tal como se muestra en la tarjeta | Sí |
+| cardholder.email | String      | Email del tarjeta habiente | Sí |
 | billing | String      | Dirección de facturación asociada a la tarjeta  | Sí |
 | billing.line1 | String      | Dirección de facturación | Sí |
 | billing.line2 | String      | Dirección 2 de facturación | No |
@@ -67,13 +68,16 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
   "capture_method": "TOKENIZATION",
   "cardholder": {
     "reference_id": "Merchant_id_reference",
-    "country": "CL"
+    "country": "CL",
+    "name": "David Munoz",
+    "email": "dummy_user@gmail.com"
   },
   "billing": {
     "line1": "Miraflores 222",
     "city": "Santiago",
     "state": "Region Metropolitana",
-    "country": "CL"
+    "country": "CL",
+    "name": "David Muñoz Gaete"
   },
   "create_time": "2017-07-14T02:25:18.928Z",
   "update_time": "2017-07-14T02:25:18.928Z",
@@ -107,6 +111,7 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 | cardholder.reference_id | String        | Identificador externo del comercio | No |
 | cardholder.country | String ([ISO 3166-1 alpha-2][ISO 3166-1 alpha-2])        | País de residencia del tarjeta habiente | Sí |
 | cardholder.name | String      | Nombre del tarjeta habiente tal como se muestra en la tarjeta | Sí |
+| cardholder.email | String      | Email del tarjeta  | Sí |
 | billing | String      | Dirección de facturación asociada a la tarjeta  | Sí |
 | billing.line1 | String      | Dirección de facturación | Sí |
 | billing.line2 | String      | Dirección 2 de facturación | No |
@@ -126,13 +131,13 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 | redirect_urls.return_url | String (Url)      | Url de redirección al producirse una captura exitosa | Sí |
 | redirect_urls.cancel_url | String (Url)      | Url de redirección al producirse una captura fallida | Sí |
 
-> Algunos medios de pago, entregan links de funcionalidades mayores a las descritas en el ejemplo de respuesta indicado arriba, como por ejemplo el link opcional **"silent_charge"** que permite ejecutar transacciones inmediatas sin requerir aprobación previa del cliente.
+> Algunos medios de captura, entregan links de funcionalidades mayores a las descritas en el ejemplo de respuesta indicado arriba, como por ejemplo el link opcional **"check_availability"** que permite ejecutar consultas inmediatas sin requerir aprobación previa del cliente.
 
 ## Pasos Siguientes
 
-**Información:** Al crear una intención de pago , ya es posible comenzar con el proceso de aprobación del mismo por el cliente y actualizar una intención de pago a un pago completado para finalizar el proceso.
+**Información:** Al crear una intención de captura , ya es posible comenzar con el proceso de captura del mismo por el cliente y actualizar una intención de captura a una captura completada para finalizar el proceso.
 
-[Obtener aprobación del pago >](get-capture.md)
+[Obtener url de proceso de captura >](get-capture.md)
 
 
 [ISO 3166-1 alpha-2]: https://es.wikipedia.org/wiki/ISO_3166-1#Tabla_de_c.C3.B3digos_alfa-2_asignados_o_reservados

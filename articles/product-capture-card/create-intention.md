@@ -20,6 +20,8 @@ curl -v -X POST 'https://api-capture-card-quickpay.azurewebsites.net/captures' \
   "cardholder": {
     "reference_id": "Merchant_id_reference",
     "country": "CL"
+    "email": "dummy_user@gmail.com",
+    "name": "David Munoz"
   },
   "billing": {
     "line1": "Miraflores 222",

@@ -6,7 +6,7 @@ Te puedes integrar de las siguientes formas:
 
   - [API Tokenización y Pago](Api-tokenizacion-pago.md)
   - [API Checkout](Api-checkout.md)
-  - [SDK/Plugins](Sdk-plugins.md)
+  - [SDK Javascript](https://github.com/Peinau/peinau-javascript/blob/master/README.md)
 
 Además tienes la posibilidad de anular tus transacciones de la siguiente manera:
 

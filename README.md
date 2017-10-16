@@ -46,11 +46,10 @@ Te ofrecemos las siguientes soluciones:
 - [Pasarela de pagos](Articulos/Pasarela-de-pagos.md)
   - [API Tokenización y Pago](Articulos/Api-tokenizacion-pago.md)
   - [API Checkout](Articulos/Api-checkout.md)
-  - [SDK/Plugins](Articulos/Sdk-plugins.md)
+  - [SDK Javascript](https://github.com/Peinau/peinau-javascript/blob/master/README.md)
   - [Anulaciones](Articulos/Anulaciones.md)
 
 - [Motor de fraude](Articulos/Motor-de-fraude.md)
-- [Pago Recurrente](Articulos/Pago-recurrente.md)
 
 ----
 ## Intermediate Proxy Pull
@@ -59,9 +58,3 @@ Componente Interno que permite la reducción PCI DSS hacia el producto Checkout.
 
 [Guía de Funcionamiento](articles/intermediate-proxy-pull/introduction.md)
 
-----
-## SDK Javascript
-
-SDK Javascript para integración de los productos checkout y capture card
-
-[Guía de Integración](https://github.com/Peinau/peinau-javascript/blob/master/README.md)

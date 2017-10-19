@@ -47,7 +47,7 @@ Te ofrecemos las siguientes soluciones:
   - [API REST de Tokenización y Pago](Articulos/Api-tokenizacion-pago.md)
   - [API REST Checkout](Articulos/Api-checkout.md)
   - [SDK Javascript](https://github.com/Peinau/peinau-javascript/blob/master/README.md)
-  - [Plugins eCommerce](Plugins.md)
+  - [Plugins eCommerce](Articulos/Plugins.md)
   - [Anulaciones](Articulos/Anulaciones.md)
 
 - [Motor de fraude](Articulos/Motor-de-fraude.md)

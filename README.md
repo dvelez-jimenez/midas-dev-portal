@@ -13,7 +13,7 @@ Te ofrecemos las siguientes soluciones:
   - [API REST Checkout](Articulos/Api-checkout.md)
   - [SDK Javascript](https://github.com/Peinau/peinau-javascript/blob/master/README.md)
   - [Plugins eCommerce](Articulos/Plugins.md)
-  - [Anulaciones](Articulos/Anulaciones.md)
+  - [Anulaciones](articles/anulaciones/introduccion.md)
 
 - [Motor de fraude](Articulos/Motor-de-fraude.md)
 

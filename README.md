@@ -17,4 +17,4 @@ Te ofrecemos las siguientes soluciones:
 
 - [Motor de fraude](Articulos/Motor-de-fraude.md)
 
-¿Quieres contribuir con el contenido de PEINAU? [Más Info Aquí](Contribuciones.md)
+¿Quieres contribuir con el contenido de PEINAU? [Más Info Aquí](Articulos/Contribuciones.md)

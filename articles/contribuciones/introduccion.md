@@ -37,4 +37,4 @@ In the public peinau-docs repository, automated labels are assigned to pull requ
 
 Componente Interno que permite la reducción PCI DSS hacia el producto Checkout.
 
-[Guía de Funcionamiento](intermediate-proxy-pull/introduction.md)
+[Guía de Funcionamiento](articles/intermediate-proxy-pull/introduction.md)

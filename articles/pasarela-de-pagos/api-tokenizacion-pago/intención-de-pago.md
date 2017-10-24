@@ -153,7 +153,7 @@ Obtendrás los Links:
 
 - **self**: desde esta URL puedes consultar la información de la captura.
 - **approval_url**: desde esta URL el cliente debe autorizar el pago.
-- **reverse_method**: para anular la transacción, debes hacer el llamado a este endpoint desde la [API de Anulación](../articles/anulaciones/introduccion.md).
+- **reverse_method**: para anular la transacción, debes hacer el llamado a este endpoint desde la [API de Anulación](../blob/master/articles/anulaciones/introduccion.md).
 - **silent_charge**: llamando a este endpoint desde la [API silent_charge](cargo-tarjeta.md) puedes ejecutar el cargo a la tarjeta de cŕedito del cliente sin pasar por la intención de pago.
 
 [Ir al paso 5](cargo-tarjeta.md)

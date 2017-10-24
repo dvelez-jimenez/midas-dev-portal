@@ -17,13 +17,13 @@ curl -X POST 'https://api.sandbox.connect.fif.tech/tokenization/captures' \
     "name": "Mati 1",
     "email": "JLPrueba1@gmail.com"
   },
-	"billing": {
+  "billing": {
     "line1": "Miraflores 222",
     "city": "Santiago",
     "state": "Region Metropolitana",
     "country": "CL"
   },
-	
+  
   "redirect_urls": {
     "return_url": "https://requestb.in/sfoogtsf",
     "cancel_url": "http://www.mysite.cl/cancel"
@@ -37,7 +37,7 @@ Como respuesta obtendrás la siguiente información:
 {
     "capture": "CREDIT_CARD",
     "capture_method": "TOKENIZATION",
-    "application": "a3be1bc6-438a-c35e-e603-b15f2d30cfb9",
+    "application": "28adb999-7a2e-70b8-c092-e4c16a9e9e0a",
     "redirect_urls": {
         "return_url": "https://requestb.in/sfoogtsf",
         "cancel_url": "http://www.mysite.cl/cancel"
@@ -54,19 +54,19 @@ Como respuesta obtendrás la siguiente información:
         "name": "Mati 1",
         "email": "JLPrueba1@gmail.com"
     },
-    "id": "f445ffde-c746-e0ce-1fc6-751f8c633800",
-    "create_time": "2017-10-12T20:17:24.907Z",
-    "update_time": "2017-10-12T20:17:24.907Z",
+    "id": "42743d48-7699-0d00-ef45-a68c587e662d",
+    "create_time": "2017-10-24T02:27:28.985Z",
+    "update_time": "2017-10-24T02:27:28.985Z",
     "state": "created",
-    "capture_number": "INCA-0000000046",
+    "capture_number": "INCA-50000000006",
     "links": [
         {
-            "href": "https://quickpay-connect-capture-card.azurewebsites.net/captures/f445ffde-c746-e0ce-1fc6-751f8c633800",
+            "href": "https://api.sandbox.connect.fif.tech/tokenization/captures/42743d48-7699-0d00-ef45-a68c587e662d",
             "rel": "self",
             "method": "GET"
         },
         {
-            "href": "https://quickpay-connect-capture-card.azurewebsites.net/captures/gateways/credit/card/f445ffde-c746-e0ce-1fc6-751f8c633800/capture",
+            "href": "https://api.sandbox.connect.fif.tech/tokenization/captures/gateways/credit/card/42743d48-7699-0d00-ef45-a68c587e662d/capture",
             "rel": "capture_url",
             "method": "REDIRECT"
         }

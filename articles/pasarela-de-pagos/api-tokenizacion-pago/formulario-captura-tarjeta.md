@@ -1,20 +1,20 @@
-#### 3. Mostrar Formulario de Captura de tarjeta
+## 3. Mostrar Formulario de Captura de tarjeta
 
-Con la **capture_url** obtenida en el [paso 2](#2-crear-una-intención-de-captura) puedes desplegar el formulario de captura de tarjeta. [Puedes hacer clic aquí para ver un ejemplo de capture_url](https://quickpay-connect-capture-card.azurewebsites.net/captures/gateways/credit/card/61bf9053-dc08-15ea-7419-aba75cd3bea4/capture)
+Con la **capture_url** obtenida en el [paso 2](crear-intencion-captura.md) puedes desplegar el formulario de captura de tarjeta. [Puedes hacer clic aquí para ver un ejemplo de capture_url](https://quickpay-connect-capture-card.azurewebsites.net/captures/gateways/credit/card/61bf9053-dc08-15ea-7419-aba75cd3bea4/capture)
 
-![Ejemplo de ventana Formulario](Portal02.jpg)
+![Ejemplo de ventana Formulario](captura-tarjeta-1.png)
 
 El cliente debe ingresar los datos solicitados en el formulario y hacer clic en **Usar esta tarjeta** para obtener el token de la tarjeta de crédito.
 
 ![Ejemplo datos a ingresar](Portal03.jpg)
 
-La respuesta será enviada a la página de confirmacion indicada en la variable **"return_url"** de la petición a la [API de intención de Captura (paso 2)](#2-crear-una-intención-de-captura) o puedes consultar dicha respuesta llamando a la **API Revisión de Captura** de la siguiente forma:
+La respuesta será enviada a la página de confirmacion indicada en la variable **"return_url"** de la petición a la [API de intención de Captura (paso 2)](crear-intencion-captura.md) o puedes consultar dicha respuesta llamando a la **API Revisión de Captura** de la siguiente forma:
 
 ```
- curl -X GET 'https://quickpay-connect-capture-card.azurewebsites.net/captures/{{id}}'
+ curl -X GET 'https://api.sandbox.connect.fif.tech/tokenization/captures/{{id}}'
 ```
 
-> Debes reemplazar el **id** por el obtenido en la respuesta de la **API de captura /captures** [paso 2](#2-crear-una-intención-de-captura).
+> Debes reemplazar el **id** por el obtenido en la respuesta de la **API de captura /captures** [paso 2](crear-intencion-captura.md).
 
 **Ejemplo de respuesta enviada a la return_url:**
 

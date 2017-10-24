@@ -3,7 +3,7 @@
 Para completar el pago con el **token de la tarjeta** debes ingresar el **id** obtenido previamente de la **return_url** en el campo **capture_token** de la petición a la API de **Intención de Pago /payments**, el **access_token** generado en el [paso 1](obtener-token-acceso.md) y hacer el llamado de la siguiente forma:
 
 ```
-curl -X POST 'https://quickpay-connect-checkout.azurewebsites.net/payments' \
+curl -X POST 'https://api.sandbox.connect.fif.tech/checkout/payments' \
  -H "Content-Type: application/json" \
  -H "Authorization: Bearer access_token" \
  -d '{ 
@@ -17,7 +17,7 @@ curl -X POST 'https://quickpay-connect-checkout.azurewebsites.net/payments' \
        "documentType": "RUT"
      }, 
      "payment_method": "QUICKPAY_TOKEN",
-     "capture_token": "fe5228dc-91ab-fa28-97ec-034bed089743"
+     "capture_token": "397fd6a5-5d3f-e588-e200-e37088d124b2"
    }, 
    "transaction": { 
      "reference_id": "OD0000233", 
@@ -49,7 +49,7 @@ curl -X POST 'https://quickpay-connect-checkout.azurewebsites.net/payments' \
            "name": "Destornillador 2344", 
            "description": "Destornillador SCL - ONT", 
            "quantity": 1, 
-           "price": 500, 
+           "price": 4500, 
            "tax": 0 
          } 
        ] 
@@ -67,7 +67,7 @@ Como respuesta obtendrás la siguiente información:
 ```
 {
     "intent": "sale",
-    "application": "a3be1bc6-438a-c35e-e603-b15f2d30cfb9",
+    "application": "28adb999-7a2e-70b8-c092-e4c16a9e9e0a",
     "redirect_urls": {
         "return_url": "https://requestb.in/sfoogtsf",
         "cancel_url": "https://chao.com"
@@ -84,7 +84,7 @@ Como respuesta obtendrás la siguiente información:
                     "name": "Destornillador 2344",
                     "description": "Destornillador SCL - ONT",
                     "quantity": 1,
-                    "price": 500,
+                    "price": 4500,
                     "tax": 0
                 }
             ],
@@ -117,35 +117,35 @@ Como respuesta obtendrás la siguiente información:
             "email": "jlprueba1@quickpay.com"
         },
         "payment_method": "QUICKPAY_TOKEN",
-        "capture_token": "0e0b75dc-2cb1-81f5-9e19-054741744455"
+        "capture_token": "397fd6a5-5d3f-e588-e200-e37088d124b2"
     },
     "links": [
         {
-            "href": "https://quickpay-connect-checkout.azurewebsites.net/payments/0fdcd938-62c7-aab2-5048-c2f172d495ac",
+            "href": "https://api.sandbox.peinau.fif.tech/checkout/payments/4422ad2b-7285-a953-2bfc-400b8318d517",
             "rel": "self",
             "method": "GET"
         },
         {
-            "href": "https://quickpay-connect-checkout.azurewebsites.net/payments/gateways/quickpay/token/0fdcd938-62c7-aab2-5048-c2f172d495ac/pay",
+            "href": "https://api.sandbox.peinau.fif.tech/checkout/payments/gateways/quickpay/token/4422ad2b-7285-a953-2bfc-400b8318d517/pay",
             "rel": "approval_url",
             "method": "REDIRECT"
         },
         {
-            "href": "https://quickpay-connect-checkout.azurewebsites.net/payments/gateways/quickpay/token/0fdcd938-62c7-aab2-5048-c2f172d495ac/reverse",
+            "href": "https://api.sandbox.peinau.fif.tech/checkout/payments/gateways/quickpay/token/4422ad2b-7285-a953-2bfc-400b8318d517/reverse",
             "rel": "reverse_method",
             "method": "POST"
         },
         {
-            "href": "https://quickpay-connect-checkout.azurewebsites.net/payments/gateways/quickpay/token/0fdcd938-62c7-aab2-5048-c2f172d495ac/silent",
+            "href": "https://api.sandbox.peinau.fif.tech/checkout/payments/gateways/quickpay/token/4422ad2b-7285-a953-2bfc-400b8318d517/silent",
             "rel": "silent_charge",
             "method": "POST"
         }
     ],
-    "id": "0fdcd938-62c7-aab2-5048-c2f172d495ac",
-    "create_time": "2017-10-12T20:37:48.390Z",
-    "update_time": "2017-10-12T20:37:48.390Z",
+    "id": "4422ad2b-7285-a953-2bfc-400b8318d517",
+    "create_time": "2017-10-24T02:39:15.090Z",
+    "update_time": "2017-10-24T02:39:15.090Z",
     "state": "created",
-    "invoice_number": "INPA-0000000093"
+    "invoice_number": "INPA-50000000021"
 }
 ```
 

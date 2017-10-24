@@ -198,4 +198,4 @@ Necesitas el **access_token** obtenido en la **Autenticación** y el **id (Token
  -H "Content-Type: application/json" \
  -H "Authorization: Bearer access_token"
 ```
-[Volver al inicio](../../)
+[Volver al inicio](../introduction.md)

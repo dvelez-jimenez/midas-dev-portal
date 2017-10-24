@@ -9,11 +9,6 @@ Además, utilizando Peinau nunca verás la información sensible de la tarjeta y
 Te ofrecemos las siguientes soluciones:
 
 - [Pasarela de pagos](articles/pasarela-de-pagos/introduction.md)
-  - [API REST de Tokenización y Pago](Articulos/Api-tokenizacion-pago.md)
-  - [API REST Checkout](Articulos/Api-checkout.md)
-  - [SDK Javascript](https://github.com/Peinau/peinau-javascript/blob/master/README.md)
-  - [Plugins eCommerce](Articulos/Plugins.md)
-  - [API REST de Anulaciones](articles/anulaciones/introduccion.md)
 
 - [Motor de fraude](Articulos/Motor-de-fraude.md)
 

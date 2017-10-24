@@ -79,4 +79,4 @@ Detalle de las URLs generadas:
 + URL 1 (**rel: self**): desde esta URL puedes consultar la información de la intención de captura.
 + URL 2 (**rel: capture_url**): desde esta URL debes acceder al formulario de captura de la tarjeta.
 
-[Ir al paso 3](formulario-captura-tarjeta.md)
+Ir al paso [3. Mostrar formulario de Captura de tarjeta](formulario-captura-tarjeta.md)

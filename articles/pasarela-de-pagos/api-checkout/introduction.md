@@ -4,4 +4,4 @@ Puedes ejecutar un pago (Approval o Silent Charge) sin pasar por la captura de t
 
 > PROXIMAMENTE
 
-[Volver al menú anterior](Pasarela-de-pagos.md)
+[Volver al menú anterior](pasarela-de-pagos/introduction.md)

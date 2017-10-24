@@ -6,10 +6,10 @@ Al completar el registro de la aplicación (Alta del Comercio), obtendrás dos l
 
 Con estas credenciales podrás obtener el **token de acceso** llamando a la **API de Autenticación** de la siguiente forma:
 
-```export CLIENT_ID=772778451507664600860
-export CLIENT_ID=772778451507664600860
-export CLIENT_SECRET=3f9IecqBbiZew3sOQhzSPF62xHdgGzNHx2kShWpaqzaT
-curl -v -X POST https://quickpay-connect-sso.azurewebsites.net/oauth2/v2/token \
+```
+export CLIENT_ID=641281901508761220281
+export CLIENT_SECRET=B8WKRXMiWHHrMCectt9Rg3ju4Y8GNheEa50gx6365sBV
+curl -v -X POST https://api.sandbox.connect.fif.tech/sso/oauth2/v2/token \
  -H "Content-Type:application/x-www-form-urlencoded" \
  -H "Authorization: Basic $CLIENT_ID:$CLIENT_SECRET" \
  -d "grant_type=client_credentials" | json_pp
@@ -20,11 +20,11 @@ curl -v -X POST https://quickpay-connect-sso.azurewebsites.net/oauth2/v2/token \
 Como respuesta obtendrás el **access_token**:
 
 ```
-{
-   "expires_in" : 1507920388,
-   "scope" : "profile",
-   "token_type" : "Bearer",
-   "access_token" : "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcmltYXJ5c2lkIjoiYTNiZTFiYzYtNDM4YS1jMzVlLWU2MDMtYjE1ZjJkMzBjZmI5IiwidW5pcXVlX25hbWUiOiJDb21lcmNpbyBkZSBQcnVlYmEiLCJncm91cHNpZCI6IkFQUEwiLCJpc3MiOiJGYWxhYmVsbGEiLCJhdWQiOiJXZWIiLCJzY29wZSI6WyJwcm9maWxlIl0sImlhdCI6MTUwNzgzMzk4OCwiZXhwIjozMDE1NzU0Mzc2fQ.FyTeDIhXhPDUy9yUq1-rDSCLhdjG2Dq3k42AcnK-PuCb6g1nfa-N52x_zI2SNmhf0TtdJcBIacfW7CXegCbU3_chcIPJJoxSkfp-GdOddzOx_loQrCwxcrlyI4tJNlGgxieNsoOXvgaC7PjfydUF23Z5GkdqK31nf5Uwc6sP38gqf-rq9CNfKLVejwEGdRPgt1YOmm87TVQax3BjVxu7GgMKzKxIa5kP72tvy0Ss3d7WMq4ZrQXWQ50a1lRa_LNwZPjJOibN-q7n8xMbHO8wXenpt2q4-U7T0cHag1IXFdZ79CfUgPMmVFKTyeY5fZDWcgKcbCpmHPbJlpKYqLI7eA"
+{  
+   "scope":"",
+   "token_type":"Bearer",
+   "access_token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcmltYXJ5c2lkIjoiMjhhZGI5OTktN2EyZS03MGI4LWMwOTItZTRjMTZhOWU5ZTBhIiwidW5pcXVlX25hbWUiOiJHbWFpbCIsImdyb3Vwc2lkIjoiQVBQTCIsImlzcyI6IkZhbGFiZWxsYSIsImF1ZCI6IldlYiIsInNjb3BlIjpbXSwiaWF0IjoxNTA4ODExNzA2LCJleHAiOjMwMTc3MDk4MTJ9.MQJFaXB-TWYbPGeJYU5CYcYJmc8mtERokeEgNSq31IjnIWvPugpD1lA0vU1zTsCTJJxb-jMfQGLqYb68HjMrZPiaFk09HZTWjdKEdWyV07Ospv4BwtVEfSlFBw-hVoazIYXng4UNXGQwxhMEduHyRY4yB6Anc2vk6J_EBPTkGv75ogsYl6bt1NTSZ9oHkjhz8Mp05Re7lt59XRajSFYp9OJExHjMJOS3mQw-zwwJedKua9XcdNu65Zx-8Zur7pcU_qk9Bjbd5o5D6Y5R6ueYUQx7kWnabWgt8ubDsEqRTnqUDvcY-5KYmMKXjtFD6riMWGXyX3EaOPNvYwrFNoXH9A",
+   "expires_in":1508898106
 }
 ```
 

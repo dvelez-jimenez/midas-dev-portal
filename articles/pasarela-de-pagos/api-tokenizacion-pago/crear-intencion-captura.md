@@ -5,7 +5,7 @@ Luego de haber obtenido el **access_token** y con la información mínima del cl
 Utilizando dicho **access_token**, debes ejecutar una llamanda a la **API de captura /captures** de la siguiente forma:
 
 ```
-curl -X POST 'https://quickpay-connect-capture-card.azurewebsites.net/captures' \
+curl -X POST 'https://api.sandbox.connect.fif.tech/tokenization/captures' \
  -H "Content-Type: application/json" \
  -H "Authorization: Bearer ACCESS TOKEN" \
  -d '{

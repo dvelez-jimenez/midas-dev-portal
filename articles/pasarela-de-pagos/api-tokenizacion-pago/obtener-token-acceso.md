@@ -29,3 +29,5 @@ Como respuesta obtendrás el **access_token**:
 ```
 
 Con el **access_token** generado, ya puedes comenzar a usar nuestras APIs para completar los pasos siguientes. 
+
+[Ir al paso 2](crear-intencion-captura.md)

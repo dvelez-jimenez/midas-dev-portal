@@ -121,22 +121,22 @@ Como respuesta obtendrás la siguiente información:
     },
     "links": [
         {
-            "href": "https://api.sandbox.peinau.fif.tech/checkout/payments/4422ad2b-7285-a953-2bfc-400b8318d517",
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/4422ad2b-7285-a953-2bfc-400b8318d517",
             "rel": "self",
             "method": "GET"
         },
         {
-            "href": "https://api.sandbox.peinau.fif.tech/checkout/payments/gateways/quickpay/token/4422ad2b-7285-a953-2bfc-400b8318d517/pay",
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/4422ad2b-7285-a953-2bfc-400b8318d517/pay",
             "rel": "approval_url",
             "method": "REDIRECT"
         },
         {
-            "href": "https://api.sandbox.peinau.fif.tech/checkout/payments/gateways/quickpay/token/4422ad2b-7285-a953-2bfc-400b8318d517/reverse",
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/4422ad2b-7285-a953-2bfc-400b8318d517/reverse",
             "rel": "reverse_method",
             "method": "POST"
         },
         {
-            "href": "https://api.sandbox.peinau.fif.tech/checkout/payments/gateways/quickpay/token/4422ad2b-7285-a953-2bfc-400b8318d517/silent",
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/4422ad2b-7285-a953-2bfc-400b8318d517/silent",
             "rel": "silent_charge",
             "method": "POST"
         }

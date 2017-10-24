@@ -5,7 +5,7 @@ Esta solución permite recibir pagos de tus clientes en tu sitio de e-commerce.
 Te puedes integrar de las siguientes formas:
 
   - [API REST de Tokenización y Pago](api-tokenizacion-pago/introduction.md)
-  - [API REST Checkout](pasarela-de-pagos/api-checkout/introduction.md)
+  - [API REST Checkout](api-checkout/introduction.md)
   - [SDK Javascript](https://github.com/Peinau/peinau-javascript/blob/master/README.md)
   - [Plugins eCommerce](pasarela-de-pagos/plugins/introduction.md)
 

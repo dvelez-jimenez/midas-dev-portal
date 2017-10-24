@@ -8,4 +8,4 @@ Utilizando el **access_token** obtenido en la **Autenticación** y el **id (Toke
  -H "Authorization: Bearer access_token"
 ```
 
-[Volver al menú anterior](pasarela-de-pagos/introduction.md)
+[Volver al menú anterior](../introduction.md)

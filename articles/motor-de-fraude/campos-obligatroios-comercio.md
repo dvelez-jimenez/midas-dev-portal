@@ -4,11 +4,11 @@
 |general_id.purchase_order_id                 |ID Orden de la compra generada por el Comercio                                              |`string` |
 |general_id.associated_promotion             |Nombre promoción asociada                                                                   |`string` |
 |**shopping_cart**                |**Datos del carro de compras**                                                              |`array`  |
-|shopping_cart.cantidad_producto                |Cantidad de productos de un item                                                            |`string` |
+|shopping_cart.product_quantity                |Cantidad de productos de un item                                                            |`string` |
 |shopping_cart.sku_producto                     |Código SKU del producto                                                                     |`string` |
 |Nombre del producto             |NombreProducto                                                                              |`string` |
-|shopping_cart.codigo_producto                  |Categoría del producto. Lista de valores definidos                                          |`string` |
-|shopping_cart.categoria_producto               |Categoría del producto que maneja el comercio                                               |`string` |
+|shopping_cart.product_code                  |Categoría del producto. Lista de valores definidos                                          |`string` |
+|shopping_cart.product_category               |Categoría del producto que maneja el comercio                                               |`string` |
 |shopping_cart.cantidad_total_productos          |Cantidad de productos del item                                                              |`string` |
 |shopping_cart.precio_unitario_producto          |Precio unitario del producto                                                                |`string` |
 |**purchase_amount**              |**Datos del monto de la compra**                                                            |`array`  |

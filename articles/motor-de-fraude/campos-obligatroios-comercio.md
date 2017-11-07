@@ -1,18 +1,18 @@
 |Nombre Parametro                |Descripción                                                                                 |Tipo Dato|
 | ----                           | ----                                                                                       |----     |
-|**generalId**                   |**Identificadores Generales QP**                                                            |`array`  |
-|purchaseOrderId                 |ID Orden de la compra generada por el Comercio                                              |`string` |
-|associatedPromotion             |Nombre promoción asociada                                                                   |`string` |
-|**shoppingCart**                |**Datos del carro de compras**                                                              |`array`  |
-|CantidadProducto                |Cantidad de productos de un item                                                            |`string` |
-|SKUProducto                     |Código SKU del producto                                                                     |`string` |
+|**general_id**                   |**Identificadores Generales QP**                                                            |`array`  |
+|general_id.purchase_order_id                 |ID Orden de la compra generada por el Comercio                                              |`string` |
+|general_id.associated_promotion             |Nombre promoción asociada                                                                   |`string` |
+|**shopping_cart**                |**Datos del carro de compras**                                                              |`array`  |
+|shopping_cart.cantidad_producto                |Cantidad de productos de un item                                                            |`string` |
+|shopping_cart.sku_producto                     |Código SKU del producto                                                                     |`string` |
 |Nombre del producto             |NombreProducto                                                                              |`string` |
-|CodigoProducto                  |Categoría del producto. Lista de valores definidos                                          |`string` |
-|CategoriaProducto               |Categoría del producto que maneja el comercio                                               |`string` |
-|CantidadTotalProductos          |Cantidad de productos del item                                                              |`string` |
-|PrecioUnitarioProducto          |Precio unitario del producto                                                                |`string` |
-|**purchaseAmount**              |**Datos del monto de la compra**                                                            |`array`  |
-|amount                          |Monto de la compra sin impuesto                                                             |`string` |
+|shopping_cart.codigo_producto                  |Categoría del producto. Lista de valores definidos                                          |`string` |
+|shopping_cart.categoria_producto               |Categoría del producto que maneja el comercio                                               |`string` |
+|shopping_cart.cantidad_total_productos          |Cantidad de productos del item                                                              |`string` |
+|shopping_cart.precio_unitario_producto          |Precio unitario del producto                                                                |`string` |
+|**purchase_amount**              |**Datos del monto de la compra**                                                            |`array`  |
+|purchase_amount.amount                          |Monto de la compra sin impuesto                                                             |`string` |
 |tax                             |Impuesto                                                                                    |`string` |
 |totalAmount                     |Monto total de la compra                                                                    |`decimal`|
 |**clientData**                  |**Datos del cliente que está realizando la compra**                                         |`array`  |

@@ -24,15 +24,15 @@
 |client_data.is_employee                      |Indica si el pagador es empleado true/false                                                 |`boolean`|
 |client_data.day_since_reg                     |Número de días desde que el cliente se registró en el comercio hasta hoy                    |`int`    |
 |**dispatch_data**                |**Datos del despacho o retiro de los productos**                                            |`array`  |
-|beneficiaryName                 |Nombre de la persona que retira o recibe los productos                                      |`string` |
-|beneficiaryLastName             |Apellido de la persona que retira o recibe los productos                                        |`string` |
-|beneficiaryId                   |Número de documento de la persona que retira o recibe los productos                             |`string` |
-|beneficiaryDocType              |Tipo de documento de la persona que retira o recibe los productos                               |`string` |
-|personWhoCollect                |Identifica a quien retira o recibe el producto: Titular/Tercero                                 |`string` |
-|dispatchPhoneNumber             |Número de teléfono de la persona que retira/recibe los productos                                |`string` |
-|dispatchAddress                 |Dirección del lugar donde se despachan los productos                                            |`string` |
-|dispatchCity                    |Ciudad donde se despachan los productos                                                         |`string` |
-|dispatchState                   |Estado donde se despachan los productos                                                         |`string` |
-|dispatchZipCod                  |Código postal donde se despachan los productos                                                  |`string` |
-|dispatchCountry                 |País donde se despachan los productos                                                           |`string` |
-|dispatchMerchantCode            |Si la compra es retiro en tienda, indicar el código de la tienda donde se realizará el despacho |`string` |
+|dispatch_data.beneficiary_name                 |Nombre de la persona que retira o recibe los productos                                      |`string` |
+|dispatch_data.beneficiary_last_name             |Apellido de la persona que retira o recibe los productos                                        |`string` |
+|dispatch_data.beneficiary_id                   |Número de documento de la persona que retira o recibe los productos                             |`string` |
+|dispatch_data.beneficiary_doc_type              |Tipo de documento de la persona que retira o recibe los productos                               |`string` |
+|dispatch_data.beneficiary_type                |Identifica a quien retira o recibe el producto: Titular/Tercero                                 |`string` |
+|dispatch_data.beneficiary_phone_number             |Número de teléfono de la persona que retira/recibe los productos                                |`string` |
+|dispatch_data.dispatch_address                 |Dirección del lugar donde se despachan los productos                                            |`string` |
+|dispatch_data.dispatch_city                    |Ciudad donde se despachan los productos                                                         |`string` |
+|dispatch_data.dispatch_state                   |Estado donde se despachan los productos                                                         |`string` |
+|dispatch_data.dispatch_zipcode                  |Código postal donde se despachan los productos                                                  |`string` |
+|dispatch_data.dispatch_country                 |País donde se despachan los productos                                                           |`string` |
+|dispatch_data.dispatch_merchant_code            |Si la compra es retiro en tienda, indicar el código de la tienda donde se realizará el despacho |`string` |

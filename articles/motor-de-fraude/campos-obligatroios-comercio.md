@@ -35,4 +35,4 @@
 |dispatch_data.dispatch_state                   |Estado donde se despachan los productos                                                         |`string` |
 |dispatch_data.dispatch_zipcode                  |Código postal donde se despachan los productos                                                  |`string` |
 |dispatch_data.dispatch_country                 |País donde se despachan los productos                                                           |`string` |
-|dispatch_data.dispatch_merchant_code            |Si la compra es retiro en tienda, indicar el código de la tienda donde se realizará el despacho |`string` |
+|dispatch_data.dispatch_store_code            |Si la compra es retiro en tienda, indicar el código de la tienda donde se realizará el despacho |`string` |

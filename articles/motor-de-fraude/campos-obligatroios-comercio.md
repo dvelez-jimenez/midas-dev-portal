@@ -24,12 +24,12 @@
 |client_data.is_employee                      |Indica si el pagador es empleado true/false                                                 |`boolean`|
 |client_data.day_since_reg                     |Número de días desde que el cliente se registró en el comercio hasta hoy                    |`int`    |
 |**dispatch_data**                |**Datos del despacho o retiro de los productos**                                            |`array`  |
-|dispatch_data.beneficiary_name                 |Nombre de la persona que retira o recibe los productos                                      |`string` |
-|dispatch_data.beneficiary_last_name             |Apellido de la persona que retira o recibe los productos                                        |`string` |
-|dispatch_data.beneficiary_id                   |Número de documento de la persona que retira o recibe los productos                             |`string` |
-|dispatch_data.beneficiary_doc_type              |Tipo de documento de la persona que retira o recibe los productos                               |`string` |
-|dispatch_data.beneficiary_type                |Identifica a quien retira o recibe el producto: Titular/Tercero                                 |`string` |
-|dispatch_data.beneficiary_phone_number             |Número de teléfono de la persona que retira/recibe los productos                                |`string` |
+|dispatch_data.recipient_name                 |Nombre de la persona que retira o recibe los productos                                      |`string` |
+|dispatch_data.recipient_last_name             |Apellido de la persona que retira o recibe los productos                                        |`string` |
+|dispatch_data.recipient_id                   |Número de documento de la persona que retira o recibe los productos                             |`string` |
+|dispatch_data.recipient_doc_type              |Tipo de documento de la persona que retira o recibe los productos                               |`string` |
+|dispatch_data.recipient_type                |Identifica a quien retira o recibe el producto: Titular/Tercero                                 |`string` |
+|dispatch_data.recipient_phone               |Número de teléfono de la persona que retira/recibe los productos                                |`string` |
 |dispatch_data.dispatch_address                 |Dirección del lugar donde se despachan los productos                                            |`string` |
 |dispatch_data.dispatch_city                    |Ciudad donde se despachan los productos                                                         |`string` |
 |dispatch_data.dispatch_state                   |Estado donde se despachan los productos                                                         |`string` |

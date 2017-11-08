@@ -16,7 +16,7 @@
 |purchase_amount.tax                             |Impuesto                                                                                    |`string` |
 |purchase_amount.total                           |Monto total de la compra                                                                    |`decimal`|
 |**client_data**                  |**Datos del cliente que está realizando la compra**                                         |`array`  |
-|client_data.id_pagador                       |Identificador del cliente en el comercio                                                    |`string` |
+|client_data.payer_id                       |Identificador del cliente en el comercio                                                    |`string` |
 |client_data.payer_personal_id                 |Número de identificación del pagador - RUT                                                  |`string` |
 |client_data.is_guest                         |Indica si el pagador es un usuario invitado: true/false                                     |`boolean`|
 |client_data.payer_category                   |Indica si el pagador pertenece a alguna categoría en el comercio. Ejemplo: Elite, Premium.  |`string` |

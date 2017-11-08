@@ -6,7 +6,7 @@
 |**shopping_cart**                |**Datos del carro de compras**                                                              |`array`  |
 |shopping_cart.product_quantity                |Cantidad de productos de un item                                                            |`string` |
 |shopping_cart.product_sku                     |Código SKU del producto                                                                     |`string` |
-|Nombre del producto             |NombreProducto                                                                              |`string` |
+|shopping_cart.product_number             |NombreProducto                                                                              |`string` |
 |shopping_cart.product_code                  |Categoría del producto. Lista de valores definidos                                          |`string` |
 |shopping_cart.product_category               |Categoría del producto que maneja el comercio                                               |`string` |
 |shopping_cart.total_quantity_products          |Cantidad de productos del item                                                              |`string` |
@@ -14,7 +14,7 @@
 |**purchase_amount**              |**Datos del monto de la compra**                                                            |`array`  |
 |purchase_amount.amount                          |Monto de la compra sin impuesto                                                             |`string` |
 |purchase_amount.tax                             |Impuesto                                                                                    |`string` |
-|purchase_amount.totalAmount                     |Monto total de la compra                                                                    |`decimal`|
+|purchase_amount.total                           |Monto total de la compra                                                                    |`decimal`|
 |**client_data**                  |**Datos del cliente que está realizando la compra**                                         |`array`  |
 |client_data.id_pagador                       |Identificador del cliente en el comercio                                                    |`string` |
 |client_data.payer_personal_id                 |Número de identificación del pagador - RUT                                                  |`string` |

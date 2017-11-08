@@ -20,7 +20,7 @@
 |client_data.payer_personal_id                 |Número de identificación del pagador - RUT                                                  |`string` |
 |client_data.is_guest                         |Indica si el pagador es un usuario invitado: true/false                                     |`boolean`|
 |client_data.payer_category                   |Indica si el pagador pertenece a alguna categoría en el comercio. Ejemplo: Elite, Premium.  |`string` |
-|client_data.payer_mail                       |Correo electrónico del pagador                                                              |`string` |
+|client_data.payer_email                       |Correo electrónico del pagador                                                              |`string` |
 |client_data.is_employee                      |Indica si el pagador es empleado true/false                                                 |`boolean`|
 |client_data.day_since_reg                     |Número de días desde que el cliente se registró en el comercio hasta hoy                    |`int`    |
 |**dispatch_data**                |**Datos del despacho o retiro de los productos**                                            |`array`  |

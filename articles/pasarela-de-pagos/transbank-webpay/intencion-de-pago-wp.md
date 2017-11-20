@@ -1,6 +1,6 @@
 ## 2. Intención de Pago
 
-Para completar el pago debes ingresar el **access_token** generado en el [paso 1](obtener-token-acceso.md) y hacer el llamado de la siguiente forma:
+Para contiunar con el proceso de pago debes ingresar el **access_token** generado en el [paso 1](obtener-token-acceso.md) y hacer el llamado de la siguiente forma:
 
 ```
 curl -X POST 'https://api.sandbox.connect.fif.tech/checkout/payments' \
@@ -151,7 +151,7 @@ Como respuesta obtendrás la siguiente información:
 Obtendrás los Links:
 
 - **self**: desde esta URL puedes consultar la información de la captura.
-- **approval_url**: desde esta URL el cliente debe autorizar el pago.
+- **approval_url**: debes desplegar esta URL al cliente para que pueda continuar con el pago.
 - **reverse_method**: te permite anular la transacción.
 
 

@@ -154,4 +154,4 @@ Obtendrás los Links:
 - **approval_url**: debes desplegar esta URL al cliente para que pueda continuar con el pago.
 - **reverse_method**: te permite anular la transacción.
 
-[paso 3](formulario-pago-transbank.md)
+Ir al paso [3. Mostrar Formulario de Pago Transbank Webpay](formulario-pago-transbank.md)

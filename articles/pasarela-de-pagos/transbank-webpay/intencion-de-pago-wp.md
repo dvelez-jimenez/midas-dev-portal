@@ -152,6 +152,6 @@ Obtendrás los Links:
 
 - **self**: desde esta URL puedes consultar la información de la captura.
 - **approval_url**: desde esta URL el cliente debe autorizar el pago.
-- **reverse_method**: para anular la transacción, debes hacer el llamado a este endpoint desde la [API de Anulación](../../anulaciones/introduccion.md).
+- **reverse_method**: te permite anular la transacción.
 
 

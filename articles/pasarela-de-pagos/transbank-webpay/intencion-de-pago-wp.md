@@ -1,6 +1,6 @@
 ## 2. Intención de Pago
 
-Para completar el pago con el **token de la tarjeta** debes ingresar el **access_token** generado en el [paso 1](obtener-token-acceso.md) y hacer el llamado de la siguiente forma:
+Para completar el pago debes ingresar el **access_token** generado en el [paso 1](obtener-token-acceso.md) y hacer el llamado de la siguiente forma:
 
 ```
 curl -X POST 'https://api.sandbox.connect.fif.tech/checkout/payments' \

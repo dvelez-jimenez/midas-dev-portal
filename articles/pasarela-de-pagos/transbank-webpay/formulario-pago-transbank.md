@@ -5,3 +5,5 @@ Con la **approval_url** obtenida en el [paso 2](intencion-de-pago-wp.md) puedes 
 ![Ejemplo de Formulario Transbank](images/transbank-1.PNG)
 
 Desde este punto el cliente interactua directamente con WebPay plus.
+
+Ir al paso [4. Consultar Estado de la Transacción](consulta-de-estado.md)

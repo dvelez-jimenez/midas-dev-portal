@@ -30,4 +30,4 @@ Como respuesta obtendrás el **access_token**:
 
 Con el **access_token** generado, ya puedes comenzar a usar nuestras APIs para completar los pasos siguientes. 
 
-Ir al paso [2. Crear una Intención de Captura](crear-intencion-captura.md)
+Ir al paso [2. Crear una Intención de Captura](intención-de-pago-wp.md)

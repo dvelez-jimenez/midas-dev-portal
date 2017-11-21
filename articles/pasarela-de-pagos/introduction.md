@@ -10,4 +10,3 @@ Te ofrecemos las siguientes herramientas para facilitar tu integración:
   - [SDK Javascript](https://github.com/Peinau/peinau-javascript/blob/master/README.md)
   - [Plugins eCommerce](plugins/introduction.md)
 
-Además tienes la posibilidad de anular tus transacciones mediante nuestra [API REST de Anulaciones](anulaciones/introduction.md)

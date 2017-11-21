@@ -6,6 +6,6 @@ Con la **approval_url** obtenida en el [paso 2](intencion-de-pago-wp.md) puedes 
 
 Desde este punto, el cliente interactua directamente con WebPay plus. 
 
-Una vez finalizada la transacción, PEINAU devuelve el resultado de esta a la URL que indicaste en el request a la API intencion de pago [(paso 2)](intencion-de-pago-wp.md).
+Una vez finalizada la transacción, PEINAU devuelve el resultado de esta a la URL que indicaste en el request a la API **intención de pago** [(paso 2)](intencion-de-pago-wp.md).
 
 Ir al paso [4. Consultar Estado de la Transacción](consulta-de-estado.md)

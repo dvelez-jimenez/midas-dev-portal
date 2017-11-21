@@ -1,3 +1,3 @@
-- [Prestashop](../../../../../../../peinau-plugin-prestashop/blob/master/README.md)
+- [Prestashop](../../../../../../peinau-plugin-prestashop/blob/master/README.md)
 - [Shopify](shopify/introduction.md)
 - [WooCommerce](woocommerce/introduction.md)

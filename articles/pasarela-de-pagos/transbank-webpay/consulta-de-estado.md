@@ -7,7 +7,7 @@ Con la url **self** obtenida en el [paso 2](intencion-de-pago-wp.md) puedes cons
   -H 'authorization: Bearer access_token
 ```
 
-Donde access_token es el **token de acceso** generado en el **paso 1** y el **id** es el id de la intención de pago generado en el **paso 3**.
+Donde access_token es el **token de acceso** generado en el [paso 1](obtener-token-acceso.md) y el **id** es el id de la intención de pago generado en el [paso 2](intencion-de-pago-wp.md).
 
 Obtendrás una respuesta similar a:
 

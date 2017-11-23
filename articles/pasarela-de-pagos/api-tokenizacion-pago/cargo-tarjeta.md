@@ -6,7 +6,7 @@ Te ofrecemos dos opciones para realizar el cargo a la tarjeta del cliente, a con
 
 Si quieres utilizar esta opción, necesitas que el cliente apruebe el pago para ejecutar el cargo a la tarjeta de crédito. Para ello debes desplegar la ventana de aprobación del pago a partir de la [approval_url](https://quickpay-connect-checkout.azurewebsites.net/payments/gateways/quickpay/token/0fdcd938-62c7-aab2-5048-c2f172d495ac/pay) obtenida en el [paso 3](#3-mostrar-formulario-de-captura-de-tarjeta).
 
-![Ejemplo Approval](Portal04.jpg)
+![Ejemplo Approval](approval-1.png)
 
 Esta ventana permite dos opciones al cliente:
 

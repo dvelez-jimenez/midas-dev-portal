@@ -2,11 +2,18 @@
 
 Esta solución permite recibir pagos de tus clientes en tu sitio de e-commerce. 
 
-Te ofrecemos las siguientes herramientas para facilitar tu integración:
+Te ofrecemos diversas opciones de integración para que puedas adaptar nuestro producto a las necesidades de tu negocio.
 
-  - [API para Tokenización y Pago](api-tokenizacion-pago/introduction.md)
-  - [API Express Checkout](api-checkout/introduction.md)
-  - [API para Pago con Transbank Webpay](transbank-webpay/introduction.md)
+## APIs
+  - [Captura de Tarjeta + Pago](api-tokenizacion-pago/introduction.md)
+  - [Express Checkout](api-checkout/introduction.md)
+  - [Pago con Transbank Webpay](transbank-webpay/introduction.md)
+  
+## SDKs
   - [SDK Javascript](https://github.com/Peinau/peinau-javascript/blob/master/README.md)
-  - [Plugins eCommerce](plugins/introduction.md)
+  
+## Plugins
+  - [Prestashop](../../../../../peinau-plugin-prestashop/blob/master/README.md)
+  - [VTEX](plugins/vtex/introduction.md)
+  - [WooCommerce](plugins/woocommerce/introduction.md)
 

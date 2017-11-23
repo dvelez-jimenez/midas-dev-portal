@@ -53,4 +53,4 @@ El **id** generado corresponde al **Token de la tarjeta**.
 
 > **id de ejemplo**"id": "fe5228dc-91ab-fa28-97ec-034bed089743"
 
-Ir al paso [4. Intención de Pago](intención-de-pago.md)
+Ir al paso [4. Intención de Pago](intencion-de-pago.md)

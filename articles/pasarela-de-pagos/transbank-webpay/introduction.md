@@ -1,4 +1,4 @@
-# Pago con Transbank Webpay
+# Debit Checkout con Webpay plus
 
 Recibe pagos online con la solución Transbank Webpay a través de PEINAU.
 

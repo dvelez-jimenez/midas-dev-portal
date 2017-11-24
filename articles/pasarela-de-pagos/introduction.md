@@ -4,7 +4,7 @@ Esta solución permite recibir pagos de tus clientes en tu sitio de e-commerce.
 
 Te ofrecemos diversas opciones de integración para que puedas adaptar nuestro producto a las necesidades de tu negocio.
 
-## APIs
+## API Checkout
   - [Captura de Tarjeta + Pago](api-tokenizacion-pago/introduction.md)
   - [Express Checkout](api-checkout/introduction.md)
   - [Pago con Transbank Webpay](transbank-webpay/introduction.md)

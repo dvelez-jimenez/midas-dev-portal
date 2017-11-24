@@ -6,8 +6,8 @@ Te ofrecemos diversas opciones de integración para que puedas adaptar nuestro p
 
 ## API Checkout
   - [Captura de Tarjeta + Pago](api-tokenizacion-pago/introduction.md)
-  - [Express Checkout](api-checkout/introduction.md)
-  - [Pago con Transbank Webpay](transbank-webpay/introduction.md)
+  - [Credit Express Checkout](api-checkout/introduction.md)
+  - [Debit Checkout con Webpay plus](transbank-webpay/introduction.md)
   
 ## SDKs
   - [SDK Javascript](https://github.com/Peinau/peinau-javascript/blob/master/README.md)

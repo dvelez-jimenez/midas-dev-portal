@@ -6,7 +6,6 @@ Te ofrecemos diversas opciones de integración para que puedas adaptar nuestro p
 
 ## API Checkout
   - [Captura de Tarjeta + Checkout](api-tokenizacion-pago/introduction.md)
-  - [Credit Express Checkout](api-checkout/introduction.md)
   - [Debit Checkout con Webpay plus](transbank-webpay/introduction.md)
   
 ## SDKs

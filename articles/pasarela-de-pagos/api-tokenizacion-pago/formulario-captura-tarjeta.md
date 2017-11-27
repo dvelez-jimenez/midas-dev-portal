@@ -53,4 +53,11 @@ El **id** generado corresponde al **Token de la tarjeta**.
 
 > **id de ejemplo**"id": "fe5228dc-91ab-fa28-97ec-034bed089743"
 
+Tabla de posibles respuestas:
+
+| State    | Definición                               |
+| -------- | ---------------------------------------- |
+| captured | Se ha capturado la información de la tarjeta |
+| canceled | Ocurrio un error y no se pudo completar la captura |
+
 Ir al paso [4. Intención de Pago](intencion-de-pago.md)

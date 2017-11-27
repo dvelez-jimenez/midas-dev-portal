@@ -110,6 +110,12 @@ Esta ventana permite dos opciones al cliente:
       }
   }
   ```
+Posibles estados de la transacción:
+  
+| State    | Definición                               |
+| -------- | ---------------------------------------- |
+| paid  | Cliente hizo clic en Aprobar pago y el cargo fue realizado exitosamente en su cuenta |
+| canceled | El cargo no fue realizado en la cuenta del cliente |
 
 #### 5.1.2 Cancelar
 
@@ -187,6 +193,13 @@ Esta ventana permite dos opciones al cliente:
 }
 ```
 
+Posibles estados de la transacción:
+
+| State    | Definición                               |
+| -------- | ---------------------------------------- |
+| canceled  | Cliente hizo clic en Cancelar, ha abandonado el proceso de compra, no se realiza ningun cargo en la cuenta del cliente |
+
+
 ### 5.2 Silent Charge
 
 Con esta opción, no es requerida la aprobación del cliente para ejecutar el cargo a la tarjeta de crédito.
@@ -198,4 +211,13 @@ Necesitas el **access_token** obtenido en la **Autenticación** y el **id (Token
  -H "Content-Type: application/json" \
  -H "Authorization: Bearer access_token"
 ```
+
+Posibles estados de la transacción:
+
+| State    | Definición                               |
+| -------- | ---------------------------------------- |
+| paid  | El cargo fue realizado exitosamente en la cuenta del cliente |
+| canceled | El cargo no fue realizado |
+
+canceled
 [Volver al inicio](../introduction.md)

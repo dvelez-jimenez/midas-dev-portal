@@ -16,8 +16,7 @@ curl -X POST 'https://api.sandbox.connect.fif.tech/checkout/payments' \
        "documentNumber": "123123123",
        "documentType": "RUT"
      }, 
-     "payment_method": "QUICKPAY_TOKEN",
-     "capture_token": "397fd6a5-5d3f-e588-e200-e37088d124b2"
+     "payment_method": "QUICKPAY_TOKEN"
    }, 
    "transaction": { 
      "reference_id": "OD0000233", 
@@ -57,7 +56,10 @@ curl -X POST 'https://api.sandbox.connect.fif.tech/checkout/payments' \
    }, 
    "redirect_urls": { 
      "return_url": "https://requestb.in/sfoogtsf", 
-     "cancel_url": "https://chao.com" 
+     "cancel_url": "https://chao.com",
+     "additional_attributes": {
+    "capture_token": "80bafec1-edf6-04ec-e08e-cabf7d93b688"
+  }
    } 
  }' | json_pp
 ```

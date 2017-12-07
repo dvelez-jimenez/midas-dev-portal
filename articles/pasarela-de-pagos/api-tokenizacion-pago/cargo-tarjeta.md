@@ -107,6 +107,7 @@ Si recibes una respuesta con **"state": "paid"** en la URL indicada como **retur
             "_id": "5a29af926867b6000fe42a47",
             "card_number": {
                 "panLast4": 1111
+                "panFirst6": 411111
             },
             "authorizations": {
                 "code": "570110"

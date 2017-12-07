@@ -5,7 +5,7 @@ Esta solución permite recibir pagos de tus clientes en tu sitio de e-commerce.
 Te ofrecemos diversas opciones de integración para que puedas adaptar nuestro producto a las necesidades de tu negocio.
 
 ## API Checkout
-  - [Captura de Tarjeta + Checkout](api-tokenizacion-pago/introduction.md)
+  - [Split Checkout (Captura de Tarjeta + Pago)](api-tokenizacion-pago/introduction.md)
   - [Debit Checkout con Webpay plus](transbank-webpay/introduction.md)
   
 ## SDKs

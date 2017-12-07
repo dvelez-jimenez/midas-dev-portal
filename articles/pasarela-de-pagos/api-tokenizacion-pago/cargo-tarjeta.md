@@ -151,7 +151,7 @@ Obtendras una respuesta similar a:
 {
     "intent": "sale",
     "additional_attributes": {
-        "capture_token": "db95da9e-b94c-0b40-a84b-4268b0ca18bb"
+        "capture_token": "c9c19a22-b3b9-6b0b-c295-ab41c898f41c"
     },
     "application": "28adb999-7a2e-70b8-c092-e4c16a9e9e0a",
     "redirect_urls": {
@@ -172,7 +172,7 @@ Obtendras una respuesta similar a:
                     "quantity": 1,
                     "price": 4500,
                     "tax": 0,
-                    "_id": "5a29af0e6867b6000fe42a42"
+                    "_id": "5a29b1144bddb8000f673f1a"
                 }
             ],
             "shipping_address": {
@@ -206,17 +206,17 @@ Obtendras una respuesta similar a:
         "payment_method": "QUICKPAY_TOKEN"
     },
     "links": [],
-    "id": "0ce929a2-5d69-bfa8-4643-39a22bc16765",
-    "create_time": "2017-12-07T21:13:50.333Z",
-    "update_time": "2017-12-07T21:14:14.345Z",
+    "id": "a8cb0e21-acd1-93d7-f623-9a3a4523a2d0",
+    "create_time": "2017-12-07T21:22:28.944Z",
+    "update_time": "2017-12-07T21:22:46.142Z",
     "state": "paid",
-    "invoice_number": "INPA-50000000914",
+    "invoice_number": "INPA-50000000916",
     "gateway": {
-        "merchantReferenceCode": "INPA-50000000914",
-        "requestID": "5126812538946339804010",
+        "merchantReferenceCode": "INPA-50000000916",
+        "requestID": "5126817655686174204009",
         "decision": "ACCEPT",
         "reasonCode": "100",
-        "requestToken": "Ahj7/wSTFezRCSebGRNqilF5MQderAKi8mIOvViYGxlHK2GTSTLdIDgL7QwJyYr2aISTzYyJtQAACzX6",
+        "requestToken": "Ahj7/wSTFezjNs1vVeBpilF5MQeDvgKi8mIPB3yYGxlHK2GTSTLdIDgL7QwJyYr2cZtmt6rwNIAAMwWk",
         "purchaseTotals": {
             "currency": "CLP"
         },
@@ -225,32 +225,33 @@ Obtendras una respuesta similar a:
             "amount": "4500",
             "authorizationCode": "570110",
             "avsCode": "1",
-            "authorizedDateTime": "2017-12-07T21:14:14Z",
+            "authorizedDateTime": "2017-12-07T21:22:46Z",
             "processorResponse": "1",
             "paymentNetworkTransactionID": "111222",
             "ownerMerchantID": "falabella",
-            "processorTransactionID": "b91434cbd2434a9ab47e37cb65c0be64"
+            "processorTransactionID": "0c9a962865c44452a8edef0194cfac5c"
         },
         "ccCaptureReply": {
             "reasonCode": "100",
-            "requestDateTime": "2017-12-07T21:14:14Z",
+            "requestDateTime": "2017-12-07T21:22:46Z",
             "amount": "4500"
         },
-        "additionalProcessorResponse": "0719bf69-41ef-402e-b7f1-272bbbfc91f9",
-        "capture_token": "db95da9e-b94c-0b40-a84b-4268b0ca18bb",
+        "additionalProcessorResponse": "0e372a5c-715c-4a50-b90c-ff774fec23f8",
+        "capture_token": "c9c19a22-b3b9-6b0b-c295-ab41c898f41c",
         "resume": {
-            "_id": "5a29af264bddb8000f673f15",
+            "_id": "5a29b1266867b6000fe42a4b",
             "card_number": {
-                "panLast4": 1111
+                "panLast4": 1111,
+                "panFirst6": 411111
             },
             "authorizations": {
                 "code": "570110"
             },
             "transaction": {
                 "type": "CREDIT",
-                "date": "2017-12-07T21:14:14.344Z",
+                "date": "2017-12-07T21:22:46.141Z",
                 "currency": "CLP",
-                "buy_order": "INPA-50000000914",
+                "buy_order": "INPA-50000000916",
                 "amount": 4500,
                 "installments_number": 0
             },
@@ -270,7 +271,7 @@ Posibles estados de la transacción:
 | canceled | El cargo no fue realizado |
 | reversed | Tiene al menos una devolución asociada |
 
-Además, agregamos información específica del código entregado por el Gateway CyberSource. [Ver la lista de códigos de respuesta CyberSource aquí](cybersource_reason_code.md).
+Además, agregamos información específica del código entregado por el Gateway CyberSource (Estructura resume del JSON de respuesta). [Ver la lista de códigos de respuesta CyberSource aquí](cybersource_reason_code.md).
 
 Si deseas hacer la devolución al cliente, debes llamar a [API de Anulación](../../anulaciones/introduccion.md).
 

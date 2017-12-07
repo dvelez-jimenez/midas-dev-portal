@@ -107,8 +107,9 @@ Posibles estados de la transacción:
   
 | State    | Definición                               |
 | -------- | ---------------------------------------- |
-| paid  | Cliente hizo clic en Aprobar pago y el cargo fue realizado exitosamente en su cuenta |
-| canceled | El cargo no fue realizado en la cuenta del cliente |
+| paid  | El cargo fue realizado exitosamente en la cuenta del cliente |
+| canceled | El cargo no fue realizado |
+| reversed | Tiene al menos una devolución asociada |
 
 ### 5.2 Silent Charge
 

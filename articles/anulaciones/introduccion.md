@@ -100,4 +100,4 @@ Obtendrás una respuesta similar a:
 | -------- | ---------------------------------------- |
 | reversed | La devolución se completó exitosamente   |
 
-[Volver al menú anterior](pasarela-de-pagos/api-tokenizacion-pago/introduction.md)
+[Volver al menú anterior](../pasarela-de-pagos/api-tokenizacion-pago/introduction.md)

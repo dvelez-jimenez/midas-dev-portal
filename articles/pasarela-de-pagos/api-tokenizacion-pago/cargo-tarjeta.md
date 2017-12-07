@@ -131,6 +131,8 @@ Posibles estados de la transacción:
 | canceled | El cargo no fue realizado |
 | reversed | Tiene al menos una devolución asociada |
 
+Además, agregamos información específica del código entregado por el Gateway CyberSource. [Ver la lista de códigos de respuesta CyberSource aquí](cybersource_reason_code.md).
+
 Si deseas hacer la devolución al cliente, debes llamar a [API de Anulación](../../anulaciones/introduccion.md).
 
 [Volver al inicio](../introduction.md)

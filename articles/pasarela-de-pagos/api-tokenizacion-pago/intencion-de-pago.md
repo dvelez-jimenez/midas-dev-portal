@@ -178,4 +178,6 @@ Obtendrás los Links:
 - **silent_charge**: llamando a este endpoint desde la [API silent_charge](cargo-tarjeta.md) puedes ejecutar el cargo a la tarjeta de cŕedito del cliente sin pasar por la intención de pago.
 - **reverse_method**: para anular la transacción, debes hacer el llamado a este endpoint desde la [API de Anulación](../../anulaciones/introduccion.md).
 
+[Haz clic aquí para ver la información de actualización de intención de pago](update-transaction.md)
+
 Ir al paso [5. Realizar el cargo a la tarjeta](cargo-tarjeta.md)

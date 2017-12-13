@@ -139,10 +139,10 @@ Posibles estados de la transacción:
 
 Con esta opción, no es requerida la aprobación del cliente para ejecutar el cargo a la tarjeta de crédito.
 
-Necesitas el **access_token** obtenido en la **Autenticación** y el **id (Token de la tarjeta)** generado en la **Intención de captura**, para ejecutar una llamada a la **API de Silent Charge /silent** de la siguiente forma:
+Necesitas el **access_token** obtenido en la **Autenticación** y el **id de la intención de pago** generado en el **paso 4**, para ejecutar una llamada a la **API de Silent Charge /silent** de la siguiente forma:
 
 ```
- curl -v -X POST 'https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/{Token_de_tarjeta}/silent' \
+ curl -v -X POST 'https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/{id}/silent' \
  -H "Content-Type: application/json" \
  -H "Authorization: Bearer access_token"
 ```

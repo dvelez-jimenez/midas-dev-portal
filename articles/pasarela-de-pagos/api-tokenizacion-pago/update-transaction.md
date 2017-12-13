@@ -1,13 +1,12 @@
 ## ¿Cómo actualizar una intención de pago?
 
-Necesitas el **access_token** obtenido en la **Autenticación** y el **id (Token de la tarjeta)** generado en la **Intención de captura**, para ejecutar una llamada a la **API de actualización /edit** de la siguiente forma:
+Necesitas el **access_token** obtenido en la **Autenticación** y el **id de la intención de pago** generado en el **paso 4**, para ejecutar una llamada a la **API de actualización /edit** de la siguiente forma:
 
 ```
- curl -v -X PUT 'https://api.sandbox.connect.fif.tech/checkout/payments/{Token_de_tarjeta}/edit' \
+ curl -v -X PUT 'https://api.sandbox.connect.fif.tech/checkout/payments/{id}/edit' \
   
  -H "Content-Type: application/json" \
  -H "Authorization: Bearer access_token"
- -H 'postman-token: 1afaef16-88d9-dd06-bbbc-504eb1519161' \
  -d '{
 "transaction": {
 "item_list": {

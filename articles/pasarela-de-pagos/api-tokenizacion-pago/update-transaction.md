@@ -83,3 +83,7 @@ Obtendras una respuesta similar a:
 }
 
 ```
+Podrás actualizar los siguientes datos:
+- Método de despacho
+- Dirección de despacho
+- Monto

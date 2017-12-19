@@ -1,8 +1,15 @@
 ## 2. Crear una Intención de Captura
 
-Luego de haber obtenido el **access_token** y con la información mínima del cliente, se debe crear una **intención de captura**.
+Luego de obtener la autorización de captura del cliente a través de tu ecommerce, es necesario crear una intención de captura.
 
-Utilizando dicho **access_token**, debes ejecutar una llamanda a la **API de captura /captures** de la siguiente forma:
+Para comenzar con el proceso, debes ejecutar una llamada a la api de captura **/captures** con al menos la siguiente información:
+
+- En el encabezado **Authorization** de la llamada es necesario enviar el **access_token** previamente obtenido en el servidor de autorización.
+- En el cuerpo del mensaje JSON, se debe establecer el campo **capture** a **CREDIT_CARD**.
+- Enviar las **url's de redirección** cuando la captura se complete con exito o cuando la captura no haya podido ser completada.
+- El **método de captura** de acuerdo a la selección de la plataforma en línea.
+- Un identificador que pertenezca al comercio para asociar la captura a un dato único **reference_id**
+- La información de **transaccion(es)** a pagar definida(s) de acuerdo a la compra de productos seleccionados por el cliente.
 
 ```
 curl -X POST 'https://api.sandbox.connect.fif.tech/tokenization/captures' \
@@ -31,7 +38,30 @@ curl -X POST 'https://api.sandbox.connect.fif.tech/tokenization/captures' \
 }' | json_pp
 ```
 
-Como respuesta obtendrás la siguiente información:
+**Detalle de los campos de la Petición**
+
+| Nombre        | Tipo            | Descripción  | Requerido |
+| ------------- | --------------- | ------------ | --------- |
+| capture      | Enum    | Tipo de Captura solicitada en la intención.             | Sí |
+| capture_method| Enum      | Método de Captura para la tarjeta   | Sí |
+| cardholder | Object        | Datos del tarjeta habiente | Sí |
+| cardholder.reference_id | String        | Identificador externo del comercio | No |
+| cardholder.country | String      | País de residencia del tarjeta habiente | Sí |
+| cardholder.name | String      | Nombre del tarjeta habiente tal como se muestra en la tarjeta | Sí |
+| cardholder.email | String      | Email del tarjeta habiente | Sí |
+| billing | String      | Dirección de facturación asociada a la tarjeta  | Sí |
+| billing.line1 | String      | Dirección de facturación | Sí |
+| billing.line2 | String      | Dirección 2 de facturación | No |
+| billing.city | String      | Ciudad para facturación | Sí |
+| billing.state | String      | Comuna de facturación | Sí |
+| billing.country | String     | País de facturación| Sí |
+| redirect_urls | Object      | Url de redirección dependiendo del estado de la captura una vez finalizado el proceso de captura | Sí |
+| redirect_urls.return_url | String (Url)      | Url de redirección al producirse una captura exitosa | Sí |
+| redirect_urls.cancel_url | String (Url)      | Url de redirección al producirse una captura fallida | Sí |
+
+El resultado de la llamada a la API de captura, será una intención de captura en su estado inicial (**created**), que contendrá el, o los links HATEOAS relacionados con la llamada, como por ejemplo , el link que se deberá ejecutar para proceder con la **captura de la tarjeta** y finalizar el proceso de captura. 
+
+A continuación se presenta ejemplo de un JSON como respuesta al crear una intención de captura a través de la API RESTful de captura:
 
 ```
 {
@@ -73,8 +103,39 @@ Como respuesta obtendrás la siguiente información:
     ]
 }
 ```
+**Detalle de los campos de la Respuesta**
 
-Detalle de las URLs generadas:
+| Nombre        | Tipo            | Descripción  | Requerido |
+| ------------- | --------------- | ------------ | --------- |
+| id            | String (Guid)   | Identificador único de la intención              | Sí |
+| capture       | Enum          | Tipo de Captura establecida en la intención.             | Sí |
+| capture_method| Enum           | Método de Captura que se usará   | Sí |
+| cardholder | Object        | Datos del tarjeta habiente | Sí |
+| cardholder.reference_id | String        | Identificador externo del comercio | No |
+| cardholder.country | String       | País de residencia del tarjeta habiente | Sí |
+| cardholder.name | String      | Nombre del tarjeta habiente tal como se muestra en la tarjeta | Sí |
+| cardholder.email | String      | Email del tarjeta  | Sí |
+| billing | String      | Dirección de facturación asociada a la tarjeta  | Sí |
+| billing.line1 | String      | Dirección de facturación | Sí |
+| billing.line2 | String      | Dirección 2 de facturación | No |
+| billing.city | String      | Ciudad para facturación | Sí |
+| billing.state | String      | Comuna de facturación | Sí |
+| billing.country | String     | País de facturación| Sí |
+| create_time | String (ISO 8601) | Fecha de creación de la intención | Sí |
+| update_time | String (ISO 8601) | Fecha de actualización de la intención | Sí |
+| state | Enum  | Estado actual de la intención | Sí |
+| capture_number | String (Correlativo) | Identificador legible de la intención | Sí |
+| links | Array[ link ] | Arreglo de Link HATEOAS para la ejecución de operaciones disponibles sobre la intención | Sí |
+| link | Object | Enlace bajo formato HATEOAS, sobre la definición de una operación disponible en una intención | Sí |
+| link.href | String (Url) | Dirección URL de la operación | Sí |
+| link.rel | Enum  | Relación de la operación sobre una intención | Sí |
+| link.method | Enum  | Verbo HTTP solicitado para la ejecución de la operación | Sí |
+| redirect_urls | Object      | Url de redirección dependiendo del estado de la captura una vez finalizado el proceso de captura | Sí |
+| redirect_urls.return_url | String (Url)      | Url de redirección al producirse una captura exitosa | Sí |
+| redirect_urls.cancel_url | String (Url)      | Url de redirección al producirse una captura fallida | Sí |
+
+
+**Detalle de las URLs generadas:**
 
 + URL 1 (**rel: self**): desde esta URL puedes consultar la información de la intención de captura.
 + URL 2 (**rel: capture_url**): desde esta URL debes acceder al formulario de captura de la tarjeta.

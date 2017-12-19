@@ -44,10 +44,37 @@ La respuesta será enviada a la página de confirmacion indicada en la variable 
   "update_time": "2017-10-12T20:29:59.333Z",
   "state": "captured",
   "capture_number": "INCA-0000000047",
-   "panLast4": "1111"
+  "panLast4": "1111"
   }
-}
 ```
+
+**Detalle de los campos**
+
+| Nombre        | Tipo            | Descripción  | Requerido |
+| ------------- | --------------- | ------------ | --------- |
+| id            | String (Guid)   | Identificador único de la intención              | Sí |
+| capture       | Enum          | Tipo de Captura establecida en la intención.             | Sí |
+| capture_method| Enum           | Método de Captura que se usará   | Sí |
+| cardholder | Object        | Datos del tarjetahabiente | Sí |
+| cardholder.reference_id | String        | Identificador externo del comercio | No |
+| cardholder.country | String       | País de residencia del tarjetahabiente | Sí |
+| cardholder.name | String      | Nombre del tarjetahabiente tal como se muestra en la tarjeta | Sí |
+| cardholder.email | String      | Email del tarjeta  | Sí |
+| billing | String      | Dirección de facturación asociada a la tarjeta  | Sí |
+| billing.line1 | String      | Dirección de facturación | Sí |
+| billing.line2 | String      | Dirección 2 de facturación | No |
+| billing.city | String      | Ciudad para facturación | Sí |
+| billing.state | String      | Comuna de facturación | Sí |
+| billing.country | String     | País de facturación| Sí |
+| create_time | String (ISO 8601) | Fecha de creación de la intención | Sí |
+| update_time | String (ISO 8601) | Fecha de actualización de la intención | Sí |
+| state | Enum  | Estado actual de la intención | Sí |
+| capture_number | String (Correlativo) | Identificador legible de la intención | Sí |
+| panLast4      | String | Cuatro últimos números de la tarjeta |
+| redirect_urls | Object      | Url de redirección dependiendo del estado de la captura una vez finalizado el proceso de captura | Sí |
+| redirect_urls.return_url | String (Url)      | Url de redirección al producirse una captura exitosa | Sí |
+| redirect_urls.cancel_url | String (Url)      | Url de redirección al producirse una captura fallida | Sí |
+
 
 El **id** generado corresponde al **Token de la tarjeta**.
 

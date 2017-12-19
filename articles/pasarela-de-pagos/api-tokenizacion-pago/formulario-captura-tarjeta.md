@@ -52,7 +52,7 @@ La respuesta será enviada a la página de confirmacion indicada en la variable 
 
 | Nombre        | Tipo            | Descripción  | Requerido |
 | ------------- | --------------- | ------------ | --------- |
-| id            | String (Guid)   | Identificador único de la intención              | Sí |
+| id            | String (Guid)   | Identificador único de la intención (Token)             | Sí |
 | capture       | Enum          | Tipo de Captura establecida en la intención.             | Sí |
 | capture_method| Enum           | Método de Captura que se usará   | Sí |
 | cardholder | Object        | Datos del tarjetahabiente | Sí |

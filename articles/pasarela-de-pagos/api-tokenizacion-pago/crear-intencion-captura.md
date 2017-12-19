@@ -44,11 +44,11 @@ curl -X POST 'https://api.sandbox.connect.fif.tech/tokenization/captures' \
 | ------------- | --------------- | ------------ | --------- |
 | capture      | Enum    | Tipo de Captura solicitada en la intención.             | Sí |
 | capture_method| Enum      | Método de Captura para la tarjeta   | Sí |
-| cardholder | Object        | Datos del tarjeta habiente | Sí |
+| cardholder | Object        | Datos del tarjetahabiente | Sí |
 | cardholder.reference_id | String        | Identificador externo del comercio | No |
-| cardholder.country | String      | País de residencia del tarjeta habiente | Sí |
-| cardholder.name | String      | Nombre del tarjeta habiente tal como se muestra en la tarjeta | Sí |
-| cardholder.email | String      | Email del tarjeta habiente | Sí |
+| cardholder.country | String      | País de residencia del tarjetahabiente | Sí |
+| cardholder.name | String      | Nombre del tarjetahabiente tal como se muestra en la tarjeta | Sí |
+| cardholder.email | String      | Email del tarjetahabiente | Sí |
 | billing | String      | Dirección de facturación asociada a la tarjeta  | Sí |
 | billing.line1 | String      | Dirección de facturación | Sí |
 | billing.line2 | String      | Dirección 2 de facturación | No |
@@ -110,10 +110,10 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 | id            | String (Guid)   | Identificador único de la intención              | Sí |
 | capture       | Enum          | Tipo de Captura establecida en la intención.             | Sí |
 | capture_method| Enum           | Método de Captura que se usará   | Sí |
-| cardholder | Object        | Datos del tarjeta habiente | Sí |
+| cardholder | Object        | Datos del tarjetahabiente | Sí |
 | cardholder.reference_id | String        | Identificador externo del comercio | No |
-| cardholder.country | String       | País de residencia del tarjeta habiente | Sí |
-| cardholder.name | String      | Nombre del tarjeta habiente tal como se muestra en la tarjeta | Sí |
+| cardholder.country | String       | País de residencia del tarjetahabiente | Sí |
+| cardholder.name | String      | Nombre del tarjetahabiente tal como se muestra en la tarjeta | Sí |
 | cardholder.email | String      | Email del tarjeta  | Sí |
 | billing | String      | Dirección de facturación asociada a la tarjeta  | Sí |
 | billing.line1 | String      | Dirección de facturación | Sí |

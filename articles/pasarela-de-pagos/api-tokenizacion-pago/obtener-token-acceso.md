@@ -4,7 +4,9 @@ Al completar el registro de la aplicación (Alta del Comercio), obtendrás dos l
 
 ![Ejemplo de client_id y client_secret](images/portal-1.png)
 
-Con estas credenciales podrás obtener el **token de acceso** llamando a la **API de Autenticación** de la siguiente forma:
+Con estas credenciales, deberás obtener un **token de acceso** enviando por medio del encabezado **Authorization** las credenciales bajo el formato client_id:client_secret al servidor de autorización. 
+
+El servidor de autorización intercambiara las llaves del aplicativo por un token de acceso (**access_token**) válido para ejecutar requerimientos a nuestras a APIs RESTful. 
 
 ```
 export CLIENT_ID=641281901508761220281
@@ -27,7 +29,5 @@ Como respuesta obtendrás el **access_token**:
    "expires_in":1508898106
 }
 ```
-
-Con el **access_token** generado, ya puedes comenzar a usar nuestras APIs para completar los pasos siguientes. 
 
 Ir al paso [2. Crear una Intención de Captura](crear-intencion-captura.md)

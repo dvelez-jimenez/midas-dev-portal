@@ -66,7 +66,7 @@ curl -X POST \
   }
  }'
  ```
-**Detalle de los Campos:**
+**Detalle de los Campos de la Petición**
 
 | Nombre                                   | Descripción                              | Tipo         |
 | ---------------------------------------- | ---------------------------------------- | ------------ |
@@ -115,7 +115,9 @@ curl -X POST \
 | additional_attributes.capture_token      | ID de captura de tarjeta                 | string       |
 | additional_attributes.customer_save_card | Marca para identificar si el cliente decide guardar la tarjeta | boolean      |
 
-Como respuesta obtendrás la siguiente información:
+El resultado de la llamada a la API de checkout, será una intención de pago en su estado inicial (created), que contendrá el, o los links HATEOAS relacionados con la llamada.
+
+A continuación se presenta ejemplo de un JSON como respuesta al crear una intención de pago a través de la API RESTful de checkout:
 
 ```
 {
@@ -217,6 +219,54 @@ Como respuesta obtendrás la siguiente información:
     "invoice_number": "INPA-50000000954"
 }
 ```
+**Detalle de los campos de la Respuesta**
+
+| Nombre                                   | Descripción                              | Tipo         |
+| ---------------------------------------- | ---------------------------------------- | ------------ |
+| intent                                   | Identifica en tipo de transacción: Venta | string       |
+| **payer**                                | **Pagador**                              | **object**   |
+| **payer.payer_info**                     | **Información del cliente que está comprando en el sitio del  comercio** | **object**   |
+| payer.payer_info.email                   | correo electrónico                       | string       |
+| payer.payer_info.full_name               | nombre completo                          | string       |
+| payer.payer_info.country                 | Nacionalidad                             | string       |
+| payer.payer_info.documentNumber          | Número de identificación                 | string       |
+| payer.payer_info.documentType            | Tipo de documento de identificación      | string       |
+| payer.payment_method                     | Identifica el método de pago a utilizar  | string       |
+| **transaction**                          | **Grupo de campos con la información de la transacción** | **object**   |
+| transaction.gateway_order                | Número de la orden de compra. Este Id de transacción que es enviada al  gateway de pago | string       |
+| transaction.reference_id                 | El código de referencia de la transacción. Representa el identificador de  la transacción en el sistema del comercio. | string       |
+| transaction.description                  | Descripción de la compra                 | string       |
+| transaction.soft_descriptor              | Descripción corta de la transacción      | string       |
+| **transaction.amount**                   | **Grupo de campos que detalla los montos de la compra** | **object**   |
+| transaction.amount.currency              | Código ISO de la moneda asociada al monto de la compra. | string       |
+| transaction.amount.total                 | Monto total de la compra que será descontado de la tarjeta o cuenta del  cliente | int          |
+| transaction.amount.details               | Detalles del monto de la compra          |              |
+| transaction.amount.details.subtotal      | Monto de la compra sin incluir impuesto  | int          |
+| transaction.amount.details.tax           | Monto total de los impuestos             | int          |
+| transaction.amount.details.shipping      | Costo del despacho                       | int          |
+| transaction.amount.details.shipping_discount | Monto de descuento en costo de despacho  | int          |
+| **transaction.item_list**                | **Información del producto(s) **         | **object**   |
+| **transaction.item_list.shipping_address** | **Dirección de despacho (compras con despacho a domicilio)** | **object**   |
+| transaction.item_list.shipping_address.line1 | Direccion de despaho                     | string       |
+| transaction.item_list.shipping_address.city | Ciudad donde se realizará el despacho    | string       |
+| transaction.item_list.shipping_address.country_code | Código de país donde se efectúa el despacho | string       |
+| transaction.item_list.shipping_address.phone | Número de teléfono para la recepción de los productos despachados | string       |
+| transaction.item_list.shipping_address.type | Tipo de despacho                         | string       |
+| transaction.item_list.shipping_address.recipient_name | Nombre de la persona que recibirá el producto | string       |
+| transaction.item_list.shipping_method    | Método de despacho de la compra: Digital, | string       |
+| **transaction.item_list.items**          | **Grupo de campos que detalla los productos o servicios de la compra** | **objeto**   |
+| transaction.item_list.items.sku          | Código SKU                               | string       |
+| transaction.item_list.items.name         | Nombre del producto                      | string       |
+| transaction.item_list.items.description  | Descripción del producto                 | string       |
+| transaction.item_list.items.quantity     | Cantidad                                 | string       |
+| transaction.item_list.items.price        | Precio unitario                          | int          |
+| transaction.item_list.items.tax          | Monto del impuesto del producto          | int          |
+| **redirect_urls**                        | **Url de redirección dependiendo del estado de la captura una vez  finalizado el proceso de captura** | **objeto**   |
+| redirect_urls.return_url                 | URL de notificación de pago exitoso      | string (url) |
+| redirect_urls.cancel_url                 | URL de notificación de pago fallido      | string (url) |
+| **additional_attributes**                | **Grupo de campos de uso exclusivo**     | **objeto**   |
+| additional_attributes.capture_token      | ID de captura de tarjeta                 | string       |
+| additional_attributes.customer_save_card | Marca para identificar si el cliente decide guardar la tarjeta | boolean      |
 
 Obtendrás los Links:
 

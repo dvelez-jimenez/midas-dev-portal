@@ -55,10 +55,10 @@ La respuesta será enviada a la página de confirmacion indicada en la variable 
 | id            | String (Guid)   | Identificador único de la intención (Token)             | Sí |
 | capture       | Enum          | Tipo de Captura establecida en la intención.             | Sí |
 | capture_method| Enum           | Método de Captura que se usará   | Sí |
-| cardholder | Object        | Datos del tarjetahabiente | Sí |
-| cardholder.reference_id | String        | Identificador externo del comercio | No |
-| cardholder.country | String       | País de residencia del tarjetahabiente | Sí |
-| cardholder.name | String      | Nombre del tarjetahabiente tal como se muestra en la tarjeta | Sí |
+| cardholder | Object        | Datos del cliente | Sí |
+| cardholder.reference_id | String        | El código de referencia de la transacción. Representa el identificador de la transacción en el sistema del comercio | No |
+| cardholder.country | String       | País de residencia del cliente | Sí |
+| cardholder.name | String      | Nombre del cliente tal como se muestra en la tarjeta | Sí |
 | cardholder.email | String      | Email del tarjeta  | Sí |
 | billing | String      | Dirección de facturación asociada a la tarjeta  | Sí |
 | billing.line1 | String      | Dirección de facturación | Sí |

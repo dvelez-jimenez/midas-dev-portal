@@ -50,30 +50,30 @@ La respuesta será enviada a la página de confirmacion indicada en la variable 
 
 **Detalle de los campos**
 
-| Nombre        | Tipo            | Descripción  | Requerido |
-| ------------- | --------------- | ------------ | --------- |
-| id            | String (Guid)   | Identificador único de la intención (Token)             | Sí |
-| capture       | Enum          | Tipo de Captura establecida en la intención.             | Sí |
-| capture_method| Enum           | Método de Captura que se usará   | Sí |
-| cardholder | Object        | Datos del cliente | Sí |
-| cardholder.reference_id | String        | El código de referencia de la transacción. Representa el identificador de la transacción en el sistema del comercio | No |
-| cardholder.country | String       | País de residencia del cliente | Sí |
-| cardholder.name | String      | Nombre del cliente tal como se muestra en la tarjeta | Sí |
-| cardholder.email | String      | Email del tarjeta  | Sí |
-| billing | String      | Dirección de facturación asociada a la tarjeta  | Sí |
-| billing.line1 | String      | Dirección de facturación | Sí |
-| billing.line2 | String      | Dirección 2 de facturación | No |
-| billing.city | String      | Ciudad para facturación | Sí |
-| billing.state | String      | Comuna de facturación | Sí |
-| billing.country | String     | País de facturación| Sí |
-| create_time | String (ISO 8601) | Fecha de creación de la intención | Sí |
-| update_time | String (ISO 8601) | Fecha de actualización de la intención | Sí |
-| state | Enum  | Estado actual de la intención | Sí |
-| capture_number | String (Correlativo) | Identificador legible de la intención | Sí |
+| Nombre        | Tipo            | Descripción  |
+| ------------- | --------------- | ------------ |
+| id            | String (Guid)   | Identificador único de la intención (Token)             |
+| capture       | Enum          | Tipo de Captura establecida en la intención.             |
+| capture_method| Enum           | Método de Captura que se usará   |
+| cardholder | Object        | Datos del cliente |
+| cardholder.reference_id | String        | El código de referencia de la transacción. Representa el identificador de la transacción en el sistema del comercio |
+| cardholder.country | String       | País de residencia del cliente |
+| cardholder.name | String      | Nombre del cliente tal como se muestra en la tarjeta |
+| cardholder.email | String      | Email del tarjeta  |
+| billing | String      | Dirección de facturación asociada a la tarjeta  |
+| billing.line1 | String      | Dirección de facturación |
+| billing.line2 | String      | Dirección 2 de facturación |
+| billing.city | String      | Ciudad para facturación |
+| billing.state | String      | Comuna de facturación |
+| billing.country | String     | País de facturación|
+| create_time | String (ISO 8601) | Fecha de creación de la intención |
+| update_time | String (ISO 8601) | Fecha de actualización de la intención |
+| state | Enum  | Estado actual de la intención |
+| capture_number | String (Correlativo) | Identificador legible de la intención |
 | panLast4      | String | Cuatro últimos números de la tarjeta |
-| redirect_urls | Object      | Url de redirección dependiendo del estado de la captura una vez finalizado el proceso de captura | Sí |
-| redirect_urls.return_url | String (Url)      | Url de redirección al producirse una captura exitosa | Sí |
-| redirect_urls.cancel_url | String (Url)      | Url de redirección al producirse una captura fallida | Sí |
+| redirect_urls | Object      | Url de redirección dependiendo del estado de la captura una vez finalizado el proceso de captura |
+| redirect_urls.return_url | String (Url)      | Url de redirección al producirse una captura exitosa |
+| redirect_urls.cancel_url | String (Url)      | Url de redirección al producirse una captura fallida |
 
 
 El **id** generado corresponde al **Token de la tarjeta**.

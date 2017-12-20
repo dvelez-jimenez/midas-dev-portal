@@ -111,17 +111,17 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 | id            | String (Guid)   | Identificador único de la intención              | Sí |
 | capture       | Enum          | Tipo de Captura establecida en la intención. Este campo contiene el valor que enviaste en la petición| Sí |
 | capture_method| Enum           | Método de Captura que se usará. Este campo contiene el valor que enviaste en la petición| Sí |
-| cardholder | Object        | Datos del cliente. Este campo contiene el valor que enviaste en la petición | Sí |
-| cardholder.reference_id | String        | Identificador externo del comercio. Este campo contiene el valor que enviaste en la petición | No |
+| cardholder | Object        | Datos del cliente. Este campo contiene el valor que enviaste en la petición. | Sí |
+| cardholder.reference_id | String        |El código de referencia de la transacción. Representa el identificador de la transacción en el sistema del comercio. Este campo contiene el valor que enviaste en la petición. | No |
 | cardholder.country | String       | País de residencia del cliente. Este campo contiene el valor que enviaste en la petición | Sí |
-| cardholder.name | String      | Nombre del cliente tal como se muestra en la tarjeta. Este campo contiene el valor que enviaste en la petición | Sí |
+| cardholder.name | String      | Nombre del cliente tal como se muestra en la tarjeta. Este campo contiene el valor que enviaste en la petición. | Sí |
 | cardholder.email | String      | Email del cliente. Este campo contiene el valor que enviaste en la petición  | Sí |
 | billing | String      | Dirección de facturación asociada a la tarjeta. Este campo contiene el valor que enviaste en la petición  | Sí |
-| billing.line1 | String      | Dirección de facturación. Este campo contiene el valor que enviaste en la petición | Sí |
-| billing.line2 | String      | Dirección 2 de facturación. Este campo contiene el valor que enviaste en la petición | No |
-| billing.city | String      | Ciudad para facturación. Este campo contiene el valor que enviaste en la petición | Sí |
-| billing.state | String      | Comuna de facturación. Este campo contiene el valor que enviaste en la petición | Sí |
-| billing.country | String     | País de facturación. Este campo contiene el valor que enviaste en la petición| Sí |
+| billing.line1 | String      | Dirección de facturación. Este campo contiene el valor que enviaste en la petición. | Sí |
+| billing.line2 | String      | Dirección 2 de facturación. Este campo contiene el valor que enviaste en la petición. | No |
+| billing.city | String      | Ciudad para facturación. Este campo contiene el valor que enviaste en la petición. | Sí |
+| billing.state | String      | Comuna de facturación. Este campo contiene el valor que enviaste en la petición. | Sí |
+| billing.country | String     | País de facturación. Este campo contiene el valor que enviaste en la petición.| Sí |
 | create_time | String (ISO 8601) | Fecha de creación de la intención | Sí |
 | update_time | String (ISO 8601) | Fecha de actualización de la intención | Sí |
 | state | Enum  | Estado actual de la intención | Sí |
@@ -132,8 +132,8 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 | link.rel | Enum  | Relación de la operación sobre una intención | Sí |
 | link.method | Enum  | Verbo HTTP solicitado para la ejecución de la operación | Sí |
 | redirect_urls | Object      | Url de redirección dependiendo del estado de la captura una vez finalizado el proceso de captura. Este campo contiene el valor que enviaste en la petición | Sí |
-| redirect_urls.return_url | String (Url)      | Url de redirección al producirse una captura exitosa. Este campo contiene el valor que enviaste en la petición | Sí |
-| redirect_urls.cancel_url | String (Url)      | Url de redirección al producirse una captura fallida. Este campo contiene el valor que enviaste en la petición | Sí |
+| redirect_urls.return_url | String (Url)      | Url de redirección al producirse una captura exitosa. Este campo contiene el valor que enviaste en la petición. | Sí |
+| redirect_urls.cancel_url | String (Url)      | Url de redirección al producirse una captura fallida. Este campo contiene el valor que enviaste en la petición. | Sí |
 
 
 **Detalle de las URLs generadas:**

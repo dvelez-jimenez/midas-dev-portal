@@ -40,24 +40,24 @@ curl -X POST 'https://api.sandbox.connect.fif.tech/tokenization/captures' \
 
 **Detalle de los campos de la Petición**
 
-| Nombre        | Tipo            | Descripción  | Requerido |
-| ------------- | --------------- | ------------ | --------- |
-| capture      | Enum    | Tipo de Captura solicitada en la intención.             | Sí |
-| capture_method| Enum      | Método de Captura para la tarjeta   | Sí |
-| cardholder | Object        | Datos del cliente | Sí |
-| cardholder.reference_id | String        | Identificador externo del comercio | No |
-| cardholder.country | String      | País de residencia del cliente | Sí |
-| cardholder.name | String      | Nombre del cliente tal como se muestra en la tarjeta | Sí |
-| cardholder.email | String      | Email del cliente | Sí |
-| billing | String      | Dirección de facturación asociada a la tarjeta  | Sí |
-| billing.line1 | String      | Dirección de facturación | Sí |
-| billing.line2 | String      | Dirección 2 de facturación | No |
-| billing.city | String      | Ciudad para facturación | Sí |
-| billing.state | String      | Comuna de facturación | Sí |
-| billing.country | String     | País de facturación| Sí |
-| redirect_urls | Object      | Url de redirección dependiendo del estado de la captura una vez finalizado el proceso de captura | Sí |
-| redirect_urls.return_url | String (Url)      | Url de redirección al producirse una captura exitosa | Sí |
-| redirect_urls.cancel_url | String (Url)      | Url de redirección al producirse una captura fallida | Sí |
+| Nombre        | Tipo            | Descripción  |
+| ------------- | --------------- | ------------ |
+| capture      | Enum    | Tipo de Captura solicitada en la intención.             |
+| capture_method| Enum      | Método de Captura para la tarjeta   |
+| cardholder | Object        | Datos del cliente |
+| cardholder.reference_id | String        | Identificador externo del comercio |
+| cardholder.country | String      | País de residencia del cliente |
+| cardholder.name | String      | Nombre del cliente tal como se muestra en la tarjeta |
+| cardholder.email | String      | Email del cliente |
+| billing | String      | Dirección de facturación asociada a la tarjeta  |
+| billing.line1 | String      | Dirección de facturación |
+| billing.line2 | String      | Dirección 2 de facturación |
+| billing.city | String      | Ciudad para facturación |
+| billing.state | String      | Comuna de facturación |
+| billing.country | String     | País de facturación|
+| redirect_urls | Object      | Url de redirección dependiendo del estado de la captura una vez finalizado el proceso de captura |
+| redirect_urls.return_url | String (Url)      | Url de redirección al producirse una captura exitosa |
+| redirect_urls.cancel_url | String (Url)      | Url de redirección al producirse una captura fallida |
 
 El resultado de la llamada a la API de captura, será una intención de captura en su estado inicial (**created**), que contendrá el, o los links HATEOAS relacionados con la llamada, como por ejemplo , el link que se deberá ejecutar para proceder con la **captura de la tarjeta** y finalizar el proceso de captura. 
 
@@ -106,34 +106,34 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 
 **Detalle de los campos de la Respuesta**
 
-| Nombre        | Tipo            | Descripción  | Requerido |
-| ------------- | --------------- | ------------ | --------- |
-| id            | String (Guid)   | Identificador único de la intención              | Sí |
-| capture       | Enum          | Tipo de Captura establecida en la intención. Este campo contiene el valor que enviaste en la petición.| Sí |
-| capture_method| Enum           | Método de Captura que se usará. Este campo contiene el valor que enviaste en la petición.| Sí |
-| cardholder | Object        | Datos del cliente. Este campo contiene el valor que enviaste en la petición. | Sí |
-| cardholder.reference_id | String        |El código de referencia de la transacción. Representa el identificador de la transacción en el sistema del comercio. Este campo contiene el valor que enviaste en la petición. | No |
-| cardholder.country | String       | País de residencia del cliente. Este campo contiene el valor que enviaste en la petición. | Sí |
-| cardholder.name | String      | Nombre del cliente tal como se muestra en la tarjeta. Este campo contiene el valor que enviaste en la petición. | Sí |
-| cardholder.email | String      | Email del cliente. Este campo contiene el valor que enviaste en la petición.| Sí |
-| billing | String      | Dirección de facturación asociada a la tarjeta. Este campo contiene el valor que enviaste en la petición.  | Sí |
-| billing.line1 | String      | Dirección de facturación. Este campo contiene el valor que enviaste en la petición. | Sí |
-| billing.line2 | String      | Dirección 2 de facturación. Este campo contiene el valor que enviaste en la petición. | No |
-| billing.city | String      | Ciudad para facturación. Este campo contiene el valor que enviaste en la petición. | Sí |
-| billing.state | String      | Comuna de facturación. Este campo contiene el valor que enviaste en la petición. | Sí |
-| billing.country | String     | País de facturación. Este campo contiene el valor que enviaste en la petición.| Sí |
-| create_time | String (ISO 8601) | Fecha de creación de la intención | Sí |
-| update_time | String (ISO 8601) | Fecha de actualización de la intención | Sí |
-| state | Enum  | Estado actual de la intención | Sí |
-| capture_number | String (Correlativo) | Identificador legible de la intención | Sí |
-| links | Array[ link ] | Arreglo de Link HATEOAS para la ejecución de operaciones disponibles sobre la intención | Sí |
-| link | Object | Enlace bajo formato HATEOAS, sobre la definición de una operación disponible en una intención | Sí |
-| link.href | String (Url) | Dirección URL de la operación | Sí |
-| link.rel | Enum  | Relación de la operación sobre una intención | Sí |
-| link.method | Enum  | Verbo HTTP solicitado para la ejecución de la operación | Sí |
-| redirect_urls | Object      | Url de redirección dependiendo del estado de la captura una vez finalizado el proceso de captura. Este campo contiene el valor que enviaste en la petición. | Sí |
-| redirect_urls.return_url | String (Url)      | Url de redirección al producirse una captura exitosa. Este campo contiene el valor que enviaste en la petición. | Sí |
-| redirect_urls.cancel_url | String (Url)      | Url de redirección al producirse una captura fallida. Este campo contiene el valor que enviaste en la petición. | Sí |
+| Nombre        | Tipo            | Descripción  |
+| ------------- | --------------- | ------------ |
+| id            | String (Guid)   | Identificador único de la intención              |
+| capture       | Enum          | Tipo de Captura establecida en la intención. Este campo contiene el valor que enviaste en la petición.|
+| capture_method| Enum           | Método de Captura que se usará. Este campo contiene el valor que enviaste en la petición.|
+| cardholder | Object        | Datos del cliente. Este campo contiene el valor que enviaste en la petición. |
+| cardholder.reference_id | String        |El código de referencia de la transacción. Representa el identificador de la transacción en el sistema del comercio. Este campo contiene el valor que enviaste en la petición. |
+| cardholder.country | String       | País de residencia del cliente. Este campo contiene el valor que enviaste en la petición. |
+| cardholder.name | String      | Nombre del cliente tal como se muestra en la tarjeta. Este campo contiene el valor que enviaste en la petición. |
+| cardholder.email | String      | Email del cliente. Este campo contiene el valor que enviaste en la petición.|
+| billing | String      | Dirección de facturación asociada a la tarjeta. Este campo contiene el valor que enviaste en la petición.  |
+| billing.line1 | String      | Dirección de facturación. Este campo contiene el valor que enviaste en la petición. |
+| billing.line2 | String      | Dirección 2 de facturación. Este campo contiene el valor que enviaste en la petición. |
+| billing.city | String      | Ciudad para facturación. Este campo contiene el valor que enviaste en la petición. |
+| billing.state | String      | Comuna de facturación. Este campo contiene el valor que enviaste en la petición. |
+| billing.country | String     | País de facturación. Este campo contiene el valor que enviaste en la petición.|
+| create_time | String (ISO 8601) | Fecha de creación de la intención |
+| update_time | String (ISO 8601) | Fecha de actualización de la intención |
+| state | Enum  | Estado actual de la intención |
+| capture_number | String (Correlativo) | Identificador legible de la intención |
+| links | Array[ link ] | Arreglo de Link HATEOAS para la ejecución de operaciones disponibles sobre la intención |
+| link | Object | Enlace bajo formato HATEOAS, sobre la definición de una operación disponible en una intención |
+| link.href | String (Url) | Dirección URL de la operación |
+| link.rel | Enum  | Relación de la operación sobre una intención |
+| link.method | Enum  | Verbo HTTP solicitado para la ejecución de la operación |
+| redirect_urls | Object      | Url de redirección dependiendo del estado de la captura una vez finalizado el proceso de captura. Este campo contiene el valor que enviaste en la petición. |
+| redirect_urls.return_url | String (Url)      | Url de redirección al producirse una captura exitosa. Este campo contiene el valor que enviaste en la petición. |
+| redirect_urls.cancel_url | String (Url)      | Url de redirección al producirse una captura fallida. Este campo contiene el valor que enviaste en la petición. |
 
 
 **Detalle de las URLs generadas:**

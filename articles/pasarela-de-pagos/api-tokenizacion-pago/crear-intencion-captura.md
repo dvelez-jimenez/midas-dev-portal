@@ -126,7 +126,7 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 | update_time | String (ISO 8601) | Fecha de actualización de la intención |
 | state | Enum  | Estado actual de la intención |
 | capture_number | String (Correlativo) | Identificador legible de la intención |
-| links | Array[ link ] | Arreglo de Link HATEOAS para la ejecución de operaciones disponibles sobre la intención |
+| links | Array| Arreglo de Link HATEOAS para la ejecución de operaciones disponibles sobre la intención |
 | link | Object | Enlace bajo formato HATEOAS, sobre la definición de una operación disponible en una intención |
 | link.href | String (Url) | Dirección URL de la operación |
 | link.rel | Enum  | Relación de la operación sobre una intención |

@@ -139,7 +139,7 @@ Posibles estados de la transacción:
 
 Con esta opción, no es requerida la aprobación del cliente para ejecutar el cargo a la tarjeta de crédito.
 
-Necesitas el **access_token** obtenido en la **Autenticación** y la url [silent_charge](https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/20c3a7e6-51d4-faa7-3150-79ee0446dc74/silent) obtenida en el [paso 4](intencion-de-pago.md) para ejecutar una llamada a la **API de Silent Charge /silent** de la siguiente forma:
+Necesitas el **access_token** obtenido en la **Autenticación** y la url silent charge [ver ejemplo url silent_charge](https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/20c3a7e6-51d4-faa7-3150-79ee0446dc74/silent) obtenida en el [paso 4](intencion-de-pago.md) para ejecutar una llamada a la **API de Silent Charge /silent** de la siguiente forma:
 
 ```
  curl -v -X POST 'https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/{id}/silent' \

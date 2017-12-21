@@ -266,9 +266,19 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 | redirect_urls.cancel_url                 | URL de notificación de pago fallido      | string (url) |
 | **additional_attributes**                | **Grupo de campos de uso exclusivo**     | **objeto**   |
 | additional_attributes.capture_token      | ID de captura de tarjeta                 | string       |
-| additional_attributes.customer_save_card | Marca para identificar si el cliente decide guardar la tarjeta | boolean      |
+| additional_attributes.customer_save_card | Marca para identificar si el cliente decide guardar la tarjeta | boolean|
+| id                                       | Identificador unico de la intención      | string (Guid)|
+| create_time                              | Fecha de creación de la intención        | string (ISO 8601)|
+| update_time                              | Fecha de actualización de la intención   | string (ISO 8601)|
+| invoice_number                           | Identificador legible de la intención    | string (correlativo)|
+| application                           |     | string|
+| links | Array| Arreglo de Link HATEOAS para la ejecución de operaciones disponibles sobre la intención |
+| link | Object | Enlace bajo formato HATEOAS, sobre la definición de una operación disponible en una intención |
+| link.href | String (Url) | Dirección URL de la operación |
+| link.rel | Enum  | Relación de la operación sobre una intención |
+| link.method | Enum  | Verbo HTTP solicitado para la ejecución de la operación |
 
-Obtendrás los Links:
+**Detalle de las URLs generadas:**
 
 - **self**: desde esta URL puedes consultar la información de la captura.
 - **approval_url**: desde esta URL el cliente debe autorizar el pago.

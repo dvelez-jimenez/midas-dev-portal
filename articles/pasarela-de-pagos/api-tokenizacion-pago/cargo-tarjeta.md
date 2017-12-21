@@ -8,7 +8,7 @@ Si quieres utilizar esta opción, necesitas que el cliente apruebe el pago para 
 
 ![Ejemplo Approval](images/approval-1.png)
 
-Debes consultar el estado (state) de la transacción, para esto necesitas el **access_token** obtenido en la **Autenticación** y la **url self** obtenida en el [paso 4](intencion-de-pago.md) y ejecutar la consulta de la siguiente forma:
+Debes consultar el estado (state) de la transacción, para esto necesitas el **access_token** obtenido en la **Autenticación**, la **url self** obtenida en el [paso 4](intencion-de-pago.md) y ejecutar la consulta de la siguiente forma:
 
 ```
 curl -X GET \

@@ -4,11 +4,19 @@ Te ofrecemos dos opciones para realizar el cargo a la tarjeta del cliente, a con
 
 ### 5.1 Approval
 
-Si quieres utilizar esta opción, necesitas que el cliente apruebe el pago para ejecutar el cargo a la tarjeta de crédito. Para ello debes desplegar la ventana de aprobación del pago a partir de la approval_url [ver ejemplo approval_url](https://quickpay-connect-checkout.azurewebsites.net/payments/gateways/quickpay/token/0fdcd938-62c7-aab2-5048-c2f172d495ac/pay) obtenida en el [paso 4](intencion-de-pago.md).
+Si quieres utilizar esta opción, necesitas que el cliente apruebe el pago para ejecutar el cargo a la tarjeta de crédito. Para ello debes desplegar la ventana de aprobación del pago a partir de la **approval_url** [ver ejemplo approval_url](https://quickpay-connect-checkout.azurewebsites.net/payments/gateways/quickpay/token/0fdcd938-62c7-aab2-5048-c2f172d495ac/pay) obtenida en el [paso 4](intencion-de-pago.md).
 
 ![Ejemplo Approval](images/approval-1.png)
 
-Si recibes una respuesta con **"state": "paid"** en la URL indicada como **return_url** o consultando desde la **URL self**, entonces el cliente ha aprobado del pago y se ejecuta el cargo a la tajeta de crédito.
+Debes consultar el estado (state) de la transacción, para esto necesitas el **access_token** obtenido en la **Autenticación** y la url self [ver ejemplo url self](https://api.sandbox.connect.fif.tech/checkout/payments/5247451f-e709-bc97-b195-8725f5e5d09a) obtenida en el [paso 4](intencion-de-pago.md) para ejecutar la consulta de la siguiente forma:
+
+```
+curl -X GET \
+  https://api.sandbox.connect.fif.tech/checkout/payments/5247451f-e709-bc97-b195-8725f5e5d09a \
+  -H 'cache-control: no-cache' \
+  -H 'Authorization: Bearer access_token'
+```
+Obtendrás una respuesta silimar a:
 
   ```
 {
@@ -107,7 +115,6 @@ Si recibes una respuesta con **"state": "paid"** en la URL indicada como **retur
             "_id": "5a29af926867b6000fe42a47",
             "card_number": {
                 "panLast4": 1111
-                "panFirst6": 411111
             },
             "authorizations": {
                 "code": "570110"
@@ -139,10 +146,10 @@ Posibles estados de la transacción:
 
 Con esta opción, no es requerida la aprobación del cliente para ejecutar el cargo a la tarjeta de crédito.
 
-Necesitas el **access_token** obtenido en la **Autenticación** y la url silent charge [ver ejemplo url silent_charge](https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/20c3a7e6-51d4-faa7-3150-79ee0446dc74/silent) obtenida en el [paso 4](intencion-de-pago.md) para ejecutar una llamada a la **API de Silent Charge /silent** de la siguiente forma:
+Necesitas el **access_token** obtenido en la **Autenticación** y la url silent charge [ver ejemplo url silent_charge](https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/a8cb0e21-acd1-93d7-f623-9a3a4523a2d0/silent) obtenida en el [paso 4](intencion-de-pago.md) para ejecutar una llamada a la **API de Silent Charge /silent** de la siguiente forma:
 
 ```
- curl -v -X POST 'https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/{id}/silent' \
+ curl -v -X POST 'https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/a8cb0e21-acd1-93d7-f623-9a3a4523a2d0/silent' \
  -H "Content-Type: application/json" \
  -H "Authorization: Bearer access_token"
 ```

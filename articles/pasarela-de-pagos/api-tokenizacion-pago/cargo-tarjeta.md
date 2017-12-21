@@ -4,7 +4,7 @@ Te ofrecemos dos opciones para realizar el cargo a la tarjeta del cliente, a con
 
 ### 5.1 Approval
 
-Si quieres utilizar esta opción, necesitas que el cliente apruebe el pago para ejecutar el cargo a la tarjeta de crédito. Para ello debes desplegar la ventana de aprobación del pago a partir de la [approval_url](https://quickpay-connect-checkout.azurewebsites.net/payments/gateways/quickpay/token/0fdcd938-62c7-aab2-5048-c2f172d495ac/pay) obtenida en el [paso 3](#3-mostrar-formulario-de-captura-de-tarjeta).
+Si quieres utilizar esta opción, necesitas que el cliente apruebe el pago para ejecutar el cargo a la tarjeta de crédito. Para ello debes desplegar la ventana de aprobación del pago a partir de la [approval_url](https://quickpay-connect-checkout.azurewebsites.net/payments/gateways/quickpay/token/0fdcd938-62c7-aab2-5048-c2f172d495ac/pay) obtenida en el [paso 4](intencion-de-pago.md).
 
 ![Ejemplo Approval](images/approval-1.png)
 
@@ -139,7 +139,7 @@ Posibles estados de la transacción:
 
 Con esta opción, no es requerida la aprobación del cliente para ejecutar el cargo a la tarjeta de crédito.
 
-Necesitas el **access_token** obtenido en la **Autenticación** y el **id de la intención de pago** generado en el **paso 4**, para ejecutar una llamada a la **API de Silent Charge /silent** de la siguiente forma:
+Necesitas el **access_token** obtenido en la **Autenticación** y la url [silent_charge](https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/20c3a7e6-51d4-faa7-3150-79ee0446dc74/silent) obtenida en el [paso 4](intencion-de-pago.md) para ejecutar una llamada a la **API de Silent Charge /silent** de la siguiente forma:
 
 ```
  curl -v -X POST 'https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/{id}/silent' \

@@ -286,6 +286,8 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 - **silent_charge**: llamando a este endpoint desde la [API silent_charge](cargo-tarjeta.md) puedes ejecutar el cargo a la tarjeta de cŕedito del cliente sin pasar por la intención de pago.
 - **reverse_method**: para anular la transacción, debes hacer el llamado a este endpoint desde la [API de Anulación](../../anulaciones/introduccion.md).
 
+> Estas URLs son dinamicas, nunca debes guardarlas como variables de entorno. Siempre debes consultarlas desde aquí para continuar con los pasos siguientes.
+
 ¿Quieres saber cómo actualizar una intención de pago?[haz clic aquí](update-transaction.md)
 
 Ir al paso [5. Realizar el cargo a la tarjeta](cargo-tarjeta.md)

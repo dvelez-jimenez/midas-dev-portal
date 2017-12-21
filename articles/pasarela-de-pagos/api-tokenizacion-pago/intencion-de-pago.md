@@ -272,11 +272,11 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 | update_time                              | Fecha de actualización de la intención   | string (ISO 8601)|
 | invoice_number                           | Identificador legible de la intención    | string (correlativo)|
 | application                           |     | string|
-| links | Array| Arreglo de Link HATEOAS para la ejecución de operaciones disponibles sobre la intención |
-| link | Object | Enlace bajo formato HATEOAS, sobre la definición de una operación disponible en una intención |
-| link.href | String (Url) | Dirección URL de la operación |
-| link.rel | Enum  | Relación de la operación sobre una intención |
-| link.method | Enum  | Verbo HTTP solicitado para la ejecución de la operación |
+| links | Arreglo de Link HATEOAS para la ejecución de operaciones disponibles sobre la intención | array |
+| **link** | Enlace bajo formato HATEOAS, sobre la definición de una operación disponible en una intención  | **objeto**  |
+| link.href | Dirección URL de la operación | string (URL) |
+| link.rel |Relación de la operación sobre una intención | Enum |
+| link.method |Verbo HTTP solicitado para la ejecución de la operación|Enum|
 
 **Detalle de las URLs generadas:**
 

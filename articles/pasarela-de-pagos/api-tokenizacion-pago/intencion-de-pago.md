@@ -9,63 +9,63 @@ curl -X POST \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -H 'postman-token: fdd285bc-5f48-7c71-b306-19ee7d04941e' \
-  -d '{ 
-   "intent": "sale", 
-   "payer": { 
-     "payer_info": { 
-       "email": "jlprueba1@quickpay.com", 
-       "full_name": "Andres Roa",
-       "country": "CL",
-       "documentNumber": "123123123",
-       "documentType": "RUT"
-     }, 
-     "payment_method": "PEINAU_CAPTURE"
-   }, 
-   "transaction": { 
-     "reference_id": "OD0000233", 
-     "description": "Transaction detailed description", 
-     "soft_descriptor": "Short Description", 
-     "amount": { 
-       "currency": "CLP", 
-       "total": 4500, 
-       "details": { 
-         "subtotal": 810, 
-         "tax": 190, 
-         "shipping": 0, 
-         "shipping_discount": 0 
-       } 
-     }, 
-     "item_list": { 
-       "shipping_address": { 
-         "line1": "Miraflores 222", 
-         "city": "Santiago", 
-         "country_code": "CL", 
-         "phone": "+56 9 1234 5674", 
-         "type": "HOME_OR_WORK", 
-         "recipient_name": "Andres Roa" 
-       }, 
-       "shipping_method": "DIGITAL", 
-       "items": [ 
-         { 
-           "sku": "1231232", 
-           "name": "Destornillador 2344", 
-           "description": "Destornillador SCL - ONT", 
-           "quantity": 1, 
-           "price": 4500, 
-           "tax": 0 
-         } 
-       ] 
-     } 
-   }, 
-   "redirect_urls": { 
-     "return_url": "https://requestb.in/sfoogtsf", 
-     "cancel_url": "https://chao.com" 
+  -d '{  
+   "intent":"sale",
+   "payer":{  
+      "payer_info":{  
+         "email":"jlprueba1@quickpay.com",
+         "full_name":"Andres Roa",
+         "country":"CL",
+         "documentNumber":"123123123",
+         "documentType":"RUT"
+      },
+      "payment_method":"PEINAU_CAPTURE"
    },
-   "additional_attributes": {
-   	"capture_token": "87a0155d-5ff9-d792-93c5-c7837d800aa5",
-    "remember_capture": true
-  }
- }'
+   "transaction":{  
+      "reference_id":"OD0000233",
+      "description":"Transaction detailed description",
+      "soft_descriptor":"Short Description",
+      "amount":{  
+         "currency":"CLP",
+         "total":4500,
+         "details":{  
+            "subtotal":810,
+            "tax":190,
+            "shipping":0,
+            "shipping_discount":0
+         }
+      },
+      "item_list":{  
+         "shipping_address":{  
+            "line1":"Miraflores 222",
+            "city":"Santiago",
+            "country_code":"CL",
+            "phone":"+56 9 1234 5674",
+            "type":"HOME_OR_WORK",
+            "recipient_name":"Andres Roa"
+         },
+         "shipping_method":"DIGITAL",
+         "items":[  
+            {  
+               "sku":"1231232",
+               "name":"Destornillador 2344",
+               "description":"Destornillador SCL - ONT",
+               "quantity":1,
+               "price":4500,
+               "tax":0
+            }
+         ]
+      }
+   },
+   "redirect_urls":{  
+      "return_url":"https://requestb.in/sfoogtsf",
+      "cancel_url":"https://chao.com"
+   },
+   "additional_attributes":{  
+      "capture_token":"87a0155d-5ff9-d792-93c5-c7837d800aa5",
+      "remember_capture":true
+   }
+}'
  ```
 **Detalle de los Campos de la Petición**
 

@@ -19,7 +19,7 @@ curl -X POST \
        "documentNumber": "123123123",
        "documentType": "RUT"
      }, 
-     "payment_method": "QUICKPAY_TOKEN"
+     "payment_method": "PEINAU_CAPTURE"
    }, 
    "transaction": { 
      "reference_id": "OD0000233", 
@@ -78,7 +78,7 @@ curl -X POST \
 | payer.payer_info.country                 | Nacionalidad                             | string       |
 | payer.payer_info.documentNumber          | Número de identificación                 | string       |
 | payer.payer_info.documentType            | Tipo de documento de identificación      | string       |
-| payer.payment_method                     | Identifica el método de pago a utilizar  | string       |
+| payer.payment_method                     | Identifica el método de captura a utilizar (PEINAU_CAPTURE)  | string       |
 | **transaction**                          | **Grupo de campos con la información de la transacción** | **object**   |
 | transaction.gateway_order                | Número de la orden de compra. Este Id de transacción que es enviada al  gateway de pago | string       |
 | transaction.reference_id                 | El código de referencia de la transacción. Representa el identificador de  la transacción en el sistema del comercio. | string       |

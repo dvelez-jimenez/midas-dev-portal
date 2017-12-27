@@ -124,7 +124,8 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 {
     "intent": "sale",
     "additional_attributes": {
-        "capture_token": "87a0155d-5ff9-d792-93c5-c7837d800aa5"
+        "capture_token": "87a0155d-5ff9-d792-93c5-c7837d800aa5",
+        "remember_capture": true
     },
     "application": "28adb999-7a2e-70b8-c092-e4c16a9e9e0a",
     "redirect_urls": {
@@ -267,7 +268,7 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 | redirect_urls.cancel_url                 | URL de notificación de pago fallido      | string (url) |
 | **additional_attributes**                | **Grupo de campos de uso exclusivo**     | **objeto**   |
 | additional_attributes.capture_token      | ID de captura de tarjeta                 | string       |
-| additional_attributes.customer_save_card | Marca para identificar si el cliente decide guardar la tarjeta | boolean|
+| additional_attributes.remember_capture | Marca para identificar si el cliente decide guardar la tarjeta | boolean|
 | id                                       | Identificador unico de la intención      | string (Guid)|
 | create_time                              | Fecha de creación de la intención        | string (ISO 8601)|
 | update_time                              | Fecha de actualización de la intención   | string (ISO 8601)|

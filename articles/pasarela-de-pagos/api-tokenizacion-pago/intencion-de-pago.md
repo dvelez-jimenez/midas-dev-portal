@@ -62,7 +62,8 @@ curl -X POST \
      "cancel_url": "https://chao.com" 
    },
    "additional_attributes": {
-   	"capture_token": "87a0155d-5ff9-d792-93c5-c7837d800aa5"
+   	"capture_token": "87a0155d-5ff9-d792-93c5-c7837d800aa5",
+    "remember_capture": true
   }
  }'
  ```
@@ -113,7 +114,7 @@ curl -X POST \
 | redirect_urls.cancel_url                 | URL de notificación de pago fallido      | string (url) |
 | **additional_attributes**                | **Grupo de campos de uso exclusivo**     | **objeto**   |
 | additional_attributes.capture_token      | ID de captura de tarjeta                 | string       |
-| additional_attributes.customer_save_card | Marca para identificar si el cliente decide guardar la tarjeta | boolean      |
+| additional_attributes.remember_capture | Marca para identificar si el cliente decide guardar la tarjeta | boolean      |
 
 El resultado de la llamada a la API de checkout, será una intención de pago en su estado inicial (created), que contendrá el, o los links HATEOAS relacionados con la llamada.
 
@@ -174,7 +175,7 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
             "full_name": "Andres Roa",
             "email": "jlprueba1@quickpay.com"
         },
-        "payment_method": "QUICKPAY_TOKEN"
+        "payment_method": "PEINAU_CAPTURE"
     },
     "links": [
         {

@@ -7,20 +7,33 @@ Necesitas el **access_token** obtenido en la **Autenticación** y el **id de la 
   
  -H "Content-Type: application/json" \
  -H "Authorization: Bearer access_token"
- -d '{
-"transaction": {
-"item_list": {
-"shipping_method": "DIGITAL",
-"shipping_address":
-{ "line1": "General Carol Urzua 7030, Depto 302B", "city": "Santiago", "country_code": "CL", "phone": "+56 9 8762 1244", "type": "HOME_OR_WORK", "recipient_name": "Jhon Doe Son" }
-},
-"amount": {
-"currency": "CLP",
-"total": 2000,
-"details":
-{ "subtotal": 2000, "tax": 0, "shipping": 0, "shipping_discount": 0 }
-}
-}
+ -d '{  
+   "transaction":{  
+      "item_list":{  
+         "shipping_method":"DIGITAL",
+         "shipping_address":{  
+            "line1":"General Carol Urzua 7030, Depto 302B",
+            "city":"Santiago",
+            "country_code":"CL",
+            "phone":"+56 9 8762 1244",
+            "type":"HOME_OR_WORK",
+            "recipient_name":"Jhon Doe Son"
+         }
+      },
+      "amount":{  
+         "currency":"CLP",
+         "total":2000,
+         "details":{  
+            "subtotal":2000,
+            "tax":0,
+            "shipping":0,
+            "shipping_discount":0
+         }
+      }
+   },
+   "additional_attributes":{  
+      "remember_capture":true
+   }
 }'
  
 ```
@@ -57,7 +70,8 @@ Obtendras una respuesta similar a:
     },
     "intent": "sale",
     "additional_attributes": {
-        "capture_token": "a2797df2-c3b6-03d8-dabf-58ea0f73fcfe"
+        "capture_token": "a2797df2-c3b6-03d8-dabf-58ea0f73fcfe",
+        "remember_capture":true
     },
     "application": "28adb999-7a2e-70b8-c092-e4c16a9e9e0a",
     "redirect_urls": {
@@ -84,6 +98,7 @@ Obtendras una respuesta similar a:
 
 ```
 Podrás actualizar los siguientes datos:
-- Método de despacho
-- Dirección de despacho
+- Datos del producto
+- Datos de despacho
 - Monto
+- Marca recordar captura (remember_capture)

@@ -141,4 +141,6 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 + URL 1 (**rel: self**): desde esta URL puedes consultar la información de la intención de captura.
 + URL 2 (**rel: capture_url**): desde esta URL debes acceder al formulario de captura de la tarjeta.
 
+[Consultar estado del servicio (Health Check)](health-tokenizer.md)
+
 Ir al paso [3. Mostrar formulario de Captura de tarjeta](formulario-captura-tarjeta.md)

@@ -30,6 +30,6 @@ Como respuesta obtendrás el **access_token**:
 }
 ```
 
-[Consultar estado del servicio](health-sso.md)
+[Consultar estado del servicio (Health Check)](health-sso.md)
 
 Ir al paso [2. Crear una Intención de Captura](crear-intencion-captura.md)

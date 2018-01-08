@@ -1,4 +1,4 @@
-# Health Check Api de checkout **/checkout**
+# Health Check Api checkout
 
 Puedes consultar el estado del servicio de la siguiente forma:
 

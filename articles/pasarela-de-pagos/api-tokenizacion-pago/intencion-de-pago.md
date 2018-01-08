@@ -292,4 +292,6 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 
 ¿Quieres saber cómo actualizar una intención de pago?[haz clic aquí](update-transaction.md)
 
+[Consultar estado del servicio (Health Check)](health-checkout.md)
+
 Ir al paso [5. Realizar el cargo a la tarjeta](cargo-tarjeta.md)

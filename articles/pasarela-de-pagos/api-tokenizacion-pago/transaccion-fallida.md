@@ -93,6 +93,5 @@ Obtendras una respuesta similar a:
     }
 }
 ```
-Cybersource responde: **"reasonCode": "202"**, este código hace referencia a tarjeta vencida.
 
-El **state** de la transacción es **canceled**.
+Cuando el resultado del pago es fallido, el campo state de la respuesta tendrá un valor distinto de **paid** y será posible ver el detalle en **gateway.error**.

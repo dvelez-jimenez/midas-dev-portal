@@ -3,11 +3,11 @@
 Necesitas el **access_token** obtenido en la **Autenticación** y el **id de la intención de pago** generado en el **paso 4**, para ejecutar una petición a la **API de Anulación /reverse** de la siguiente forma:
 
 ```
- curl -X POST 'https://api.sandbox.connect.fif.tech/payments/gateways/quickpay/token/{id}/reverse' \
+ curl -X POST 'https://api.sandbox.connect.fif.tech/payments/gateways/quickpay/token/{id}/refund' \
   -H 'authorization: Bearer access_token' \
   -H 'content-type: application/json' \
   -d '{
-	"reversal_amount":"1000"
+	"refund_amount":"1000"
 }'
 ```
 
@@ -75,7 +75,7 @@ Obtendrás una respuesta similar a:
     "id": "5dbe2208-c819-4f0e-d4fd-d451d479fef2",
     "create_time": "2017-12-07T14:03:43.534Z",
     "update_time": "2017-12-07T14:06:54.530Z",
-    "state": "reversed",
+    "state": "refunded",
     "invoice_number": "INPA-50000000901",
     "gateway": {
         "reversal_amount": "1000",
@@ -92,7 +92,7 @@ Obtendrás una respuesta similar a:
             "requestDateTime": "2017-12-07T14:06:54Z",
             "amount": "1000"
         },
-        "message": "payment reversed"
+        "message": "payment refunded"
     }
 }
 ```

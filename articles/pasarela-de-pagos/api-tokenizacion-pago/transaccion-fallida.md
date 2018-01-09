@@ -73,7 +73,7 @@ Obtendras una respuesta similar a:
     "id": "b81f9f63-3a21-2528-59cf-65614071da78",
     "create_time": "2018-01-09T01:25:46.942Z",
     "update_time": "2018-01-09T01:26:13.198Z",
-    "state": "canceled",
+    "state": "rejected",
     "invoice_number": "INPA-50000001456",
     "gateway": {
         "merchantReferenceCode": "INPA-50000001456",
@@ -94,4 +94,4 @@ Obtendras una respuesta similar a:
 }
 ```
 
-Cuando el resultado del pago es fallido, el campo state de la respuesta tendrá un valor distinto de **paid** y será posible ver el detalle en **gateway.error**.
+Cuando el resultado del pago es fallido, el campo state de la respuesta tendrá el valor **rejected** y será posible ver el detalle en **gateway.error**.

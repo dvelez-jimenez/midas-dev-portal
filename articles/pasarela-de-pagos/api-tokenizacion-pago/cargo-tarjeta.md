@@ -276,7 +276,7 @@ Posibles estados de la transacción:
 | State    | Definición                               |
 | -------- | ---------------------------------------- |
 | paid  | El cargo fue realizado exitosamente en la cuenta del cliente |
-| canceled | El cargo no fue realizado |
+| canceled | Transacción fallida. El cargo no fue realizado |
 | reversed | Tiene al menos una devolución asociada |
 
 [Ejemplo de transacción fallida](transaccion-fallida.md)

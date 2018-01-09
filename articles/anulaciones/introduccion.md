@@ -1,6 +1,6 @@
 # API REST de Anulaciones
 
-Necesitas el **access_token** obtenido en la **Autenticación** y el **id de la intención de pago** generado en el **paso 4**, para ejecutar una petición a la **API de Anulación /reverse** de la siguiente forma:
+Necesitas el **access_token** obtenido en la **Autenticación** y el **id de la intención de pago** generado en el **paso 4**, para ejecutar una petición a la **API de Anulación /refund** de la siguiente forma:
 
 ```
  curl -X POST 'https://api.sandbox.connect.fif.tech/payments/gateways/quickpay/token/{id}/refund' \
@@ -78,7 +78,7 @@ Obtendrás una respuesta similar a:
     "state": "refunded",
     "invoice_number": "INPA-50000000901",
     "gateway": {
-        "reversal_amount": "1000",
+        "refund_amount": "1000",
         "merchantReferenceCode": "INPA-50000000901",
         "requestID": "5126556142216262304009",
         "decision": "ACCEPT",
@@ -98,6 +98,6 @@ Obtendrás una respuesta similar a:
 ```
 | State    | Definición                               |
 | -------- | ---------------------------------------- |
-| reversed | La devolución se completó exitosamente   |
+| refunded | La devolución se completó exitosamente   |
 
 [Volver al menú anterior](../pasarela-de-pagos/api-tokenizacion-pago/introduction.md)

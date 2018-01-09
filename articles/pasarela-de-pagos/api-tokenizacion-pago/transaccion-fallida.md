@@ -85,7 +85,8 @@ Obtendras una respuesta similar a:
             "reasonCode": "202"
         },
         "error": {
-            "error_code": "CYBERSOURCE_REJECTION"
+            "error_code": "CYBERSOURCE_202"
+            "error_message": "Expired card"
         },
         "amount": 4500,
         "capture_token": "e246c3a8-da94-8394-d9f7-77d8445b9d46"

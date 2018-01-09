@@ -270,6 +270,7 @@ Obtendras una respuesta similar a:
     }
 }
 ```
+Cuando el resultado del pago es exitoso, el campo state de la respuesta tendrá el valor **paid** y será posible ver el detalle en una estructura estándar denominada **resume**.
 
 Posibles estados de la transacción:
 

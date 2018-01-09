@@ -36,7 +36,7 @@ Obtendras una respuesta similar a:
                     "quantity": 1,
                     "price": 4500,
                     "tax": 0,
-                    "_id": "5a53eab3def5c0001432d1b6"
+                    "_id": "5a541a1adef5c0001432d1c1"
                 }
             ],
             "shipping_address": {
@@ -70,19 +70,22 @@ Obtendras una respuesta similar a:
         "payment_method": "QUICKPAY_TOKEN"
     },
     "links": [],
-    "id": "25c30852-33ae-927a-02c9-80bc6c9afb74",
-    "create_time": "2018-01-08T22:03:31.669Z",
-    "update_time": "2018-01-08T22:04:47.184Z",
+    "id": "b81f9f63-3a21-2528-59cf-65614071da78",
+    "create_time": "2018-01-09T01:25:46.942Z",
+    "update_time": "2018-01-09T01:26:13.198Z",
     "state": "canceled",
-    "invoice_number": "INPA-50000001451",
+    "invoice_number": "INPA-50000001456",
     "gateway": {
-        "merchantReferenceCode": "INPA-50000001451",
-        "requestID": "5154490864826673304012",
+        "merchantReferenceCode": "INPA-50000001456",
+        "requestID": "5154611727996227304008",
         "decision": "REJECT",
         "reasonCode": "202",
-        "requestToken": "AhjzbwSTF2zuM+WV4JHMigFRp8SJQLZMDYyj6QmVpJl6MVy/LACYXhW/",
-        "afsReply": {
+        "requestToken": "Ahj77wSTF26bmE8lkjpIilGnxJBrwgKjT4kg14SYGxlH0hMrSTL0Yrl+WAE5MXbpuYTyWSOkgAAAywvw",
+        "ccAuthReply": {
             "reasonCode": "202"
+        },
+        "error": {
+            "error_code": "CYBERSOURCE_REJECTION"
         },
         "amount": 4500,
         "capture_token": "e246c3a8-da94-8394-d9f7-77d8445b9d46"

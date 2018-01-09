@@ -85,6 +85,6 @@ Tabla de posibles respuestas:
 | State    | Definición                               |
 | -------- | ---------------------------------------- |
 | captured | Se ha capturado la información de la tarjeta |
-| canceled | Ocurrio un error y no se pudo completar la captura |
+| rejected | Ocurrio un error y no se pudo completar la captura |
 
 Ir al paso [4. Intención de Pago](intencion-de-pago.md)

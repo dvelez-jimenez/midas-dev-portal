@@ -139,7 +139,7 @@ Posibles estados de la transacción:
 | State    | Definición                               |
 | -------- | ---------------------------------------- |
 | paid  | El cargo fue realizado exitosamente en la cuenta del cliente |
-| canceled | El cargo no fue realizado |
+| rejected | El cargo no fue realizado |
 | reversed | Tiene al menos una devolución asociada |
 
 ### 5.2 Silent Charge
@@ -277,7 +277,7 @@ Posibles estados de la transacción:
 | State    | Definición                               |
 | -------- | ---------------------------------------- |
 | paid  | El cargo fue realizado exitosamente en la cuenta del cliente |
-| canceled | Transacción fallida. El cargo no fue realizado |
+| rejected | Transacción fallida. El cargo no fue realizado |
 | reversed | Tiene al menos una devolución asociada |
 
 [Ejemplo de transacción fallida](transaccion-fallida.md)

@@ -87,7 +87,7 @@ curl -X POST \
 | transaction.soft_descriptor              | Descripción corta de la transacción      | string       |
 | **transaction.amount**                   | **Grupo de campos que detalla los montos de la compra** | **object**   |
 | transaction.amount.currency              | Código ISO de la moneda asociada al monto de la compra. | string       |
-| transaction.amount.total                 | Monto total de la compra que será descontado de la tarjeta o cuenta del  cliente | int          |
+| transaction.amount.total                 | Monto total de la compra que será descontado de la tarjeta o cuenta del  cliente | number          |
 | transaction.amount.details               | Detalles del monto de la compra          |              |
 | transaction.amount.details.subtotal      | Monto de la compra sin incluir impuesto  | number          |
 | transaction.amount.details.tax           | Monto total de los impuestos             | number          |
@@ -241,7 +241,7 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 | transaction.soft_descriptor              | Descripción corta de la transacción      | string       |
 | **transaction.amount**                   | **Grupo de campos que detalla los montos de la compra** | **object**   |
 | transaction.amount.currency              | Código ISO de la moneda asociada al monto de la compra. | string       |
-| transaction.amount.total                 | Monto total de la compra que será descontado de la tarjeta o cuenta del  cliente | int          |
+| transaction.amount.total                 | Monto total de la compra que será descontado de la tarjeta o cuenta del  cliente | number          |
 | transaction.amount.details               | Detalles del monto de la compra          |              |
 | transaction.amount.details.subtotal      | Monto de la compra sin incluir impuesto  | number          |
 | transaction.amount.details.tax           | Monto total de los impuestos             | number          |

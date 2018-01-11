@@ -89,10 +89,10 @@ curl -X POST \
 | transaction.amount.currency              | Código ISO de la moneda asociada al monto de la compra. | string       |
 | transaction.amount.total                 | Monto total de la compra que será descontado de la tarjeta o cuenta del  cliente | int          |
 | transaction.amount.details               | Detalles del monto de la compra          |              |
-| transaction.amount.details.subtotal      | Monto de la compra sin incluir impuesto  | int          |
-| transaction.amount.details.tax           | Monto total de los impuestos             | int          |
-| transaction.amount.details.shipping      | Costo del despacho                       | int          |
-| transaction.amount.details.shipping_discount | Monto de descuento en costo de despacho  | int          |
+| transaction.amount.details.subtotal      | Monto de la compra sin incluir impuesto  | number          |
+| transaction.amount.details.tax           | Monto total de los impuestos             | number          |
+| transaction.amount.details.shipping      | Costo del despacho                       | number          |
+| transaction.amount.details.shipping_discount | Monto de descuento en costo de despacho  | number          |
 | **transaction.item_list**                | **Información del producto(s) **         | **object**   |
 | **transaction.item_list.shipping_address** | **Dirección de despacho (compras con despacho a domicilio)** | **object**   |
 | transaction.item_list.shipping_address.line1 | Direccion de despaho                     | string       |
@@ -107,8 +107,8 @@ curl -X POST \
 | transaction.item_list.items.name         | Nombre del producto                      | string       |
 | transaction.item_list.items.description  | Descripción del producto                 | string       |
 | transaction.item_list.items.quantity     | Cantidad                                 | string       |
-| transaction.item_list.items.price        | Precio unitario                          | int          |
-| transaction.item_list.items.tax          | Monto del impuesto del producto          | int          |
+| transaction.item_list.items.price        | Precio unitario                          | number          |
+| transaction.item_list.items.tax          | Monto del impuesto del producto          | number          |
 | **redirect_urls**                        | **Url de redirección dependiendo del estado de la captura una vez  finalizado el proceso de captura** | **objeto**   |
 | redirect_urls.return_url                 | URL de notificación de pago exitoso      | string (url) |
 | redirect_urls.cancel_url                 | URL de notificación de pago fallido      | string (url) |
@@ -243,10 +243,10 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 | transaction.amount.currency              | Código ISO de la moneda asociada al monto de la compra. | string       |
 | transaction.amount.total                 | Monto total de la compra que será descontado de la tarjeta o cuenta del  cliente | int          |
 | transaction.amount.details               | Detalles del monto de la compra          |              |
-| transaction.amount.details.subtotal      | Monto de la compra sin incluir impuesto  | int          |
-| transaction.amount.details.tax           | Monto total de los impuestos             | int          |
-| transaction.amount.details.shipping      | Costo del despacho                       | int          |
-| transaction.amount.details.shipping_discount | Monto de descuento en costo de despacho  | int          |
+| transaction.amount.details.subtotal      | Monto de la compra sin incluir impuesto  | number          |
+| transaction.amount.details.tax           | Monto total de los impuestos             | number          |
+| transaction.amount.details.shipping      | Costo del despacho                       | number          |
+| transaction.amount.details.shipping_discount | Monto de descuento en costo de despacho  | number          |
 | **transaction.item_list**                | **Información del producto(s) **         | **object**   |
 | **transaction.item_list.shipping_address** | **Dirección de despacho (compras con despacho a domicilio)** | **object**   |
 | transaction.item_list.shipping_address.line1 | Direccion de despaho                     | string       |
@@ -261,8 +261,8 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 | transaction.item_list.items.name         | Nombre del producto                      | string       |
 | transaction.item_list.items.description  | Descripción del producto                 | string       |
 | transaction.item_list.items.quantity     | Cantidad                                 | string       |
-| transaction.item_list.items.price        | Precio unitario                          | int          |
-| transaction.item_list.items.tax          | Monto del impuesto del producto          | int          |
+| transaction.item_list.items.price        | Precio unitario                          | number          |
+| transaction.item_list.items.tax          | Monto del impuesto del producto          | number          |
 | **redirect_urls**                        | **Url de redirección dependiendo del estado de la captura una vez  finalizado el proceso de captura** | **objeto**   |
 | redirect_urls.return_url                 | URL de notificación de pago exitoso      | string (url) |
 | redirect_urls.cancel_url                 | URL de notificación de pago fallido      | string (url) |

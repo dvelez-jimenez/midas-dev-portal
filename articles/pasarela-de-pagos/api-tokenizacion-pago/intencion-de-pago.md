@@ -9,63 +9,62 @@ curl -X POST \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -H 'postman-token: fdd285bc-5f48-7c71-b306-19ee7d04941e' \
-  -d '{  
-   "intent":"sale",
-   "payer":{  
-      "payer_info":{  
-         "email":"jlprueba1@quickpay.com",
-         "full_name":"Andres Roa",
-         "country":"CL",
-         "documentNumber":"123123123",
-         "documentType":"RUT"
-      },
-      "payment_method":"PEINAU_CAPTURE"
+  -d '{ 
+   "intent": "sale", 
+   "payer": { 
+     "payer_info": { 
+       "email": "jlprueba1@quickpay.com", 
+       "full_name": "Andres Roa",
+       "country": "CL",
+       "document_number": "123123123",
+       "document_type": "RUT"
+     }, 
+     "payment_method": "QUICKPAY_TOKEN"
+   }, 
+   "transaction": { 
+     "reference_id": "OD0000233", 
+     "description": "Transaction detailed description", 
+     "soft_descriptor": "Short Description", 
+     "amount": { 
+       "currency": "CLP", 
+       "total": 4500, 
+       "details": { 
+         "subtotal": 810, 
+         "tax": 190, 
+         "shipping": 0, 
+         "shipping_discount": 0 
+       } 
+     }, 
+     "item_list": { 
+       "shipping_address": { 
+         "line1": "Miraflores 222", 
+         "city": "Santiago", 
+         "country_code": "CL", 
+         "phone": "+56 9 1234 5674", 
+         "type": "HOME_OR_WORK", 
+         "recipient_name": "Andres Roa" 
+       }, 
+       "shipping_method": "DIGITAL", 
+       "items": [ 
+         { 
+           "sku": "1231232", 
+           "name": "Destornillador 2344", 
+           "description": "Destornillador SCL - ONT", 
+           "quantity": 1, 
+           "price": 4500, 
+           "tax": 0 
+         } 
+       ] 
+     } 
+   }, 
+   "redirect_urls": { 
+     "return_url": "https://peinau.azureedge.net/redirections/payment_success.html", 
+     "cancel_url": "https://chao.com" 
    },
-   "transaction":{  
-      "reference_id":"OD0000233",
-      "description":"Transaction detailed description",
-      "soft_descriptor":"Short Description",
-      "amount":{  
-         "currency":"CLP",
-         "total":4500,
-         "details":{  
-            "subtotal":810,
-            "tax":190,
-            "shipping":0,
-            "shipping_discount":0
-         }
-      },
-      "item_list":{  
-         "shipping_address":{  
-            "line1":"Miraflores 222",
-            "city":"Santiago",
-            "country_code":"CL",
-            "phone":"+56 9 1234 5674",
-            "type":"HOME_OR_WORK",
-            "recipient_name":"Andres Roa"
-         },
-         "shipping_method":"DIGITAL",
-         "items":[  
-            {  
-               "sku":"1231232",
-               "name":"Destornillador 2344",
-               "description":"Destornillador SCL - ONT",
-               "quantity":1,
-               "price":4500,
-               "tax":0
-            }
-         ]
-      }
-   },
-   "redirect_urls":{  
-      "return_url":"https://requestb.in/sfoogtsf",
-      "cancel_url":"https://chao.com"
-   },
-   "additional_attributes":{  
-      "capture_token":"87a0155d-5ff9-d792-93c5-c7837d800aa5",
-      "remember_capture":true
-   }
-}'
+   "additional_attributes": {
+   	"capture_token": "13b7c0f0-619b-ccf2-83e5-f33bcf2c4cd1"
+  }
+ }'
  ```
 **Detalle de los Campos de la Petición**
 
@@ -124,12 +123,11 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 {
     "intent": "sale",
     "additional_attributes": {
-        "capture_token": "87a0155d-5ff9-d792-93c5-c7837d800aa5",
-        "remember_capture": true
+        "capture_token": "13b7c0f0-619b-ccf2-83e5-f33bcf2c4cd1"
     },
     "application": "28adb999-7a2e-70b8-c092-e4c16a9e9e0a",
     "redirect_urls": {
-        "return_url": "https://requestb.in/sfoogtsf",
+        "return_url": "https://peinau.azureedge.net/redirections/payment_success.html",
         "cancel_url": "https://chao.com"
     },
     "transaction": {
@@ -170,17 +168,17 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
     },
     "payer": {
         "payer_info": {
-            "documentType": "RUT",
-            "documentNumber": "123123123",
+            "document_type": "RUT",
+            "document_number": "123123123",
             "country": "CL",
             "full_name": "Andres Roa",
             "email": "jlprueba1@quickpay.com"
         },
-        "payment_method": "PEINAU_CAPTURE"
+        "payment_method": "QUICKPAY_TOKEN"
     },
     "links": [
         {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/20c3a7e6-51d4-faa7-3150-79ee0446dc74",
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/aedac5dc-49a2-87db-e373-aa44675951a7",
             "rel": "self",
             "security": [
                 "ApiKey"
@@ -188,17 +186,17 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
             "method": "GET"
         },
         {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/20c3a7e6-51d4-faa7-3150-79ee0446dc74/pay",
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/aedac5dc-49a2-87db-e373-aa44675951a7/pay",
             "rel": "approval_url",
             "method": "REDIRECT"
         },
         {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/20c3a7e6-51d4-faa7-3150-79ee0446dc74/edit",
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/aedac5dc-49a2-87db-e373-aa44675951a7/edit",
             "rel": "update_url",
             "method": "PUT"
         },
         {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/20c3a7e6-51d4-faa7-3150-79ee0446dc74/silent",
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/aedac5dc-49a2-87db-e373-aa44675951a7/silent",
             "rel": "silent_charge",
             "security": [
                 "Jwt"
@@ -206,7 +204,7 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
             "method": "POST"
         },
         {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/20c3a7e6-51d4-faa7-3150-79ee0446dc74/reverse",
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/aedac5dc-49a2-87db-e373-aa44675951a7/reverse",
             "rel": "reverse_method",
             "security": [
                 "Jwt"
@@ -214,11 +212,11 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
             "method": "POST"
         }
     ],
-    "id": "20c3a7e6-51d4-faa7-3150-79ee0446dc74",
-    "create_time": "2017-12-13T15:15:44.477Z",
-    "update_time": "2017-12-13T15:15:44.477Z",
+    "id": "aedac5dc-49a2-87db-e373-aa44675951a7",
+    "create_time": "2018-01-15T15:57:20.191Z",
+    "update_time": "2018-01-15T15:57:20.191Z",
     "state": "created",
-    "invoice_number": "INPA-50000000954"
+    "invoice_number": "INPA-50000001613"
 }
 ```
 **Detalle de los campos de la Respuesta**

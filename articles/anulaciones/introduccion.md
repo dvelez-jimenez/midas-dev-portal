@@ -101,6 +101,7 @@ Obtendrás una respuesta similar a:
 | refunded | La devolución se completó exitosamente   |
 
 **Ejemplo de Anulación fallida**
+
 En este caso enviamos la solicitud de anulación por un monto mayor al de la compra.
 
 Necesitas el **access_token** obtenido en la **Autenticación** y el **id de la intención de pago** generado en el **paso 4**, para ejecutar una petición a la **API de Anulación /refund** de la siguiente forma:
@@ -130,7 +131,7 @@ Obtendrás una respuesta similar a:
 }
 ```
 
-Al consultar con self el estado de la transacción:
+Al consultar el estado de la transacción:
 
 ```
 curl -X GET \
@@ -262,6 +263,6 @@ Obtendrás una respuesta similar a:
 
 ```
 
-Donde podemos observar que el **state** de la transacción continúa siendo **paid** debido a que la anulación no fue procesada.
+Podrás observar que el **state** de la transacción continúa siendo **paid** debido a que la anulación no fue procesada.
   
 [Volver al menú anterior](../pasarela-de-pagos/api-tokenizacion-pago/introduction.md)

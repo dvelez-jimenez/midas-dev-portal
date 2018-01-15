@@ -149,7 +149,7 @@ Con esta opción, no es requerida la aprobación del cliente para ejecutar el ca
 Necesitas el **access_token** obtenido en la **Autenticación** y la **url silent charge** obtenida en el [paso 4](intencion-de-pago.md) para ejecutar una llamada a la **API de Silent Charge /silent** de la siguiente forma:
 
 ```
- curl -v -X POST 'https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/a8cb0e21-acd1-93d7-f623-9a3a4523a2d0/silent' \
+ curl -v -X POST 'https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/aedac5dc-49a2-87db-e373-aa44675951a7/silent' \
  -H "Content-Type: application/json" \
  -H "Authorization: Bearer access_token"
 ```
@@ -159,11 +159,11 @@ Obtendras una respuesta similar a:
 {
     "intent": "sale",
     "additional_attributes": {
-        "capture_token": "c9c19a22-b3b9-6b0b-c295-ab41c898f41c"
+        "capture_token": "13b7c0f0-619b-ccf2-83e5-f33bcf2c4cd1"
     },
     "application": "28adb999-7a2e-70b8-c092-e4c16a9e9e0a",
     "redirect_urls": {
-        "return_url": "https://requestb.in/sfoogtsf",
+        "return_url": "https://peinau.azureedge.net/redirections/payment_success.html",
         "cancel_url": "https://chao.com"
     },
     "transaction": {
@@ -180,7 +180,7 @@ Obtendras una respuesta similar a:
                     "quantity": 1,
                     "price": 4500,
                     "tax": 0,
-                    "_id": "5a29b1144bddb8000f673f1a"
+                    "_id": "5a5ccf5f79c83f0014632599"
                 }
             ],
             "shipping_address": {
@@ -205,8 +205,8 @@ Obtendras una respuesta similar a:
     },
     "payer": {
         "payer_info": {
-            "documentType": "RUT",
-            "documentNumber": "123123123",
+            "document_type": "RUT",
+            "document_number": "123123123",
             "country": "CL",
             "full_name": "Andres Roa",
             "email": "jlprueba1@quickpay.com"
@@ -214,17 +214,18 @@ Obtendras una respuesta similar a:
         "payment_method": "QUICKPAY_TOKEN"
     },
     "links": [],
-    "id": "a8cb0e21-acd1-93d7-f623-9a3a4523a2d0",
-    "create_time": "2017-12-07T21:22:28.944Z",
-    "update_time": "2017-12-07T21:22:46.142Z",
+    "id": "aedac5dc-49a2-87db-e373-aa44675951a7",
+    "create_time": "2018-01-15T15:57:20.191Z",
+    "update_time": "2018-01-15T15:57:42.622Z",
     "state": "paid",
-    "invoice_number": "INPA-50000000916",
+    "invoice_number": "INPA-50000001613",
     "gateway": {
-        "merchantReferenceCode": "INPA-50000000916",
-        "requestID": "5126817655686174204009",
+        "installments_number": 36,
+        "merchantReferenceCode": "INPA-50000001613",
+        "requestID": "5160318622226245704012",
         "decision": "ACCEPT",
         "reasonCode": "100",
-        "requestToken": "Ahj7/wSTFezjNs1vVeBpilF5MQeDvgKi8mIPB3yYGxlHK2GTSTLdIDgL7QwJyYr2cZtmt6rwNIAAMwWk",
+        "requestToken": "Ahj//wSTF73Ojl/8i1lMiiDBlYjWmciPKhWY82VamJcW4Q6B4ClxbhDoHkwNjKPp8MmkmXoxXL8sBgTkxe9zo5f/ItZTAAAA+hPE",
         "purchaseTotals": {
             "currency": "CLP"
         },
@@ -233,35 +234,38 @@ Obtendras una respuesta similar a:
             "amount": "4500",
             "authorizationCode": "570110",
             "avsCode": "1",
-            "authorizedDateTime": "2017-12-07T21:22:46Z",
+            "authorizedDateTime": "2018-01-15T15:57:42Z",
             "processorResponse": "1",
+            "reconciliationID": "02XFZ3HGJBYGMJZL",
             "paymentNetworkTransactionID": "111222",
-            "ownerMerchantID": "falabella",
-            "processorTransactionID": "0c9a962865c44452a8edef0194cfac5c"
+            "ownerMerchantID": "falabella2",
+            "processorTransactionID": "152e471b288543c89e2f33d2fe0ac722"
         },
         "ccCaptureReply": {
             "reasonCode": "100",
-            "requestDateTime": "2017-12-07T21:22:46Z",
-            "amount": "4500"
+            "requestDateTime": "2018-01-15T15:57:42Z",
+            "amount": "4500",
+            "reconciliationID": "02XFZ3HGJBYGMJZL"
         },
-        "additionalProcessorResponse": "0e372a5c-715c-4a50-b90c-ff774fec23f8",
-        "capture_token": "c9c19a22-b3b9-6b0b-c295-ab41c898f41c",
+        "additionalProcessorResponse": "2fd6e9c9-4280-4134-a0a2-a67ee8f79a3c",
+        "capture_token": "13b7c0f0-619b-ccf2-83e5-f33bcf2c4cd1",
         "resume": {
-            "_id": "5a29b1266867b6000fe42a4b",
+            "_id": "5a5ccf76b35dd40014db701a",
             "card_number": {
-                "panLast4": 1111,
-                "panFirst6": 411111
+                "pan_last4": 1111,
+                "pan_first6": 411111
             },
             "authorizations": {
                 "code": "570110"
             },
             "transaction": {
+                "gateway_id": "5160318622226245704012",
                 "type": "CREDIT",
-                "date": "2017-12-07T21:22:46.141Z",
+                "date": "2018-01-15T15:57:42.622Z",
                 "currency": "CLP",
-                "buy_order": "INPA-50000000916",
+                "buy_order": "INPA-50000001613",
                 "amount": 4500,
-                "installments_number": 0
+                "installments_number": 36
             },
             "response": {
                 "code": 100

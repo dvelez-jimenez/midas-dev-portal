@@ -8,6 +8,9 @@ Necesitas el **access_token** obtenido en la **Autenticación** y la **url silen
  curl -v -X POST 'https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/25c30852-33ae-927a-02c9-80bc6c9afb74/silent' \
  -H "Content-Type: application/json" \
  -H "Authorization: Bearer access_token"
+ -d '{
+	"installments_number": 36
+}'
 ```
 Obtendras una respuesta similar a:
 

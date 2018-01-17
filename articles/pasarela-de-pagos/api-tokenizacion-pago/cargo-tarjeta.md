@@ -165,7 +165,7 @@ Posibles estados de la transacción:
 | rejected | Transacción fallida. El cargo no fue realizado |
 | reversed | Tiene al menos una devolución asociada |
 
-Tabla resumen con la descripción de los campos que deben utilizar tus sistemas para obtener la respuesta del pago:
+Descripción de los campos que deben utilizar tus sistemas para obtener la respuesta de un pago exitoso:
 
 | Nombre    | Descripción                               |Tipo|
 | -------- | ---------------------------------------- |-------|

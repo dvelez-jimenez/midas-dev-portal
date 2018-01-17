@@ -157,8 +157,19 @@ Obtendrás una respuesta en formato json. Dicha respuesta contendrá toda la inf
 
 Si el pago fue exitoso, verás el campo **state** con valor **paid** y un objeto llamado **gateway** que contiene la totalidad de información del pago exitoso. Esta información puede variar en formato dependiendo del gateway de pago utilizado. Dentro de **gateway**, verás el objeto llamado **resume**, el cual siempre tendrá la misma estructura y tus sistemas podrán utilizarlo siempre para obtener la información del pago.
 
+Posibles estados de la transacción:
+
+| State    | Definición                               |
+| -------- | ---------------------------------------- |
+| paid  | El cargo fue realizado exitosamente en la cuenta del cliente |
+| rejected | Transacción fallida. El cargo no fue realizado |
+| reversed | Tiene al menos una devolución asociada |
+
+Tabla resumen con la descripción de los campos que deben utilizar tus sistemas para obtener la respuesta del pago:
+
 | Nombre    | Descripción                               |Tipo|
 | -------- | ---------------------------------------- |-------|
+| state  | Identifica el estado del pago |enum|
 | gateway  | Identifica el grupo de campos con la información detallada del pago exitoso |object|
 | gateway.resume | resumen de la información del pago exitoso |object|
 | gateway.resume.id | Identificador interno de la aplicación |string|
@@ -168,12 +179,15 @@ Si el pago fue exitoso, verás el campo **state** con valor **paid** y un objeto
 | gateway.resume.authorizations | Información del código de autorización |object|
 | gateway.resume.authorizations.code | Código de autorización |string|
 | gateway.resume.transaction | Datos de la transacción |object|
-| gateway.resume.transaction.gateway_id | Datos de la transacción |string|
-
-
-
-
-
+| gateway.resume.transaction.gateway_id | Identificador interno de la aplicación |string|
+| gateway.resume.transaction.type | Tipo de transacción |enum (CREDIT / DEBIT)|
+| gateway.resume.transaction.date | Fecha y hora de registro de transacción en el gateway |string|
+| gateway.resume.transaction.currency | Tipo moneda |string|
+| gateway.resume.transaction.buy_order | Número de la orden de compra que el comercio envio en el campo **transaction.gateway_order** de la intención de pago |string|
+| gateway.resume.transaction.amount | Monto total de la compra que el comercio envió en el campo **transaction.amount.total** de la intención de pago |number|
+| gateway.resume.transaction.installments_number | Número de cuotas que el comercio envió en el campo **installments_number** del silent charge |number|
+| gateway.resume.response | Infromación del código de respuesta entregado por el gateway |object|
+| gateway.resume.response.code | Código de respuesta entregado por el gateway |number|
 
 Ejemplo de respuesta Silent charge (Json completo): 
 
@@ -296,15 +310,6 @@ Ejemplo de respuesta Silent charge (Json completo):
     }
 }
 ```
-Cuando el resultado del pago es exitoso, el campo state de la respuesta tendrá el valor **paid** y será posible ver el detalle en **gateway.resume**.
-
-Posibles estados de la transacción:
-
-| State    | Definición                               |
-| -------- | ---------------------------------------- |
-| paid  | El cargo fue realizado exitosamente en la cuenta del cliente |
-| rejected | Transacción fallida. El cargo no fue realizado |
-| reversed | Tiene al menos una devolución asociada |
 
 [Ejemplo de transacción fallida](transaccion-fallida.md)
 

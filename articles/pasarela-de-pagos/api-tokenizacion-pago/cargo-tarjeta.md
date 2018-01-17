@@ -153,7 +153,9 @@ Necesitas el **access_token** obtenido en la **Autenticación** y la **url silen
  -H "Content-Type: application/json" \
  -H "Authorization: Bearer access_token"
 ```
-Obtendras una respuesta similar a:
+Obtendrás una respuesta en formato json. Dicha respuesta contendrá toda la información que previamente has enviado a la intención de pago y dependiendo del resultado del pago, se agrega lo siguiente:
+
+Si el pago fue exitoso, verás el campo **state** con valor **paid** y un objeto llamado **gateway** que contiene la totalidad de información del pago exitoso. Esta información puede variar en formato dependiendo del gateway de pago utilizado. Dentro de **gateway**, verás el objeto llamado **resume**, el cual siempre tendrá la misma estructura y tus sistemas podrán utilizarlo siempre para obtener la información del pago.
 
 ```
 {

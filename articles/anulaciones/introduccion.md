@@ -135,7 +135,7 @@ Al consultar el estado de la transacción:
 
 ```
 curl -X GET \
-  https://api.test.peinau.fif.tech/checkout/payments/7{id} \
+  https://api.test.peinau.fif.tech/checkout/payments/{id} \
   -H 'authorization: access_token' \
  ```
 

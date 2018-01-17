@@ -157,6 +157,26 @@ Obtendrás una respuesta en formato json. Dicha respuesta contendrá toda la inf
 
 Si el pago fue exitoso, verás el campo **state** con valor **paid** y un objeto llamado **gateway** que contiene la totalidad de información del pago exitoso. Esta información puede variar en formato dependiendo del gateway de pago utilizado. Dentro de **gateway**, verás el objeto llamado **resume**, el cual siempre tendrá la misma estructura y tus sistemas podrán utilizarlo siempre para obtener la información del pago.
 
+| Nombre    | Descripción                               |Tipo|
+| -------- | ---------------------------------------- |-------|
+| gateway  | Identifica el grupo de campos con la información detallada del pago exitoso |object|
+| gateway.resume | resumen de la información del pago exitoso |object|
+| gateway.resume.id | Identificador interno de la aplicación |string|
+| gateway.resume.card_number | datos del PAN truncado |object|
+| gateway.resume.card_number.pan_last4 | Últimos 4 dígitos del PAN |number|
+| gateway.resume.card_number.pan_first6 | Primeros 6 dígitos del PAN |number|
+| gateway.resume.authorizations | Información del código de autorización |object|
+| gateway.resume.authorizations.code | Código de autorización |string|
+| gateway.resume.transaction | Datos de la transacción |object|
+| gateway.resume.transaction.gateway_id | Datos de la transacción |string|
+
+
+
+
+
+
+Ejemplo de respuesta Silent charge (Json completo): 
+
 ```
 {
     "intent": "sale",

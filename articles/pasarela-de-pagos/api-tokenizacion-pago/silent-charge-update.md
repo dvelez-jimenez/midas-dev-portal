@@ -1,5 +1,13 @@
 # ¿Necesitas actualizar la información del pago? 
 
+Los campos que podrás actualizar son los siguientes:
+
+* Montos
+* Datos del despacho
+* Lista de productos
+
+**Siempre debes enviar el número de cuotas.**
+
 Puedes enviar la petición de silent charge de la siguiente forma:
 
 Necesitas el **access_token** obtenido en la **Autenticación** y la **url silent charge** obtenida en el [paso 4](intencion-de-pago.md) para ejecutar una llamada a la **API de Silent Charge /silent** de la siguiente forma:
@@ -48,5 +56,4 @@ curl -v -X PUT 'https://api.sandbox.connect.fif.tech/checkout/payments/{id}/sile
  
 ```
 
-Los campos que podras actualizar son los siguientes:
 

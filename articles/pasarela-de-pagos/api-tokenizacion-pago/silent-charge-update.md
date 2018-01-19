@@ -1,4 +1,6 @@
-# Si necesitas actualizar la información del pago, puesdes enviar la petición al silent charge de la siguiente forma:
+# ¿Necesitas actualizar la información del pago? 
+
+Puedes enviar la petición de silent charge de la siguiente forma:
 
 Necesitas el **access_token** obtenido en la **Autenticación** y la **url silent charge** obtenida en el [paso 4](intencion-de-pago.md) para ejecutar una llamada a la **API de Silent Charge /silent** de la siguiente forma:
 
@@ -41,9 +43,6 @@ curl -v -X PUT 'https://api.sandbox.connect.fif.tech/checkout/payments/{id}/sile
             "shipping_discount":0
          }
       }
-   },
-   "additional_attributes":{  
-      "remember_capture":true
    }
 }'
  

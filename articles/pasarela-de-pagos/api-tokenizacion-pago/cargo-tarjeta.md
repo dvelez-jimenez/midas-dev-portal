@@ -154,46 +154,12 @@ curl -v -X PUT 'https://api.sandbox.connect.fif.tech/checkout/payments/{id}/sile
  -H "Content-Type: application/json" \
  -H "Authorization: Bearer access_token"
  -d '{  
-   "installments_number": 36,
-   "transaction":{  
-      "item_list":{  
-         "shipping_method":"DIGITAL",
-	 "items": [
-                {
-                    "sku": "1231232",
-                    "name": "Destornillador 2344",
-                    "description": "Destornillador SCL - ONT",
-                    "quantity": 1,
-                    "price": 4500,
-                    "tax": 0
-                }
-            ],
-         "shipping_address":{  
-            "line1":"Moneda 970, Piso 11",
-            "city":"Santiago",
-            "country_code":"CL",
-            "phone":"+56 9 8762 1244",
-            "type":"HOME_OR_WORK",
-            "recipient_name":"Jhon Doe Son"
-         }
-      },
-      "amount":{  
-         "currency":"CLP",
-         "total":2000,
-         "details":{  
-            "subtotal":2000,
-            "tax":0,
-            "shipping":0,
-            "shipping_discount":0
-         }
-      }
-   },
-   "additional_attributes":{  
-      "remember_capture":true
-   }
-}'
+   	"installments_number": 36,
+     }'
  
 ```
+
+[Si necesitas actualizar los datos del pago](silent-charge-update.md)
 
 Obtendrás una respuesta en formato json. Dicha respuesta contendrá toda la información que previamente has enviado a la intención de pago y dependiendo del resultado del pago, se agrega lo siguiente:
 

@@ -280,7 +280,7 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 
 **Detalle de las URLs generadas:**
 
-- **self**: desde esta URL puedes consultar la información de la captura.
+- **self**: desde esta URL puedes consultar la información de la captura. [Ejemplo de ejecución de Self](self.md).
 - **approval_url**: desde esta URL el cliente debe autorizar el pago.
 - **update_url**: a partir de esta url podrás actualizar ciertos datos de la intención de pago.
 - **silent_charge**: llamando a este endpoint desde la [API silent_charge](cargo-tarjeta.md) puedes ejecutar el cargo a la tarjeta de cŕedito del cliente sin pasar por la intención de pago.

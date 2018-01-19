@@ -143,5 +143,5 @@ curl -X GET \
  ```
 
 La respuesta obtenida es: 
-Status http *500*
-Glosa: *"DOCUMENT_NOT_FOUND"*
+Status http **500**
+Glosa: **"DOCUMENT_NOT_FOUND"**

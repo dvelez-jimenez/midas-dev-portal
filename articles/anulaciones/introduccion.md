@@ -7,7 +7,7 @@ Necesitas el **access_token** obtenido en la **Autenticación** y el **id de la 
   -H 'authorization: Bearer access_token' \
   -H 'content-type: application/json' \
   -d '{
-	"refund_amount":"1000"
+	"refunded_amount":"1000"
 }'
 ```
 

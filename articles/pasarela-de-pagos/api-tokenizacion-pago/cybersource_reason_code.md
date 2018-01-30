@@ -58,7 +58,10 @@
 | 480        | The order is marked for review by Decision Manager. |
 | 481        | The order has been rejected by Decision Manager. |
 | 520        | Soft Decline - The authorization request was approved by the issuing bank but declined by CyberSource based on your Smart Authorization settings |
-| 700        | The order has been rejected by Decision Manager. |
+| 700        | The customer matched the Denied Parties List. Possible action: Reject the customer's order.|
+| 701        | Export bill_country/ship_country match. Possible action: Reject the customer's order.|
+| 702        | Export email_country match. Possible action: Reject the customer's order.|
+| 703        | Export hostname_country/ip_country match. Possible action: Reject the customer's order.|
 
 
 > Información tomada de: https://support.cybersource.com/cybskb/index?page=content&id=C1401&actp=search&viewlocale=en_US&searchid=1516825358000

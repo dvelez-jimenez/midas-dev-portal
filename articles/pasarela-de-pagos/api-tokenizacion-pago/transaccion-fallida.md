@@ -88,8 +88,8 @@ Obtendras una respuesta similar a:
             "reasonCode": "202"
         },
         "error": {
-            "error_code": "202"
-            "error_description": "CYBERSOURCE: Expired card"
+            "error_code": "GW01_202"
+            "error_description": "Expired card"
 	    "meta_data": {
           	  "soap_response": "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope"
         },

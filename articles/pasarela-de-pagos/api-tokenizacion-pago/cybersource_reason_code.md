@@ -41,16 +41,11 @@
 | 250         | The request was received, but there was a timeout at the payment processor. Possible action: To avoid duplicating the transaction, do not resend the request until you have reviewed the transaction status in the Business Center. |
 | 254         | Stand-alone credits are not allowed. Possible action: Submit a follow-on credit by including a request ID in the credit request. A follow-on credit must be requested within 60 days of the authorization. To process stand-alone credits, contact your CyberSource account representative to find out if your processor supports stand-alone credits. |
 | 400         | Soft Decline - Fraud score exceeds threshold. Possible action: You can capture the authorization, but consider reviewing the order for the possibility of fraud. |
-| 450         | Apartment number missing or not found. Possible action: Ask the customer to verify the address information and
-resend the request. |
-| 451         | Insufficient address information. Possible action: Ask the customer to verify the address information and
-resend the request. |
-| 452         | House/Box number not found on street. Possible action: Ask the customer to verify the address information and
-resend the request. |
-| 453         | Multiple address matches were found. Possible action: Ask the customer to verify the address information and
-resend the request. |
-| 454         | P.O. Box identifier not found or out of range. Possible action: Ask the customer to verify the address information and
-resend the request. |
+| 450         | Apartment number missing or not found. Possible action: Ask the customer to verify the address information and resend the request. |
+| 451         | Insufficient address information. Possible action: Ask the customer to verify the address information and resend the request. |
+| 452         | House/Box number not found on street. Possible action: Ask the customer to verify the address information and resend the request. |
+| 453         | Multiple address matches were found. Possible action: Ask the customer to verify the address information and resend the request. |
+| 454         | P.O. Box identifier not found or out of range. Possible action: Ask the customer to verify the address information and resend the request. |
 | 455         | Route service identifier not found or out of range. Possible action: Ask the customer to verify the address information and resend the request. |
 | 456         | Street name not found in Postal code. Possible action: Ask the customer to verify the address information and resend the request. |
 | 457         | Postal code not found in database. Possible action: Ask the customer to verify the address information and resend the request. |

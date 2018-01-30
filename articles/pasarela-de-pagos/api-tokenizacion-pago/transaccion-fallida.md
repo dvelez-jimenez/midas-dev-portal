@@ -90,6 +90,8 @@ Obtendras una respuesta similar a:
         "error": {
             "error_code": "202"
             "error_description": "CYBERSOURCE: Expired card"
+	    "meta_data": {
+          	  "soap_response": "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope"
         },
         "amount": 4500,
         "capture_token": "e246c3a8-da94-8394-d9f7-77d8445b9d46"

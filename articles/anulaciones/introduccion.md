@@ -105,7 +105,7 @@ Al consultar el estado de la transacción (self):
 
 ```
 curl -X GET \
-  https://api.test.peinau.fif.tech/checkout/payments/{id} \
+  https://api.sandbox.connect.fif.tech/checkout/payments/{id} \
   -H 'authorization: access_token' \
  ```
 

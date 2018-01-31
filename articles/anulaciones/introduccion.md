@@ -1,4 +1,4 @@
-# API REST de Anulaciones
+# API REST de Anulaciones / refund
 
 Necesitas el **access_token** obtenido en la **Autenticación** y el **id de la intención de pago** generado en el **paso 4**, para ejecutar una petición a la **API de Anulación /refund** de la siguiente forma:
 

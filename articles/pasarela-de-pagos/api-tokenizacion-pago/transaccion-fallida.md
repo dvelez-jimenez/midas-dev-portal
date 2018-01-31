@@ -15,87 +15,109 @@ Necesitas el **access_token** obtenido en la **Autenticación** y la **url silen
 Obtendras una respuesta similar a:
 
 ```
-{
-    "intent": "sale",
-    "additional_attributes": {
-        "capture_token": "e246c3a8-da94-8394-d9f7-77d8445b9d46"
-    },
-    "application": "28adb999-7a2e-70b8-c092-e4c16a9e9e0a",
-    "redirect_urls": {
-        "return_url": "https://peinau.azureedge.net/redirections/payment_success.html",
-        "cancel_url": "https://chao.com"
-    },
-    "transaction": {
-        "reference_id": "OD0000233",
-        "description": "Transaction detailed description",
-        "soft_descriptor": "Short Description",
-        "item_list": {
-            "shipping_method": "DIGITAL",
-            "items": [
-                {
-                    "sku": "1231232",
-                    "name": "Destornillador 2344",
-                    "description": "Destornillador SCL - ONT",
-                    "quantity": 1,
-                    "price": 4500,
-                    "tax": 0,
-                    "_id": "5a541a1adef5c0001432d1c1"
-                }
-            ],
-            "shipping_address": {
-                "line1": "Miraflores 222",
-                "city": "Santiago",
-                "country_code": "CL",
-                "phone": "+56 9 1234 5674",
-                "type": "HOME_OR_WORK",
-                "recipient_name": "Andres Roa"
+{  
+   "intent":"sale",
+   "additional_attributes":{  
+      "capture_token":"c923e853-a8ce-7a53-508d-4974ffe90aca",
+      "remember_capture":false
+   },
+   "application":"195d24b8-ff4b-1803-a405-cbcd5e8a8b7d",
+   "redirect_urls":{  
+      "return_url":"https://requestb.in/sfoogtsf",
+      "cancel_url":"https://chao.com"
+   },
+   "transaction":{  
+      "reference_id":"OD0000233",
+      "description":"Transaction detailed description",
+      "soft_descriptor":"Short Description",
+      "item_list":{  
+         "shipping_method":"DIGITAL",
+         "items":[  
+            {  
+               "sku":"1231232",
+               "name":"Destornillador 2344",
+               "description":"Destornillador SCL - ONT",
+               "quantity":1,
+               "price":4500,
+               "tax":0,
+               "_id":"5a71e36e0f94ef000f1ce8fd"
             }
-        },
-        "amount": {
-            "currency": "CLP",
-            "total": 4500,
-            "details": {
-                "subtotal": 810,
-                "tax": 190,
-                "shipping": 0,
-                "shipping_discount": 0
+         ],
+         "shipping_address":{  
+            "line1":"Miraflores 222",
+            "city":"Santiago",
+            "country_code":"CL",
+            "phone":"+56 9 1234 5674",
+            "type":"HOME_OR_WORK",
+            "recipient_name":"Andres Roa"
+         }
+      },
+      "amount":{  
+         "currency":"CLP",
+         "total":4500,
+         "details":{  
+            "subtotal":810,
+            "tax":190,
+            "shipping":0,
+            "shipping_discount":0
+         }
+      },
+      "gateway_order":"INPA-0000004017"
+   },
+   "payer":{  
+      "payer_info":{  
+         "documentType":"RUT",
+         "documentNumber":"123123123",
+         "country":"CL",
+         "full_name":"Andres Roa",
+         "email":"jlprueba2@quickpay.com"
+      },
+      "payment_method":"QUICKPAY_TOKEN"
+   },
+   "links":[  
+
+   ],
+   "id":"d33ee1f8-df10-edcc-9762-949aa2f5ed24",
+   "create_time":"2018-01-31T15:40:30.416Z",
+   "update_time":"2018-01-31T15:40:42.148Z",
+   "state":"rejected",
+   "invoice_number":"INPA-0000004017",
+   "gateway":{  
+      "error":{  
+         "error_code":"GW01_481",
+         "error_description":"The order has been rejected by Decision Manager.",
+         "meta_data":{  
+            "gateway_data":{  
+               "merchantReferenceCode":"INPA-0000004017",
+               "requestID":"5174132415356813504008",
+               "decision":"REJECT",
+               "reasonCode":"481",
+               "requestToken":"Ahjz7wSTGH2DAgngxO4IigFLgFisvPJgbGUfX14dJMvRiuX5YATkxh9gwIJ4MTuCAAAAbQ1c",
+               "afsReply":{  
+                  "reasonCode":"100",
+                  "afsResult":"41",
+                  "hostSeverity":"1",
+                  "consumerLocalTime":"12:40:41",
+                  "addressInfoCode":"MM-BIN^UNV-ADDR",
+                  "internetInfoCode":"FREE-EM",
+                  "suspiciousInfoCode":"RISK-TB",
+                  "velocityInfoCode":"VELI-FP^VELI-TIP^VELL-FP^VELL-TIP^VELS-TIP",
+                  "scoreModelUsed":"default_lac",
+                  "binCountry":"US",
+                  "cardAccountType":"Visa Gold",
+                  "cardScheme":"VISA CREDIT",
+                  "cardIssuer":"RIVER VALLEY CREDIT UNION",                  
+               }
+            },
+            "decisionReply":{  
+               "casePriority":"2",
+               "activeProfileReply":""
             }
-        }
-    },
-    "payer": {
-        "payer_info": {
-            "document_type": "RUT",
-            "document_number": "123123123",
-            "country": "CL",
-            "full_name": "Andres Roa",
-            "email": "jlprueba1@quickpay.com"
-        },
-        "payment_method": "QUICKPAY_TOKEN"
-    },
-    "links": [],
-    "id": "b81f9f63-3a21-2528-59cf-65614071da78",
-    "create_time": "2018-01-09T01:25:46.942Z",
-    "update_time": "2018-01-09T01:26:13.198Z",
-    "state": "rejected",
-    "invoice_number": "INPA-50000001456",
-    "gateway": {
-        "merchantReferenceCode": "INPA-50000001456",
-        "requestID": "5154611727996227304008",
-        "decision": "REJECT",
-        "reasonCode": "202",
-        "requestToken": "Ahj77wSTF26bmE8lkjpIilGnxJBrwgKjT4kg14SYGxlH0hMrSTL0Yrl+WAE5MXbpuYTyWSOkgAAAywvw",
-        "ccAuthReply": {
-            "reasonCode": "202"
-        },
-        "error": {
-            "error_code": "GW01_202"
-            "error_description": "Expired card"
-	    "meta_data": {
-          	  "soap_response": "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope"
-        },
-        "amount": 4500,
-        "capture_token": "e246c3a8-da94-8394-d9f7-77d8445b9d46"
-    }
+         }
+      },
+      "amount":4500,
+      "capture_token":"c923e853-a8ce-7a53-508d-4974ffe90aca"
+   }
 }
 ```
 

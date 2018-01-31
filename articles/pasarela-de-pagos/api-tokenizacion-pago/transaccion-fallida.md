@@ -115,7 +115,7 @@ Obtendras una respuesta similar a:
 }
 ```
 
-Cuando el resultado del pago es fallido, el campo state de la respuesta tendrá el valor **rejected** y será posible ver el detalle en **gateway.error**.
+Para este caso, cuando el resultado del silent es fallido, el campo state de la respuesta tendrá el valor **rejected** y será posible ver el detalle en **gateway.error**.
 
 Al consultar el estado de la transacción (self):
 
@@ -224,3 +224,113 @@ Obtendrás una respuesta similar a:
     }
 }
 ```
+
+## Otros rechazos (HTTP codes mayores a 400)
+
+Necesitas el **access_token** obtenido en la **Autenticación** y la **url silent charge** obtenida en el [paso 4](intencion-de-pago.md) para ejecutar una llamada a la **API de Silent Charge /silent** de la siguiente forma:
+
+Enviando un valor errado en el id del pago para generar el error:
+
+```
+ curl -v -X POST 'https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/xxx-xxx-xxx-xxx/silent' \
+ -H "Content-Type: application/json" \
+ -H "Authorization: Bearer access_token"
+ -d '{
+	"installments_number": 36
+}''
+```
+
+Obtendrás una respuesta similar a:
+
+```
+{
+    "error_code": "DOCUMENT_NOT_FOUND",
+    "error_description": "the document you requested is not found",
+    "meta_data": {
+        "id_not_found": "d33ee1f8-df10-edcc-9762-949aa2f5ed2",
+        "collection_name": "dbs/app-checkout-quickpay/colls/payment_intentions"
+    }
+}
+```
+
+> El http code de esta respuesta es 404 not found
+
+Al consultar el estado de la transacción (self):
+
+```
+curl -X GET \
+  https://api.sandbox.connect.fif.tech/checkout/payments/{id} \
+  -H 'authorization: access_token' \
+ ```
+ 
+ Obtenndrás una respuesta similar a:
+ 
+ ```
+ {
+    "intent": "sale",
+    "additional_attributes": {
+        "capture_token": "c923e853-a8ce-7a53-508d-4974ffe90aca"
+    },
+    "application": "195d24b8-ff4b-1803-a405-cbcd5e8a8b7d",
+    "redirect_urls": {
+        "return_url": "https://requestb.in/sfoogtsf",
+        "cancel_url": "https://chao.com"
+    },
+    "transaction": {
+        "reference_id": "OD0000233",
+        "description": "Transaction detailed description",
+        "soft_descriptor": "Short Description",
+        "item_list": {
+            "shipping_method": "DIGITAL",
+            "items": [
+                {
+                    "sku": "1231232",
+                    "name": "Destornillador 2344",
+                    "description": "Destornillador SCL - ONT",
+                    "quantity": 1,
+                    "price": 4500,
+                    "tax": 0,
+                    "_id": "5a71f5a4c68669000f63df10"
+                }
+            ],
+            "shipping_address": {
+                "line1": "Miraflores 222",
+                "city": "Santiago",
+                "country_code": "CL",
+                "phone": "+56 9 1234 5674",
+                "type": "HOME_OR_WORK",
+                "recipient_name": "Andres Roa"
+            }
+        },
+        "amount": {
+            "currency": "CLP",
+            "total": 4500,
+            "details": {
+                "subtotal": 810,
+                "tax": 190,
+                "shipping": 0,
+                "shipping_discount": 0
+            }
+        },
+        "gateway_order": "INPA-0000004018"
+    },
+    "payer": {
+        "payer_info": {
+            "documentType": "RUT",
+            "documentNumber": "123123123",
+            "country": "CL",
+            "full_name": "Andres Roa",
+            "email": "jlprueba2@quickpay.com"
+        },
+        "payment_method": "QUICKPAY_TOKEN"
+    },
+    "links": [],
+    "id": "0bb99861-b6ed-b7f5-72a8-7e992d0b3907",
+    "create_time": "2018-01-31T16:58:12.242Z",
+    "update_time": "2018-01-31T16:58:12.242Z",
+    "state": "created",
+    "invoice_number": "INPA-0000004018"
+}
+ ```
+ 
+Para este caso, cuando el resultado del silent es fallido, el campo state de la respuesta (self) mantendrá el valor **created**.

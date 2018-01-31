@@ -1,7 +1,7 @@
 # Ejemplo de silent charge fallido
 
 
-## HTTP 200 Rechazado por el Gateway
+## Rechazado por el Gateway (HTTP 200)
 
 Necesitas el **access_token** obtenido en la **Autenticación** y la **url silent charge** obtenida en el [paso 4](intencion-de-pago.md) para ejecutar una llamada a la **API de Silent Charge /silent** de la siguiente forma:
 

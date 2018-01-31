@@ -148,7 +148,7 @@ Obtendrás una respuesta similar a:
 {
     "intent": "sale",
     "additional_attributes": {
-        "capture_token": "cb9268d1-d966-0ae4-0d6d-8909c078c3d7"
+        "capture_token": "c6496332-7a67-9f15-be83-b48eee4eee0c"
     },
     "application": "195d24b8-ff4b-1803-a405-cbcd5e8a8b7d",
     "redirect_urls": {
@@ -169,7 +169,7 @@ Obtendrás una respuesta similar a:
                     "quantity": 1,
                     "price": 4500,
                     "tax": 0,
-                    "_id": "5a5ce2ca25d349000f7ed52e"
+                    "_id": "5a71c6abc68669000f63df09"
                 }
             ],
             "shipping_address": {
@@ -190,7 +190,8 @@ Obtendrás una respuesta similar a:
                 "shipping": 0,
                 "shipping_discount": 0
             }
-        }
+        },
+        "gateway_order": "INPA-0000004014"
     },
     "payer": {
         "payer_info": {
@@ -198,24 +199,23 @@ Obtendrás una respuesta similar a:
             "documentNumber": "123123123",
             "country": "CL",
             "full_name": "Andres Roa",
-            "email": "jlprueba1@quickpay.com"
+            "email": "jlprueba2@quickpay.com"
         },
         "payment_method": "QUICKPAY_TOKEN"
     },
     "links": [],
-    "id": "78f5a033-2b76-b20f-59dc-b624495db45c",
-    "create_time": "2018-01-15T17:20:10.893Z",
-    "update_time": "2018-01-15T17:20:47.003Z",
+    "id": "23dd4bb1-1597-c62c-6fa8-1a6f8b7c80a0",
+    "create_time": "2018-01-31T13:37:48.116Z",
+    "update_time": "2018-01-31T13:38:03.780Z",
     "state": "paid",
-    "invoice_number": "INPA-0000003441",
+    "invoice_number": "INPA-0000004014",
     "gateway": {
-        "payment_flow": "with_token",
-        "installments_number": "1",
-        "merchantReferenceCode": "INPA-0000003441",
-        "requestID": "5160368463946965504008",
+        "installments_number": 3,
+        "merchantReferenceCode": "INPA-0000004014",
+        "requestID": "5174058833396417504011",
         "decision": "ACCEPT",
         "reasonCode": "100",
-        "requestToken": "Ahj//wSTF75/oSfnCtAIiiDBlYjWmcqPKhWY82rXbJclx8ZUwClyXHxlTEwNjKPp8MmkmXoxXL8sBgTkxe+f6En5wrQCAAAA1QRt",
+        "requestToken": "Ahj//wSTGHx9l6KtfSMLiiDBlYjWmcePKh2oc6DIopcIJKnGgClwgkqcaEwNjKPr8MmkmXoxXL8sBgTkxh8fZeirX0jCwAAAwgdd",
         "purchaseTotals": {
             "currency": "CLP"
         },
@@ -224,23 +224,23 @@ Obtendrás una respuesta similar a:
             "amount": "4500",
             "authorizationCode": "570110",
             "avsCode": "1",
-            "authorizedDateTime": "2018-01-15T17:20:46Z",
+            "authorizedDateTime": "2018-01-31T13:38:03Z",
             "processorResponse": "1",
-            "reconciliationID": "02XFZ3JGJBYGMUW6",
+            "reconciliationID": "02XFZ3GGJCZCNAHQ",
             "paymentNetworkTransactionID": "111222",
             "ownerMerchantID": "falabella2",
-            "processorTransactionID": "745153081f0d48fd8c55e4926a948729"
+            "processorTransactionID": "5d633c05702e4099b1aad55000541819"
         },
         "ccCaptureReply": {
             "reasonCode": "100",
-            "requestDateTime": "2018-01-15T17:20:46Z",
+            "requestDateTime": "2018-01-31T13:38:03Z",
             "amount": "4500",
-            "reconciliationID": "02XFZ3JGJBYGMUW6"
+            "reconciliationID": "02XFZ3GGJCZCNAHQ"
         },
-        "additionalProcessorResponse": "3fb78121-eff5-45ff-8337-b0ea038e54f8",
-        "capture_token": "cb9268d1-d966-0ae4-0d6d-8909c078c3d7",
+        "additionalProcessorResponse": "c1b317b9-92e2-4962-af34-94dc7c47a050",
+        "capture_token": "c6496332-7a67-9f15-be83-b48eee4eee0c",
         "resume": {
-            "_id": "5a5ce2ef25d349000f7ed530",
+            "_id": "5a71c6bb0f94ef000f1ce8f7",
             "card_number": {
                 "pan_last4": 1111,
                 "pan_first6": 411111
@@ -249,13 +249,13 @@ Obtendrás una respuesta similar a:
                 "code": "570110"
             },
             "transaction": {
-                "gateway_id": "5160368463946965504008",
+                "gateway_id": "5174058833396417504011",
                 "type": "CREDIT",
-                "date": "2018-01-15T17:20:47.002Z",
+                "date": "2018-01-31T13:38:03.776Z",
                 "currency": "CLP",
-                "buy_order": "INPA-0000003441",
+                "buy_order": "INPA-0000004014",
                 "amount": 4500,
-                "installments_number": 1
+                "installments_number": 3
             },
             "response": {
                 "code": 100

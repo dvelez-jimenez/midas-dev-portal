@@ -1,4 +1,4 @@
-# Ejemplo de transacción fallida
+# Ejemplo de silent charge fallido
 
 En este caso enviamos el token de una tarjeta vencida en la petición de la intención de pago.
 

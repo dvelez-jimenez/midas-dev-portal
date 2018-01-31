@@ -241,89 +241,123 @@ curl -X GET \
 Obtendrás una respuesta similar a:
 
 ```
-{  
-   "intent":"sale",
-   "additional_attributes":{  
-      "capture_token":"c6496332-7a67-9f15-be83-b48eee4eee0c"
-   },
-   "application":"195d24b8-ff4b-1803-a405-cbcd5e8a8b7d",
-   "redirect_urls":{  
-      "return_url":"https://requestb.in/sfoogtsf",
-      "cancel_url":"https://chao.com"
-   },
-   "transaction":{  
-      "reference_id":"OD0000233",
-      "description":"Transaction detailed description",
-      "soft_descriptor":"Short Description",
-      "item_list":{  
-         "shipping_method":"DIGITAL",
-         "items":[  
-            {  
-               "sku":"1231232",
-               "name":"Destornillador 2344",
-               "description":"Destornillador SCL - ONT",
-               "quantity":1,
-               "price":4500,
-               "tax":0,
-               "_id":"5a71c6abc68669000f63df09"
+{
+    "intent": "sale",
+    "additional_attributes": {
+        "capture_token": "614e675f-8265-b53d-7d90-7c219d804574"
+    },
+    "application": "195d24b8-ff4b-1803-a405-cbcd5e8a8b7d",
+    "redirect_urls": {
+        "return_url": "https://requestb.in/sfoogtsf",
+        "cancel_url": "https://chao.com"
+    },
+    "transaction": {
+        "reference_id": "OD0000233",
+        "description": "Transaction detailed description",
+        "soft_descriptor": "Short Description",
+        "item_list": {
+            "shipping_method": "DIGITAL",
+            "items": [
+                {
+                    "sku": "1231232",
+                    "name": "Destornillador 2344",
+                    "description": "Destornillador SCL - ONT",
+                    "quantity": 1,
+                    "price": 4500,
+                    "tax": 0,
+                    "_id": "5a720eba0f94ef000f1ce90c"
+                }
+            ],
+            "shipping_address": {
+                "line1": "Miraflores 222",
+                "city": "Santiago",
+                "country_code": "CL",
+                "phone": "+56 9 1234 5674",
+                "type": "HOME_OR_WORK",
+                "recipient_name": "Andres Roa"
             }
-         ],
-         "shipping_address":{  
-            "line1":"Miraflores 222",
-            "city":"Santiago",
-            "country_code":"CL",
-            "phone":"+56 9 1234 5674",
-            "type":"HOME_OR_WORK",
-            "recipient_name":"Andres Roa"
-         }
-      },
-      "amount":{  
-         "currency":"CLP",
-         "total":4500,
-         "details":{  
-            "subtotal":810,
-            "tax":190,
-            "shipping":0,
-            "shipping_discount":0
-         }
-      },
-      "gateway_order":"INPA-0000004014"
-   },
-   "payer":{  
-      "payer_info":{  
-         "documentType":"RUT",
-         "documentNumber":"123123123",
-         "country":"CL",
-         "full_name":"Andres Roa",
-         "email":"jlprueba2@quickpay.com"
-      },
-      "payment_method":"QUICKPAY_TOKEN"
-   },
-   "links":[  
-
-   ],
-   "id":"23dd4bb1-1597-c62c-6fa8-1a6f8b7c80a0",
-   "create_time":"2018-01-31T13:37:48.116Z",
-   "update_time":"2018-01-31T15:13:53.784Z",
-   "state":"refunded",
-   "invoice_number":"INPA-0000004014",
-   "gateway":{  
-      "refunded_amount":"1000",
-      "merchantReferenceCode":"INPA-0000004014",
-      "requestID":"5174116336326044504008",
-      "decision":"ACCEPT",
-      "reasonCode":"100",
-      "requestToken":"Ahj/7wSTGH1J4j7Lc0/IiiDBlYjWmcePKh2oc6DIopcIJKnGgClwCxV6fkwK+h9fhk0ky9GK5fliBOTGHx9l6KtfSMLASxr/",
-      "purchaseTotals":{  
-         "currency":"CLP"
-      },
-      "ccCreditReply":{  
-         "reasonCode":"100",
-         "requestDateTime":"2018-01-31T15:13:53Z",
-         "amount":"1000",
-         "reconciliationID":"02XFZ3GGJCZCNAHQ"
-      }
-   }
+        },
+        "amount": {
+            "currency": "CLP",
+            "total": 4500,
+            "details": {
+                "subtotal": 810,
+                "tax": 190,
+                "shipping": 0,
+                "shipping_discount": 0
+            }
+        },
+        "gateway_order": "INPA-0000004026"
+    },
+    "payer": {
+        "payer_info": {
+            "documentType": "RUT",
+            "documentNumber": "123123123",
+            "country": "CL",
+            "full_name": "Andres Roa",
+            "email": "jlprueba2@quickpay.com"
+        },
+        "payment_method": "QUICKPAY_TOKEN"
+    },
+    "links": [],
+    "id": "74dd75bc-56d2-aa75-95e7-be921fb2da38",
+    "create_time": "2018-01-31T18:45:14.111Z",
+    "update_time": "2018-01-31T18:45:24.786Z",
+    "state": "paid",
+    "invoice_number": "INPA-0000004026",
+    "gateway": {
+        "installments_number": 3,
+        "merchantReferenceCode": "INPA-0000004026",
+        "requestID": "5174243244016963304012",
+        "decision": "ACCEPT",
+        "reasonCode": "100",
+        "requestToken": "Ahj//wSTGH8MwB4n7jpMiiERpHmUZkGFKiMZTS1WZKNPiqNTJAVGnxVGpkkwNjKPr8MmkmXoxXL8sBgTkxh/DMAeJ+46TAAA6QQU",
+        "purchaseTotals": {
+            "currency": "CLP"
+        },
+        "ccAuthReply": {
+            "reasonCode": "100",
+            "amount": "4500",
+            "authorizationCode": "570110",
+            "avsCode": "1",
+            "authorizedDateTime": "2018-01-31T18:45:24Z",
+            "processorResponse": "1",
+            "reconciliationID": "D4GLQLABJD1J4ZV2",
+            "paymentNetworkTransactionID": "111222",
+            "ownerMerchantID": "falabella2",
+            "processorTransactionID": "3d8c62c368e84e74ae65320a215d0c04"
+        },
+        "ccCaptureReply": {
+            "reasonCode": "100",
+            "requestDateTime": "2018-01-31T18:45:24Z",
+            "amount": "4500",
+            "reconciliationID": "D4GLQLABJD1J4ZV2"
+        },
+        "additionalProcessorResponse": "b67c21db-8200-43bf-8c68-6de58ac5e79f",
+        "capture_token": "614e675f-8265-b53d-7d90-7c219d804574",
+        "resume": {
+            "_id": "5a720ec4c68669000f63df22",
+            "card_number": {
+                "pan_last4": 1111,
+                "pan_first6": 411111
+            },
+            "authorizations": {
+                "code": "570110"
+            },
+            "transaction": {
+                "gateway_id": "5174243244016963304012",
+                "type": "CREDIT",
+                "date": "2018-01-31T18:45:24.785Z",
+                "currency": "CLP",
+                "buy_order": "INPA-0000004026",
+                "amount": 4500,
+                "installments_number": 3
+            },
+            "response": {
+                "code": 100
+            }
+        }
+    }
 }
 ```
 

@@ -196,9 +196,9 @@ Obtendrás una respuesta similar a:
 }
 ```
 
-**Ejemplo de Anulación fallida**
+## Ejemplo de Anulación fallida
 
-En este caso enviamos la solicitud de anulación por un monto mayor al de la compra.
+En este caso enviamos la solicitud de anulación enviando letras en el refunded_ amount para generar el error.
 
 Necesitas el **access_token** obtenido en la **Autenticación** y el **id de la intención de pago** generado en el **paso 4**, para ejecutar una petición a la **API de Anulación /refund** de la siguiente forma:
 

@@ -111,7 +111,6 @@ curl -X GET \
 
 Obtendrás una respuesta similar a:
 
-```
 
 **Ejemplo de Anulación fallida**
 

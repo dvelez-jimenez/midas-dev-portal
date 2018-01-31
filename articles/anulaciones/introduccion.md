@@ -17,9 +17,9 @@ Obtendrás una respuesta similar a:
 {
     "intent": "sale",
     "additional_attributes": {
-        "capture_token": "5d90b091-d9a3-429b-5faf-46150ebb64eb"
+        "capture_token": "c6496332-7a67-9f15-be83-b48eee4eee0c"
     },
-    "application": "28adb999-7a2e-70b8-c092-e4c16a9e9e0a",
+    "application": "195d24b8-ff4b-1803-a405-cbcd5e8a8b7d",
     "redirect_urls": {
         "return_url": "https://requestb.in/sfoogtsf",
         "cancel_url": "https://chao.com"
@@ -38,7 +38,7 @@ Obtendrás una respuesta similar a:
                     "quantity": 1,
                     "price": 4500,
                     "tax": 0,
-                    "_id": "5a294a3f4bddb8000f673eff"
+                    "_id": "5a71c6abc68669000f63df09"
                 }
             ],
             "shipping_address": {
@@ -59,7 +59,8 @@ Obtendrás una respuesta similar a:
                 "shipping": 0,
                 "shipping_discount": 0
             }
-        }
+        },
+        "gateway_order": "INPA-0000004014"
     },
     "payer": {
         "payer_info": {
@@ -67,32 +68,32 @@ Obtendrás una respuesta similar a:
             "documentNumber": "123123123",
             "country": "CL",
             "full_name": "Andres Roa",
-            "email": "jlprueba1@quickpay.com"
+            "email": "jlprueba2@quickpay.com"
         },
         "payment_method": "QUICKPAY_TOKEN"
     },
     "links": [],
-    "id": "5dbe2208-c819-4f0e-d4fd-d451d479fef2",
-    "create_time": "2017-12-07T14:03:43.534Z",
-    "update_time": "2017-12-07T14:06:54.530Z",
+    "id": "23dd4bb1-1597-c62c-6fa8-1a6f8b7c80a0",
+    "create_time": "2018-01-31T13:37:48.116Z",
+    "update_time": "2018-01-31T15:13:53.784Z",
     "state": "refunded",
-    "invoice_number": "INPA-50000000901",
+    "invoice_number": "INPA-0000004014",
     "gateway": {
-        "refund_amount": "1000",
-        "merchantReferenceCode": "INPA-50000000901",
-        "requestID": "5126556142216262304009",
+        "refunded_amount": "1000",
+        "merchantReferenceCode": "INPA-0000004014",
+        "requestID": "5174116336326044504008",
         "decision": "ACCEPT",
         "reasonCode": "100",
-        "requestToken": "Ahj77wSTFelCIa/pQcEJilF5MPYrQAKi8mHsapCYFfQ5WwyaSZbpAcBfbAnJivSe7384Y3wEAAAA2QbX",
+        "requestToken": "Ahj/7wSTGH1J4j7Lc0/IiiDBlYjWmcePKh2oc6DIopcIJKnGgClwCxV6fkwK+h9fhk0ky9GK5fliBOTGHx9l6KtfSMLASxr/",
         "purchaseTotals": {
             "currency": "CLP"
         },
         "ccCreditReply": {
             "reasonCode": "100",
-            "requestDateTime": "2017-12-07T14:06:54Z",
-            "amount": "1000"
-        },
-        "message": "payment refunded"
+            "requestDateTime": "2018-01-31T15:13:53Z",
+            "amount": "1000",
+            "reconciliationID": "02XFZ3GGJCZCNAHQ"
+        }
     }
 }
 ```

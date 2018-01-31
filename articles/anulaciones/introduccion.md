@@ -111,7 +111,7 @@ Necesitas el **access_token** obtenido en la **Autenticación** y el **id de la 
   -H 'authorization: Bearer access_token' \
   -H 'content-type: application/json' \
   -d '{
-	"refund_amount":"10000"
+	"refund_amount":"100kj"
 }'
 ```
 

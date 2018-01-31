@@ -101,6 +101,18 @@ Obtendrás una respuesta similar a:
 | -------- | ---------------------------------------- |
 | refunded | La devolución se completó exitosamente   |
 
+Al consultar el estado de la transacción (self):
+
+```
+curl -X GET \
+  https://api.test.peinau.fif.tech/checkout/payments/{id} \
+  -H 'authorization: access_token' \
+ ```
+
+Obtendrás una respuesta similar a:
+
+```
+
 **Ejemplo de Anulación fallida**
 
 En este caso enviamos la solicitud de anulación por un monto mayor al de la compra.
@@ -135,11 +147,11 @@ Obtendrás una respuesta similar a:
 }
 ```
 
-Al consultar el estado de la transacción:
+Al consultar el estado de la transacción (self):
 
 ```
 curl -X GET \
-  https://api.test.peinau.fif.tech/checkout/payments/{id} \
+  https://api.sandbox.connect.fif.tech/checkout/payments/{id} \
   -H 'authorization: access_token' \
  ```
 

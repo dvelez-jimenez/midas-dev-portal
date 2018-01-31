@@ -119,15 +119,18 @@ Obtendrás una respuesta similar a:
 
 ```
 {
-    "reversal_amount": "10000",
-    "requestID": "5160368849236752404011",
-    "decision": "ERROR",
-    "reasonCode": "150",
-    "requestToken": "Ahj/7wSTF76A/5Mr7Q4riiDBlYjWmcqPKhWY82rXbJclx8ZUwClyXHxmNkwOnEH08ADSTL0Yrl+WIE5MXvn+hJ+cK0Ag/Sjj",
-    "ccCreditReply": {
-        "reasonCode": "150"
-    },
-    "message": "CYBERSOURCE_CREDIT_FAILED"
+    "error_code": "GW01_102",
+    "error_description": "One or more fields in the request contains invalid data",
+    "meta_data": {
+        "error_details": {
+            "refunded_amount": "100kj",
+            "requestID": "5174059161376438504011",
+            "decision": "REJECT",
+            "reasonCode": "102",
+            "invalidField": "c:grandTotalAmount",
+            "requestToken": "Ahj/7wSTGHx+we56IkpLiiDBlYjWmcePKh2oc6DIopcIJKnGgClvHKnhjkwNjKPr6M2kmXoxXL8sQJyYw+PsvRVr6RhYkj1J"
+        }
+    }
 }
 ```
 

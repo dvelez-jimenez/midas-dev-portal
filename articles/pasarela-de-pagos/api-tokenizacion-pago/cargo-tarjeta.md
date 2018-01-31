@@ -140,7 +140,7 @@ Posibles estados de la transacción:
 | -------- | ---------------------------------------- |
 | paid  | El cargo fue realizado exitosamente en la cuenta del cliente |
 | rejected | El cargo no fue realizado |
-| reversed | Tiene al menos una devolución asociada |
+| refunded | Tiene al menos una devolución asociada |
 
 ### 5.2 Silent Charge
 
@@ -171,7 +171,7 @@ Posibles estados de la transacción:
 | -------- | ---------------------------------------- |
 | paid  | El cargo fue realizado exitosamente en la cuenta del cliente |
 | rejected | Transacción fallida. El cargo no fue realizado |
-| reversed | Tiene al menos una devolución asociada |
+| refunded | Tiene al menos una devolución asociada |
 
 **Pago exitoso**
 Descripción de los campos que deben utilizar tus sistemas para obtener la respuesta del pago

@@ -320,7 +320,7 @@ Ejemplo de respuesta Silent charge (Json completo):
 }
 ```
 
-[Ejemplo de transacción fallida](transaccion-fallida.md)
+[Ejemplo de silent charge fallido](transaccion-fallida.md)
 
 Además, agregamos información específica del código entregado por el Gateway CyberSource (Estructura resume del JSON de respuesta). [Ver la lista de códigos de respuesta CyberSource aquí](cybersource_reason_code.md).
 

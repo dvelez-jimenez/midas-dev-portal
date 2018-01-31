@@ -229,7 +229,7 @@ Obtendrás una respuesta similar a:
 
 Necesitas el **access_token** obtenido en la **Autenticación** y la **url silent charge** obtenida en el [paso 4](intencion-de-pago.md) para ejecutar una llamada a la **API de Silent Charge /silent** de la siguiente forma:
 
-Enviando un valor errado en el id del pago para generar el error:
+Enviando un valor incorrecto en el id del pago para generar el error:
 
 ```
  curl -v -X POST 'https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/xxx-xxx-xxx-xxx/silent' \

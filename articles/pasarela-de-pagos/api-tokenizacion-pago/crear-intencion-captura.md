@@ -5,7 +5,7 @@ Luego de obtener la autorización de captura del cliente a través de tu ecommer
 Para comenzar con el proceso, debes ejecutar una llamada a la api de captura **/captures** con al menos la siguiente información:
 
 - En el encabezado **Authorization** de la llamada es necesario enviar el **access_token** previamente obtenido en el servidor de autorización.
-- En el cuerpo del mensaje JSON, se debe establecer el campo **capture** a **CREDIT_CARD**.
+- En el cuerpo del mensaje JSON, se debe establecer el campo **capture** a **PEINAU_CAPTURE**.
 - Enviar las **url's de redirección** cuando la captura se complete con exito o cuando la captura no haya podido ser completada.
 - El **método de captura** de acuerdo a la selección de la plataforma en línea.
 - Un identificador que pertenezca al comercio para asociar la captura a un dato único **reference_id**
@@ -16,7 +16,7 @@ curl -X POST 'https://api.sandbox.connect.fif.tech/tokenization/captures' \
  -H "Content-Type: application/json" \
  -H "Authorization: Bearer ACCESS TOKEN" \
  -d '{
-  "capture": "CREDIT_CARD",
+  "capture": "PEINAU_CAPTURE",
   "capture_method": "TOKENIZATION",
   "cardholder": {
     "reference_id": "001389",

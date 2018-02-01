@@ -38,3 +38,9 @@
 |500 | **error_code**: GENERAL_SYSTEM_ERROR |
 |500 | **error_code**: DATABASE_ERROR |
 
+## intención de pago
+
+| HTTP code| Respuesta del servicio                   | Como replicar|
+| -------- | ---------------------------------------- |-----|
+|500 | **error_code**: PAYMENT_METHOD_NOT_SUPPORTED, **error_description**: the payment_method X is not supported |1|
+|xxx | **error_code**: , **error_description**: |1|

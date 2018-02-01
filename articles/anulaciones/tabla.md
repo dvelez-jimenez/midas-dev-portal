@@ -4,7 +4,7 @@
 
 | HTTP code| Respuesta del servicio                   | Como replicar|
 | -------- | ---------------------------------------- |-----|
-|400 | **error_code**: INVALID_MODEL, **error_description**: the requested model has invalid properties,|1|
+|400 | **error_code**: INVALID_MODEL, **error_description**: the requested model has invalid properties|1|
 |401 | **error_code**: InvalidCredentials|1|
 |404 | **error_code**: DOCUMENT_NOT_FOUND, **error_description**: The document you requested is not found|1|
 | 500  |**error_code**: ERROR_WAITING_FOR_PROMISES_TO_RESOLVE, **error_description**: Exception has ocurred waiting for all promises to resolve when trying to approve payments|1|

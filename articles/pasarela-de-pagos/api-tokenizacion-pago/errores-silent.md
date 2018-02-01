@@ -15,4 +15,3 @@
 |500 | **error_code**: DATABASE_ERROR, **error_description**: unknown error has ocurred when trying to get a payment by his id |
 |500 | **error_code**: GENERAL_SYSTEM_ERROR |
 |500 | **error_code**: PEINAU_ERROR |
-

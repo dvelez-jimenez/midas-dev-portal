@@ -5,7 +5,7 @@
 | -------- | ---------------------------------------- |
 |500 | **error_code**: GW01_XX, **error_description**: DESCRIPCION RETORNADA POR EL GATEWAY|
 
-> Para este caso se debe consultar la [Lista de códigos de respuesta CyberSource](api-tokenizacion-pago/cybersource_reason_code.md)
+> Para este caso se debe consultar la [Lista de códigos de respuesta CyberSource](../pasarela-de-pagos/api-tokenizacion-pago/cybersource_reason_code.md)
 
 ## Formato de error que NO proviene del Gateway
 | HTTP code| Respuesta del servicio                               |

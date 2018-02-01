@@ -225,6 +225,14 @@ Obtendrás una respuesta similar a:
 }
 ```
 
+
+### Formato de rechazo en la respuesta del Gateway
+| HTTP code| Respuesta del servicio                               |
+| -------- | ---------------------------------------- |
+|200 | **error_code**: GW01_XX, **error_description**: DESCRIPCION RETORNADA POR EL GATEWAY|
+
+> Para este caso se debe consultar la [Lista de códigos de respuesta CyberSource](../pasarela-de-pagos/api-tokenizacion-pago/cybersource_reason_code.md). Donde XX del **error_code** será el reason code respectivo y en el **error_description** estará expresada la descripción de dicho reason code de acuerdo al Gateway.
+
 ## Otros rechazos (HTTP code mayores a 400)
 
 Necesitas el **access_token** obtenido en la **Autenticación** y la **url silent charge** obtenida en el [paso 4](intencion-de-pago.md) para ejecutar una llamada a la **API de Silent Charge /silent** de la siguiente forma:

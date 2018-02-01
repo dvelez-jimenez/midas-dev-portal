@@ -8,7 +8,7 @@
 |401 | **error_code**: InvalidCredentials|1|
 |404 | **error_code**: DOCUMENT_NOT_FOUND, **error_description**: The document you requested is not found|1|
 | 500  |**error_code**: ERROR_WAITING_FOR_PROMISES_TO_RESOLVE, **error_description**: Exception has ocurred waiting for all promises to resolve when trying to approve payments|1|
-| 500 | **error_code**:REQUEST_ERROR,**error_description**: Exception has ocurred when trying tokenize the credit card in cybersource|1|
+| 500 | **error_code**:REQUEST_ERROR, **error_description**: Exception has ocurred when trying tokenize the credit card in cybersource|1|
 | 500 | **error_code**: GATEWAY_DATA_DONT_EXISTS, **error_description**: Exception ocurred when trying to read the cybersource response: reply message from cybersource is empty|1|
 | 500 | **error_code**: CYBERSOURCE_MISSING_REPLY, **error_description**: The response in cybersource has some invalid values|1|
 | 500 | **error_code**: PEINAU_PAYMENT_UPDATE_ERROR, **error_description**: Exception ocurred when trying to update the payment after cybersource update|1|

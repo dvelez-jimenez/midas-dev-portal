@@ -1,7 +1,13 @@
-# Posibles rechazos HTTP code mayores a 400
+# Posibles rechazos Anulaciones / refund
 
-## Refund
+## Formato de error en la respuesta del Gateway
+| HTTP code| Respuesta del servicio                               |
+| -------- | ---------------------------------------- |
+|500 | **error_code**: GW01_XX, **error_description**: DESCRIPCION RETORNADA POR EL GATEWAY|
 
+> Para este caso se debe consultar la [Lista de códigos de respuesta CyberSource](../cybersource_reason_code.md)
+
+## Formato de error que NO proviene del Gateway
 | HTTP code| Respuesta del servicio                               |
 | -------- | ---------------------------------------- |
 |400 | **error_code**: INVALID_MODEL, **error_description**: the requested model has invalid properties|

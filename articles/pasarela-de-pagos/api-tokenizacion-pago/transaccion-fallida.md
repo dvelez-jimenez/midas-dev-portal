@@ -225,7 +225,7 @@ Obtendrás una respuesta similar a:
 }
 ```
 
-## Otros rechazos (HTTP codes mayores a 400)
+## Otros rechazos (HTTP code mayores a 400)
 
 Necesitas el **access_token** obtenido en la **Autenticación** y la **url silent charge** obtenida en el [paso 4](intencion-de-pago.md) para ejecutar una llamada a la **API de Silent Charge /silent** de la siguiente forma:
 
@@ -334,3 +334,4 @@ curl -X GET \
  ```
  
 Para este caso, cuando el resultado del silent es fallido, el campo state de la respuesta (self) mantendrá el valor **created**.
+

@@ -1,5 +1,6 @@
-Silent
-## Posibles rechazos HTTP code mayores a 400
+# Posibles rechazos HTTP code mayores a 400
+
+## Silent
 
 | HTTP code| Respuesta del servicio                               |
 | -------- | ---------------------------------------- |
@@ -17,7 +18,7 @@ Silent
 |500 | **error_code**: GENERAL_SYSTEM_ERROR |
 |500 | **error_code**: DATABASE_ERROR |
 
-Refund
+## Refund
 
 | HTTP code| Respuesta del servicio                               |
 | -------- | ---------------------------------------- |

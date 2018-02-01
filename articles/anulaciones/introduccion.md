@@ -364,5 +364,7 @@ Obtendrás una respuesta similar a:
 Podrás observar que el **state** de la transacción continúa siendo **paid** debido a que la anulación no fue procesada.
 
 > Los refund rechazados siempre tendrán un http code mayor a 400.
+
+[Listado de errores para Refund](errores-refund.md)
   
 [Volver al menú anterior](../pasarela-de-pagos/api-tokenizacion-pago/introduction.md)

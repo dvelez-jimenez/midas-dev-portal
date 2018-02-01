@@ -3,7 +3,7 @@
 ## Silent
 
 | HTTP code| Respuesta del servicio                   | Como replicar|
-| -------- | ---------------------------------------- |1|
+| -------- | ---------------------------------------- |-----|
 |400 | **error_code**: INVALID_MODEL, **error_description**: the requested model has invalid properties,|1|
 |401 | **error_code**: InvalidCredentials|1|
 |404 | **error_code**: DOCUMENT_NOT_FOUND, **error_description**: The document you requested is not found|1|

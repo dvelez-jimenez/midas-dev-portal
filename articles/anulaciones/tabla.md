@@ -23,8 +23,9 @@
 
 | HTTP code| Respuesta del servicio                               |
 | -------- | ---------------------------------------- |
-|400 | **error_code**: INVALID_MODEL|
-|401 | **error_code**: InvalidCredentials|
+|400 | **error_code**: INVALID_MODEL, **error_description**: the requested model has invalid properties|
+|401 | **error_code**: InvalidCredentials, **error_description**: caused by TokenExpiredError: jwt expired|
+|401 | **error_code**: InvalidCredentials, **error_description**: caused by JsonWebTokenError: jwt malformed|
 |404 | **error_code**: DOCUMENT_NOT_FOUND, **error_description**: The document you requested is not found|
 | 500  |**error_code**: PAYMENT_IN_CREATED_STATE_CANT_BE_REFUNDED, **error_description**: A capture in created state cant be refunded|
 | 500 | **error_code**: PAYMENT_IN_REJECTED_STATE_CANT_BE_REFUNDED, **error_description**: A capture in reject state cant be refunded |

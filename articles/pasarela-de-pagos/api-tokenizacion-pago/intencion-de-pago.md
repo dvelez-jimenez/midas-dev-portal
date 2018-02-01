@@ -204,8 +204,8 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
             "method": "POST"
         },
         {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/aedac5dc-49a2-87db-e373-aa44675951a7/reverse",
-            "rel": "reverse_method",
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/aedac5dc-49a2-87db-e373-aa44675951a7/refund",
+            "rel": "refund_method",
             "security": [
                 "Jwt"
             ],
@@ -284,7 +284,7 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 - **approval_url**: desde esta URL el cliente debe autorizar el pago.
 - **update_url**: a partir de esta url podrás actualizar ciertos datos de la intención de pago.
 - **silent_charge**: llamando a este endpoint desde la [API silent_charge](cargo-tarjeta.md) puedes ejecutar el cargo a la tarjeta de cŕedito del cliente sin pasar por la intención de pago.
-- **reverse_method**: para anular la transacción, debes hacer el llamado a este endpoint desde la [API de Anulación](../../anulaciones/introduccion.md).
+- **refund_method**: para anular la transacción, debes hacer el llamado a este endpoint desde la [API de Anulación](../../anulaciones/introduccion.md).
 
 > Estas URLs son dinamicas, nunca debes guardarlas como variables de entorno. Siempre debes consultarlas desde aquí para continuar con los pasos siguientes.
 

@@ -335,3 +335,4 @@ curl -X GET \
  
 Para este caso, cuando el resultado del silent es fallido, el campo state de la respuesta (self) mantendrá el valor **created**.
 
+[Listado de errores para Sielnt Charge](errores-silent.md)

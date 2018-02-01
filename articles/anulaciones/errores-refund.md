@@ -20,6 +20,6 @@
 | 500 | **error_code**: CYBERSOURCE_MISSING_REPLY, **error_description**: The response in cybersource has some invalid values|
 | 500 | **error_code**: REFUNDED_AMOUNT_HIGHER_PAYMENT_TOTAL, **error_description**: The refunded amount can not be higher than payment total. |
 | 500 | **error_code**: GATEWAY_DATA_DONT_EXISTS, **error_description**: Cybersource SOAP Message from cybersource or has some missing information|
-|500 | **error_code**: DATABASE_ERROR, **error_description**: Can't create a valid payment intention document |
+|500 | **error_code**: DATABASE_ERROR, **error_description**: unknown error has ocurred when trying to get a payment by his id |
 |500 | **error_code**: GENERAL_SYSTEM_ERROR, **error_description**: Unknow error when trying to create a payment intention |
 |500 | **error_code**: PEINAU_ERROR |

@@ -341,6 +341,6 @@ curl -X GET \
 }
  ```
  
-Para este caso podrás observar que el campo state de la respuesta (self) mantendrá el valor **created**, esto debido a que el silent charge fue interrumpido antes de actualizar el state del pago.
+Para este caso podrás observar que el campo state de la respuesta (self) mantendrá el valor **created**, esto debido a que el silent charge fue interrumpido antes de actualizar el estado del pago.
 
 [Listado de errores para Silent Charge](errores-silent.md)

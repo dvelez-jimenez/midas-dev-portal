@@ -57,7 +57,7 @@ La respuesta será enviada a la página de confirmacion indicada en la variable 
     "update_time": "2018-02-01T18:21:32.247Z",
     "deletion_time": "2018-02-02T18:20:52.603Z",
     "state": "captured",
-    "capture_number": "INCA-50000001742",
+    "invoice_number": "INCA-50000001742",
     "gateway": {
         "merchantReferenceCode": "001389",
         "requestID": "5175092920666483104012",
@@ -97,7 +97,7 @@ La respuesta será enviada a la página de confirmacion indicada en la variable 
 | create_time | String (ISO 8601) | Fecha de creación de la intención |
 | update_time | String (ISO 8601) | Fecha de actualización de la intención |
 | state | Enum  | Estado actual de la intención |
-| capture_number | String (Correlativo) | Identificador legible de la intención |
+| invoice_number | String (Correlativo) | Identificador legible de la intención |
 | panLast4      | String | Cuatro últimos números de la tarjeta |
 | redirect_urls | Object      | Url de redirección dependiendo del estado de la captura una vez finalizado el proceso de captura |
 | redirect_urls.return_url | String (Url)      | Url de redirección al producirse una captura exitosa |

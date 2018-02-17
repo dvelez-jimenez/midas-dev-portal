@@ -6,7 +6,7 @@ Con la **capture_url** obtenida en el [paso 2](crear-intencion-captura.md) puede
 
 El cliente debe ingresar los datos solicitados en el formulario y hacer clic en **Usar esta tarjeta** para obtener el token de la tarjeta de crédito.
 
-![Ejemplo datos a ingresar](images/captura-tarjeta-1.png)
+![Ejemplo datos a ingresar](images/captura-tarjeta-2.png)
 
 La respuesta será enviada a la página de confirmacion indicada en la variable **"return_url"** de la petición a la [API de intención de Captura (paso 2)](crear-intencion-captura.md) o puedes consultar dicha respuesta llamando a la **API Revisión de Captura** de la siguiente forma:
 

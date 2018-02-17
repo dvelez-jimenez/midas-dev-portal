@@ -8,6 +8,12 @@ El cliente debe ingresar los datos solicitados en el formulario y hacer clic en 
 
 ![Ejemplo datos a ingresar](images/captura-tarjeta-2.png)
 
+**Tarjeta de prueba:**
+
+| PAN           | CVV             | Vencimiento  |
+| ------------- | --------------- | ------------ |
+| 4111111111111111 | 123   | 02/2020             |
+
 La respuesta será enviada a la página de confirmacion indicada en la variable **"return_url"** de la petición a la [API de intención de Captura (paso 2)](crear-intencion-captura.md) o puedes consultar dicha respuesta llamando a la **API Revisión de Captura** de la siguiente forma:
 
 ```

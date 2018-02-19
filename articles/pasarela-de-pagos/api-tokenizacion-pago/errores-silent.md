@@ -3,6 +3,7 @@
 | HTTP code| Respuesta del servicio                   |
 | -------- | ---------------------------------------- |
 |400 | **error_code**: INVALID_MODEL, **error_description**: the requested model has invalid properties|
+|401 | **error_code**: InvalidCredentials, **error_description**: No authorization token was found|
 |401 | **error_code**: InvalidCredentials, **error_description**: caused by TokenExpiredError: jwt expired|
 |401 | **error_code**: InvalidCredentials, **error_description**: caused by JsonWebTokenError: jwt malformed|
 |404 | **error_code**: DOCUMENT_NOT_FOUND, **error_description**: The document you requested is not found|

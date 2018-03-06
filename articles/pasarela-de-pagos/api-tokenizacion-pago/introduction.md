@@ -9,3 +9,5 @@ Los pasos para realizar la integración son:
 - [3. Mostrar formulario de Captura de tarjeta](formulario-captura-tarjeta.md)
 - [4. Intención de Pago](intencion-de-pago.md)
 - [5. Realizar el cargo a la tarjeta](cargo-tarjeta.md)
+
+[URL's de cada servicio en ambiente Sandbox (pruebas)](urls.md)

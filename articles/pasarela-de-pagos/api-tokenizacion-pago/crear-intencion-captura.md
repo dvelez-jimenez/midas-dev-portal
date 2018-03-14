@@ -34,6 +34,9 @@ curl -X POST 'https://api.sandbox.connect.fif.tech/tokenization/captures' \
   "redirect_urls": {
     "return_url": "https://requestb.in/sfoogtsf",
     "cancel_url": "http://www.mysite.cl/cancel"
+  },
+  "additional_attributes": {
+    "remember_capture": true
   }
 }' | json_pp
 ```

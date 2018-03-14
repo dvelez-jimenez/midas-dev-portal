@@ -61,6 +61,7 @@ curl -X POST 'https://api.sandbox.connect.fif.tech/tokenization/captures' \
 | redirect_urls | Object      | Url de redirección dependiendo del estado de la captura una vez finalizado el proceso de captura |
 | redirect_urls.return_url | String (Url)      | Url de redirección al producirse una captura exitosa |
 | redirect_urls.cancel_url | String (Url)      | Url de redirección al producirse una captura fallida |
+| additional_attributes.remember_capture | Boolean | Marca utilizada para indicar si el cliente quiere dejar almacenado el token de la tarjeta para futuras compras |
 
 El resultado de la llamada a la API de captura, será una intención de captura en su estado inicial (**created**), que contendrá el, o los links HATEOAS relacionados con la llamada, como por ejemplo , el link que se deberá ejecutar para proceder con la **captura de la tarjeta** y finalizar el proceso de captura. 
 

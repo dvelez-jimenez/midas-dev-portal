@@ -26,7 +26,7 @@ curl -v -X POST 'https://api.sandbox.connect.fif.tech/tokenization/captures/gate
 | expiry_year | Number        | Año de expiración de la tarjeta |
 | card_ccv | Number        | CCV de la tarjeta |
 
-El resultado de la llamada a la API de captura, será la misma captura creada, pero esta vez en en estado (**captured**). 
+El resultado será la misma captura creada, pero esta vez en en estado (**captured**). 
 
 A continuación se presenta ejemplo de un JSON como respuesta al realizarse una captura exitosa:
 

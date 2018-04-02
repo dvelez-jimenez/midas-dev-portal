@@ -10,7 +10,7 @@ curl -v -X POST 'https://api.sandbox.connect.fif.tech/tokenization/captures/gate
  -H "Content-Type: application/json" \
  -H "Authorization: Bearer $ACCESS_TOKEN_SB" \
  -d '{
-  "card_number": "405188665",
+  "card_number": "4111111111111111",
   "expiry_month": "2",
   "expiry_year": "2020",
   "card_ccv": "123"

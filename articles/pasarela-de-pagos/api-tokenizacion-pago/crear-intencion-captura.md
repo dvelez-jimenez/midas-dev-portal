@@ -154,4 +154,5 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 [Consultar estado del servicio (Health Check)](health-tokenizer.md)
 
 Ir al paso [3.1. Mostrar formulario de Captura de tarjeta](formulario-captura-tarjeta.md)
+
 Ir al paso [3.2. Invocar a servicio de Captura de tarjeta](silent-capture.md)

@@ -100,9 +100,14 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
             "method": "GET"
         },
         {
-            "href": "https://api.sandbox.connect.fif.tech/tokenization/captures/gateways/credit/card/42743d48-7699-0d00-ef45-a68c587e662d/capture",
+            "href": "https://api.sandbox.connect.fif.tech/tokenization/captures/gateways/peinau/capture/42743d48-7699-0d00-ef45-a68c587e662d/capture",
             "rel": "capture_url",
             "method": "REDIRECT"
+        },
+        {
+            "href": "https://api.sandbox.connect.fif.tech/tokenization/captures/gateways/peinau/capture/42743d48-7699-0d00-ef45-a68c587e662d/capture_card",
+            "rel": "capture_card",
+            "method": "POST"
         }
     ]
 }
@@ -144,7 +149,9 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 
 + URL 1 (**rel: self**): desde esta URL puedes consultar la información de la intención de captura.
 + URL 2 (**rel: capture_url**): desde esta URL debes acceder al formulario de captura de la tarjeta.
++ URL 3 (**rel: capture_card**): desde esta URL puedes invocar directamente al servicio de captura de tarjeta sin usar nuestro formulario..
 
 [Consultar estado del servicio (Health Check)](health-tokenizer.md)
 
-Ir al paso [3. Mostrar formulario de Captura de tarjeta](formulario-captura-tarjeta.md)
+Ir al paso [3.1. Mostrar formulario de Captura de tarjeta](formulario-captura-tarjeta.md)
+Ir al paso [3.2. Invocar a servicio de Captura de tarjeta](silent-capture.md)

@@ -153,6 +153,6 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 
 [Consultar estado del servicio (Health Check)](health-tokenizer.md)
 
-Ir al paso [3.1. Mostrar formulario de Captura de tarjeta (capture_url)](formulario-captura-tarjeta.md)
+Ir al paso [3.1. Captura de tarjeta mediante formulario (capture_url)](formulario-captura-tarjeta.md)
 
-Ir al paso [3.2. Invocar a servicio de Captura de tarjeta (capture_card)](silent-capture.md)
+Ir al paso [3.2. Captura de tarjeta haciendo POST directamente a la API (capture_card)](silent-capture.md)

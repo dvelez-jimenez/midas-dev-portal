@@ -37,7 +37,7 @@ A continuación se presenta ejemplo de un JSON como respuesta al realizarse una 
     "capture": "PEINAU_CAPTURE",
     "capture_method": "TOKENIZATION",
     "additional_attributes": {
-        "reemember_capture": true
+        "remember_capture": true
     },
     "application": "28adb999-7a2e-70b8-c092-e4c16a9e9e0a",
     "redirect_urls": {

@@ -1,4 +1,4 @@
-## 3.1. Mostrar Formulario de Captura de tarjeta
+## 3.1. Captura de tarjeta mediante formulario (capture_url)
 
 Con la **capture_url** obtenida en el [paso 2](crear-intencion-captura.md) puedes desplegar el formulario de captura de tarjeta. [Puedes hacer clic aquí para ver un ejemplo de capture_url](https://api.sandbox.connect.fif.tech/tokenization/captures/gateways/credit/card/42743d48-7699-0d00-ef45-a68c587e662d/capture)
 

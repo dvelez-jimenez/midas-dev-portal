@@ -80,7 +80,7 @@ curl -X POST \
 | payer.payer_info.documentType            | Tipo de documento de identificación      | string       |
 | payer.payment_method                     | Identifica el método de captura a utilizar (PEINAU_CAPTURE)  | string       |
 | **transaction**                          | **Grupo de campos con la información de la transacción** | **object**   |
-| transaction.gateway_order                | Número de la orden de compra. Este Id de transacción que es enviada al  gateway de pago | string       |
+| transaction.gateway_order                | Número de la orden de compra. Id de transacción que es enviada al  gateway de pago **Este valor debe ser unico** | string       |
 | transaction.reference_id                 | El código de referencia de la transacción. Representa el identificador de  la transacción en el sistema del comercio. | string       |
 | transaction.description                  | Descripción de la compra                 | string       |
 | transaction.soft_descriptor              | Descripción corta de la transacción      | string       |
@@ -233,7 +233,7 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 | payer.payer_info.documentType            | Tipo de documento de identificación      | string       |
 | payer.payment_method                     | Identifica el método de pago a utilizar  | string       |
 | **transaction**                          | **Grupo de campos con la información de la transacción** | **object**   |
-| transaction.gateway_order                | Número de la orden de compra. Este Id de transacción que es enviada al  gateway de pago | string       |
+| transaction.gateway_order                | Número de la orden de compra. Id de transacción que es enviada al  gateway de pago **Este valor debe ser unico** | string       |
 | transaction.reference_id                 | El código de referencia de la transacción. Representa el identificador de  la transacción en el sistema del comercio. | string       |
 | transaction.description                  | Descripción de la compra                 | string       |
 | transaction.soft_descriptor              | Descripción corta de la transacción      | string       |

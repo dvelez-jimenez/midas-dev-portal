@@ -1,4 +1,4 @@
-## 3.2. Invocar a servicio de Captura de tarjeta
+## 3.2. Captura de tarjeta haciendo POST directamente a la API (capture_card)
 
 Con la url **capture_card** obtenida en el [paso 2](crear-intencion-captura.md) puedes ejecutar una llamada al servicio de captura de tarjeta. Para ello, necesitas enviar la siguiente información:
 

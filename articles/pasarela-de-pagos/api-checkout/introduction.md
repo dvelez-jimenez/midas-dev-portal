@@ -1,7 +1,12 @@
-## API REST Checkout
+## Express Checkout
 
-Puedes ejecutar un pago (Approval o Silent Charge) sin pasar por la captura de tarjeta.
+Express Checkout le brinda a tus usuarios una experiencia de pago simplificada, ya que podrás mostrar en una sola ventana todo el proceso de captura de tarjeta, seleccion de cuotas y aprobación del pago.
 
-> PROXIMAMENTE
+Los pasos para realizar la integración son:
+
+- [1. Obtener un Token de Acceso](obtener-token-acceso.md)
+- [2. Intención de Pago](intencion-de-pago-ec.md)
+- [3. Mostrar Formulario Express Checkout](express-checkout.md)
+- [4. Consultar Estado de la Transacción](consulta-de-estado.md)
 
 [Volver al menú anterior](../introduction.md)

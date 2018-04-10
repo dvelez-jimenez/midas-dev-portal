@@ -1,10 +1,10 @@
 # API REST de Anulaciones / refund
 
-Necesitas el **access_token** obtenido en la **Autenticación** y la url **refund_method** generada en la respuesta de la **intención de pago**, para ejecutar una petición a la **API de Anulación /refund** de la siguiente forma:
+Necesitas enviar el **access_token** (en el header de la petición) obtenido en la **Autenticación** y la url **refund_method** generada en la respuesta de la **intención de pago**, para ejecutar una petición a la **API de Anulación /refund** de la siguiente forma:
 
 ```
  curl -X POST 'hhttps://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/19a516df-b027-443e-be15-e44a41dbd94f/refund' \
-  -H 'authorization: Bearer access_token' \
+  -H 'authorization: Bearer REEMPLAZAR AQUI EL ACCESS TOKEN' \
   -H 'content-type: application/json' \
   -d '{
 	"refunded_amount":"4500"
@@ -200,7 +200,7 @@ Al consultar el estado de la transacción (self):
 ```
 curl -X GET \
   https://api.sandbox.connect.fif.tech/checkout/payments/{id} \
-  -H 'authorization: access_token' \
+  -H 'authorization: REEMPLAZAR AQUI EL ACCESS TOKEN' \
  ```
 
 Obtendrás una respuesta similar a:
@@ -294,11 +294,11 @@ Obtendrás una respuesta similar a:
 
 En este caso enviamos la solicitud de anulación enviando letras en el refunded_ amount para generar el error.
 
-Necesitas el **access_token** obtenido en la **Autenticación** y el **id de la intención de pago** generado en el **paso 4**, para ejecutar una petición a la **API de Anulación /refund** de la siguiente forma:
+Necesitas enviar el **access_token** (en el header de la petición) obtenido en la **Autenticación** y el **id de la intención de pago** generado en el **paso 4**, para ejecutar una petición a la **API de Anulación /refund** de la siguiente forma:
 
 ```
  curl -X POST 'https://api.sandbox.connect.fif.tech/payments/gateways/quickpay/token/{id}/refund' \
-  -H 'authorization: Bearer access_token' \
+  -H 'authorization: Bearer REEMPLAZAR AQUI EL ACCESS TOKEN' \
   -H 'content-type: application/json' \
   -d '{
 	"refunded_amount":"100kj"
@@ -329,7 +329,7 @@ Al consultar el estado de la transacción (self):
 ```
 curl -X GET \
   https://api.sandbox.connect.fif.tech/checkout/payments/{id} \
-  -H 'authorization: access_token' \
+  -H 'authorization: REEMPLAZAR AQUI EL ACCESS TOKEN' \
  ```
 
 Obtendrás una respuesta similar a:

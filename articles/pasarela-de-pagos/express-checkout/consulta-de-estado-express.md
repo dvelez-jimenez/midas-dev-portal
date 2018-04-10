@@ -4,7 +4,7 @@ Debes consultar el estado (state) de la transacción, para esto necesitas el **a
 
 ```
 curl -X GET \
-  https://api.sandbox.connect.fif.tech/checkout/payments/5247451f-e709-bc97-b195-8725f5e5d09a \
+  https://api.sandbox.connect.fif.tech/checkout/payments/19a516df-b027-443e-be15-e44a41dbd94f \
   -H 'cache-control: no-cache' \
   -H 'Authorization: Bearer access_token'
 ```
@@ -13,16 +13,14 @@ Obtendrás una respuesta silimar a:
   ```
 {
     "intent": "sale",
-    "additional_attributes": {
-        "capture_token": "db95da9e-b94c-0b40-a84b-4268b0ca18bb"
-    },
-    "application": "28adb999-7a2e-70b8-c092-e4c16a9e9e0a",
+    "application": "ff462a80-f2a8-1390-06cf-57d5f9728b8d",
     "redirect_urls": {
-        "return_url": "https://requestb.in/sfoogtsf",
+        "return_url": "https://peinau.azureedge.net/redirections/payment_success.html",
         "cancel_url": "https://chao.com"
     },
     "transaction": {
         "reference_id": "OD0000233",
+        "gateway_order": "QP00009",
         "description": "Transaction detailed description",
         "soft_descriptor": "Short Description",
         "item_list": {
@@ -35,7 +33,7 @@ Obtendrás una respuesta silimar a:
                     "quantity": 1,
                     "price": 4500,
                     "tax": 0,
-                    "_id": "5a29af7f6867b6000fe42a45"
+                    "_id": "5acce2cd8d0f81000f9c5f5b"
                 }
             ],
             "shipping_address": {
@@ -68,54 +66,98 @@ Obtendrás una respuesta silimar a:
         },
         "payment_method": "QUICKPAY_TOKEN"
     },
-    "links": [],
-    "id": "5247451f-e709-bc97-b195-8725f5e5d09a",
-    "create_time": "2017-12-07T21:15:43.690Z",
-    "update_time": "2017-12-07T21:16:02.340Z",
+    "links": [
+        {
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/19a516df-b027-443e-be15-e44a41dbd94f",
+            "rel": "self",
+            "security": [
+                "ApiKey"
+            ],
+            "method": "GET"
+        },
+        {
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/19a516df-b027-443e-be15-e44a41dbd94f/pay",
+            "rel": "approval_url",
+            "method": "REDIRECT"
+        },
+        {
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/19a516df-b027-443e-be15-e44a41dbd94f/edit",
+            "rel": "update_url",
+            "method": "PUT"
+        },
+        {
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/19a516df-b027-443e-be15-e44a41dbd94f/silent",
+            "rel": "silent_charge",
+            "security": [
+                "Jwt"
+            ],
+            "method": "POST"
+        },
+        {
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/19a516df-b027-443e-be15-e44a41dbd94f/refund",
+            "rel": "refund_method",
+            "security": [
+                "Jwt"
+            ],
+            "method": "POST"
+        }
+    ],
+    "id": "19a516df-b027-443e-be15-e44a41dbd94f",
+    "expiration_date": "2018-04-13T16:14:05.229Z",
+    "create_time": "2018-04-10T16:14:05.309Z",
+    "update_time": "2018-04-10T16:19:56.253Z",
     "state": "paid",
-    "invoice_number": "INPA-50000000915",
+    "invoice_number": "INPA-0000012364",
     "gateway": {
-        "payment_flow": "with_token",
+        "capture_token": "9615786e-52c9-7733-39db-5bf5d600e5d6",
+        "payment_flow": "express_checkout",
         "installments_number": "1",
-        "merchantReferenceCode": "INPA-50000000915",
-        "requestID": "5126813618226081704008",
+        "merchantReferenceCode": "INPA-0000012364",
+        "requestID": "5233771897036565504009",
         "decision": "ACCEPT",
         "reasonCode": "100",
-        "requestToken": "Ahj7/wSTFezU3sEAuihIilF5MQdkMgKi8mIOyGSYGxlHK2GTSTLdIDgL7QwJyYr2am9ggF0UJAAAjAl3",
+        "requestToken": "Ahj//wSTG7ktAqSOzeAJig9GgwYMGDlLi7x5j7AUuLvHmPsmBsZR+khk0ky3SA32gQMCcmN3JaBUkdm8ASAA4yx9",
         "purchaseTotals": {
             "currency": "CLP"
         },
         "ccAuthReply": {
             "reasonCode": "100",
             "amount": "4500",
-            "authorizationCode": "570110",
+            "authorizationCode": "155328",
             "avsCode": "1",
-            "authorizedDateTime": "2017-12-07T21:16:02Z",
-            "processorResponse": "1",
-            "paymentNetworkTransactionID": "111222",
-            "ownerMerchantID": "falabella",
-            "processorTransactionID": "6073acd1ed184b8cb4a85d8a68d778de"
+            "cvCode": "3",
+            "authorizedDateTime": "2018-04-10T16:19:56Z",
+            "processorResponse": "0",
+            "reconciliationID": "QP00009",
+            "ownerMerchantID": "falabella_cl",
+            "processorTransactionID": "eeda1fd175e8e86b582e8934290f4e5dbfb50ba05d7a968b8afb93277a97aa55"
         },
         "ccCaptureReply": {
             "reasonCode": "100",
-            "requestDateTime": "2017-12-07T21:16:02Z",
-            "amount": "4500"
+            "requestDateTime": "2018-04-10T16:19:56Z",
+            "amount": "4500",
+            "reconciliationID": "QP00009"
         },
-        "additionalProcessorResponse": "c7f3fc27-eb83-44f0-8429-5bf6918198a3",
-        "capture_token": "db95da9e-b94c-0b40-a84b-4268b0ca18bb",
+        "additionalProcessorResponse": "2d13b5c5-1159-406b-8eaa-17c00d50b24d",
+        "capture_data": {
+            "panFirst6": "411111",
+            "panLast4": "1111"
+        },
         "resume": {
-            "_id": "5a29af926867b6000fe42a47",
+            "_id": "5acce42c8d0f81000f9c5f5e",
             "card_number": {
-                "panLast4": 1111
+                "pan_last4": "1111",
+                "pan_first6": "411111"
             },
             "authorizations": {
-                "code": "570110"
+                "code": "155328"
             },
             "transaction": {
+                "gateway_id": "5233771897036565504009",
                 "type": "CREDIT",
-                "date": "2017-12-07T21:16:02.337Z",
+                "date": "2018-04-10T16:19:56.250Z",
                 "currency": "CLP",
-                "buy_order": "INPA-50000000915",
+                "buy_order": "INPA-0000012364",
                 "amount": 4500,
                 "installments_number": 1
             },

@@ -182,4 +182,4 @@ Obtendrás los Links:
 - **approval_url**: debes desplegar esta URL al cliente para que pueda continuar con el pago.
 - **refund_method**: te permite anular la transacción.
 
-Ir al paso [3. Mostrar Formulario de Pago Transbank Webpay](formulario-express-checkout.md)
+Ir al paso [3. Mostrar Formulario de Pago Express Checkout](formulario-express-checkout.md)

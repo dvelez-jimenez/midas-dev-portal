@@ -6,7 +6,7 @@ Debes consultar el estado (state) de la transacción, para esto necesitas enviar
 curl -X GET \
   https://api.sandbox.connect.fif.tech/checkout/payments/19a516df-b027-443e-be15-e44a41dbd94f \
   -H 'cache-control: no-cache' \
-  -H 'Authorization: Bearer access_token'
+  -H 'Authorization: Bearer REEMPLAZAR AQUI EL ACCESS TOKEN'
 ```
 Obtendrás una respuesta silimar a:
 

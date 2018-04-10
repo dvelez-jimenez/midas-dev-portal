@@ -21,7 +21,7 @@ curl -X POST 'https://api.sandbox.connect.fif.tech/checkout/payments' \
    }, 
    "transaction": { 
      "reference_id": "OD0000233", 
-     "gateway_order": "12345678",
+     "gateway_order": "QP00009",
      "description": "Transaction detailed description", 
      "soft_descriptor": "Short Description", 
      "amount": { 
@@ -62,7 +62,6 @@ curl -X POST 'https://api.sandbox.connect.fif.tech/checkout/payments' \
    },
    "additional_attributes": {
   }
- }
  }' | json_pp
 ```
 
@@ -78,7 +77,7 @@ Como respuesta obtendrás la siguiente información:
     },
     "transaction": {
         "reference_id": "OD0000233",
-        "gateway_order": "12345678",
+        "gateway_order": "QP00009",
         "description": "Transaction detailed description",
         "soft_descriptor": "Short Description",
         "item_list": {
@@ -125,7 +124,7 @@ Como respuesta obtendrás la siguiente información:
     },
     "links": [
         {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/a8a7e32e-adeb-431a-95c2-68b691f10d06",
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/19a516df-b027-443e-be15-e44a41dbd94f",
             "rel": "self",
             "security": [
                 "ApiKey"
@@ -133,17 +132,17 @@ Como respuesta obtendrás la siguiente información:
             "method": "GET"
         },
         {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/a8a7e32e-adeb-431a-95c2-68b691f10d06/pay",
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/19a516df-b027-443e-be15-e44a41dbd94f/pay",
             "rel": "approval_url",
             "method": "REDIRECT"
         },
         {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/a8a7e32e-adeb-431a-95c2-68b691f10d06/edit",
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/19a516df-b027-443e-be15-e44a41dbd94f/edit",
             "rel": "update_url",
             "method": "PUT"
         },
         {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/a8a7e32e-adeb-431a-95c2-68b691f10d06/silent",
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/19a516df-b027-443e-be15-e44a41dbd94f/silent",
             "rel": "silent_charge",
             "security": [
                 "Jwt"
@@ -151,7 +150,7 @@ Como respuesta obtendrás la siguiente información:
             "method": "POST"
         },
         {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/a8a7e32e-adeb-431a-95c2-68b691f10d06/refund",
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/19a516df-b027-443e-be15-e44a41dbd94f/refund",
             "rel": "refund_method",
             "security": [
                 "Jwt"
@@ -159,7 +158,7 @@ Como respuesta obtendrás la siguiente información:
             "method": "POST"
         },
         {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/12345678",
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/QP00009",
             "rel": "self_by_gateway_order",
             "security": [
                 "ApiKey"
@@ -167,12 +166,12 @@ Como respuesta obtendrás la siguiente información:
             "method": "GET"
         }
     ],
-    "id": "a8a7e32e-adeb-431a-95c2-68b691f10d06",
-    "expiration_date": "2018-04-13T16:10:05.974Z",
-    "create_time": "2018-04-10T16:10:05.982Z",
-    "update_time": "2018-04-10T16:10:05.982Z",
+    "id": "19a516df-b027-443e-be15-e44a41dbd94f",
+    "expiration_date": "2018-04-13T16:14:05.229Z",
+    "create_time": "2018-04-10T16:14:05.309Z",
+    "update_time": "2018-04-10T16:14:05.309Z",
     "state": "created",
-    "invoice_number": "INPA-0000012363"
+    "invoice_number": "INPA-0000012364"
 }
 ```
 

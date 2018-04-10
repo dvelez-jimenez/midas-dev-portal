@@ -4,11 +4,11 @@ Con la **approval_url** obtenida en el [paso 2](intencion-de-pago-express.md) pu
 
 ![Ejemplo de Formulario Express Checkout](images/express-1.PNG)
 
-El cliente debe ingresar los datos de la tarjeta, seleccionar las cuotas y aprobar el pago para que nuestro sistema pueda ejecutar el cargo a la tarjeta de crédito. Luego de seleccionar el botón "Aprobar Pago", el sistema redireccionaráa la url de éxito o error, según sea la respuesta recibida en la ejecución del pago.
+El cliente debe ingresar los datos de la tarjeta, seleccionar las cuotas y aprobar el pago para que nuestro sistema pueda ejecutar el cargo a la tarjeta de crédito. 
 
-**Importante!** Las urls anteriormente mencionadas son las que el comercio envió en el [paso 2](intencion-de-pago-express.md) en los atributos "redirect_urls.return_url" y "redirect_urls.cancel_url".
+El sistema redireccionará la url de éxito o error, según sea la respuesta recibida en la ejecución del pago.
+
+> **Importante** Las urls anteriormente mencionadas son las que el comercio envió en el [paso 2](intencion-de-pago-express.md) en los atributos **"redirect_urls.return_url"** y **"redirect_urls.cancel_url"**.
 
 Para finalizar debes consultar el estado de la transacción como se explica a continuación:
 [4. Consultar Estado de la Transacción](consulta-de-estado-express.md)
-
-Si deseas hacer la devolución al cliente, debes llamar a [API de Anulación](../../anulaciones/introduccion.md).

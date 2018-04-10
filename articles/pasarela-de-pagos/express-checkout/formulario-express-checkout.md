@@ -8,3 +8,5 @@ El cliente debe ingresar los datos de la tarjeta, seleccionar las cuotas y aprob
 
 Para finalizar debes consultar el estado de la transacción como se explica a continuación:
 [4. Consultar Estado de la Transacción](consulta-de-estado-express.md)
+
+Si deseas hacer la devolución al cliente, debes llamar a [API de Anulación](../../anulaciones/introduccion.md).

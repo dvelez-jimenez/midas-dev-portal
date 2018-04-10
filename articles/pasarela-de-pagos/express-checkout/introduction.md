@@ -5,7 +5,7 @@ Express Checkout le brinda a tus usuarios una experiencia de pago simplificada, 
 Los pasos para realizar la integración son:
 
 - [1. Obtener un Token de Acceso](obtener-token-acceso.md)
-- [2. Intención de Pago](intencion-de-pago-ec.md)
+- [2. Intención de Pago](intencion-de-pago-express.md)
 - [3. Mostrar Formulario Express Checkout](express-checkout.md)
 - [4. Consultar Estado de la Transacción](consulta-de-estado.md)
 

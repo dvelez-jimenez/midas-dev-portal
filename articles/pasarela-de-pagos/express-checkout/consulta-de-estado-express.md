@@ -175,3 +175,6 @@ Posibles estados de la transacción:
 | paid  | El cargo fue realizado exitosamente en la cuenta del cliente |
 | rejected | El cargo no fue realizado |
 | refunded | Tiene al menos una devolución asociada |
+
+
+Si deseas hacer la devolución al cliente, debes llamar a [API de Anulación (**refund_method**)](../../anulaciones/introduccion.md).

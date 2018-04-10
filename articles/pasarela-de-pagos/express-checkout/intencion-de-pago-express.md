@@ -1,11 +1,11 @@
 ## 2. Intención de Pago
 
-Para contiunar con el proceso de pago debes ingresar el **access_token** generado en el [paso 1](obtener-token-acceso.md) y hacer el llamado de la siguiente forma:
+Para contiunar con el proceso de pago debes ingresar el **access_token** generado en el [paso 1](obtener-token-acceso.md) en el header de la petición y hacer el llamado de la siguiente forma:
 
 ```
 curl -X POST 'https://api.sandbox.connect.fif.tech/checkout/payments' \
  -H "Content-Type: application/json" \
- -H "Authorization: Bearer access_token" \
+ -H "Authorization: Bearer REEMPLAZAR AQUI EL ACCESS TOKEN" \
  -d '{ 
 { 
    "intent": "sale", 
@@ -177,8 +177,9 @@ Como respuesta obtendrás la siguiente información:
 
 Obtendrás los Links:
 
-- **self**: desde esta URL puedes consultar la información de la captura.
+- **self**: desde esta URL puedes consultar la información del pago.
 - **approval_url**: debes desplegar esta URL al cliente para que pueda continuar con el pago.
 - **refund_method**: te permite anular la transacción.
+- **self_by_gateway_order**: desde esta URL también puedes consultar la información del pago utilizando el gateway_order.
 
 Ir al paso [3. Mostrar Formulario de Pago Express Checkout](formulario-express-checkout.md)

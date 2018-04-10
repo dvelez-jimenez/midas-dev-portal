@@ -1,13 +1,13 @@
 # API REST de Anulaciones / refund
 
-Necesitas el **access_token** obtenido en la **Autenticación** y el **id de la intención de pago** generado en el **paso 4**, para ejecutar una petición a la **API de Anulación /refund** de la siguiente forma:
+Necesitas el **access_token** obtenido en la **Autenticación** y la url **refund_method** generada en la respuesta de la **intención de pago**, para ejecutar una petición a la **API de Anulación /refund** de la siguiente forma:
 
 ```
- curl -X POST 'https://api.sandbox.connect.fif.tech/payments/gateways/quickpay/token/{id}/refund' \
+ curl -X POST 'hhttps://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/19a516df-b027-443e-be15-e44a41dbd94f/refund' \
   -H 'authorization: Bearer access_token' \
   -H 'content-type: application/json' \
   -d '{
-	"refunded_amount":"1000"
+	"refunded_amount":"4500"
 }'
 ```
 
@@ -16,16 +16,14 @@ Obtendrás una respuesta similar a:
 ```
 {
     "intent": "sale",
-    "additional_attributes": {
-        "capture_token": "58dcdf04-8f18-9159-503d-2f7928cb072e"
-    },
-    "application": "195d24b8-ff4b-1803-a405-cbcd5e8a8b7d",
+    "application": "ff462a80-f2a8-1390-06cf-57d5f9728b8d",
     "redirect_urls": {
-        "return_url": "https://requestb.in/sfoogtsf",
+        "return_url": "https://peinau.azureedge.net/redirections/payment_success.html",
         "cancel_url": "https://chao.com"
     },
     "transaction": {
         "reference_id": "OD0000233",
+        "gateway_order": "QP00009",
         "description": "Transaction detailed description",
         "soft_descriptor": "Short Description",
         "item_list": {
@@ -38,7 +36,7 @@ Obtendrás una respuesta similar a:
                     "quantity": 1,
                     "price": 4500,
                     "tax": 0,
-                    "_id": "5a71dfadc68669000f63df0d"
+                    "_id": "5acce2cd8d0f81000f9c5f5b"
                 }
             ],
             "shipping_address": {
@@ -59,8 +57,7 @@ Obtendrás una respuesta similar a:
                 "shipping": 0,
                 "shipping_discount": 0
             }
-        },
-        "gateway_order": "INPA-0000004016"
+        }
     },
     "payer": {
         "payer_info": {
@@ -68,38 +65,135 @@ Obtendrás una respuesta similar a:
             "documentNumber": "123123123",
             "country": "CL",
             "full_name": "Andres Roa",
-            "email": "jlprueba2@quickpay.com"
+            "email": "jlprueba1@quickpay.com"
         },
         "payment_method": "QUICKPAY_TOKEN"
     },
-    "links": [],
-    "id": "fa780805-223b-2679-cc05-11e54c42b2c3",
-    "create_time": "2018-01-31T15:24:29.573Z",
-    "update_time": "2018-01-31T15:25:02.814Z",
+    "links": [
+        {
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/19a516df-b027-443e-be15-e44a41dbd94f",
+            "rel": "self",
+            "security": [
+                "ApiKey"
+            ],
+            "method": "GET"
+        },
+        {
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/19a516df-b027-443e-be15-e44a41dbd94f/pay",
+            "rel": "approval_url",
+            "method": "REDIRECT"
+        },
+        {
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/19a516df-b027-443e-be15-e44a41dbd94f/edit",
+            "rel": "update_url",
+            "method": "PUT"
+        },
+        {
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/19a516df-b027-443e-be15-e44a41dbd94f/silent",
+            "rel": "silent_charge",
+            "security": [
+                "Jwt"
+            ],
+            "method": "POST"
+        },
+        {
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/19a516df-b027-443e-be15-e44a41dbd94f/refund",
+            "rel": "refund_method",
+            "security": [
+                "Jwt"
+            ],
+            "method": "POST"
+        }
+    ],
+    "id": "19a516df-b027-443e-be15-e44a41dbd94f",
+    "expiration_date": "2018-04-13T16:14:05.229Z",
+    "create_time": "2018-04-10T16:14:05.309Z",
+    "update_time": "2018-04-10T16:26:40.324Z",
     "state": "refunded",
-    "invoice_number": "INPA-0000004016",
+    "invoice_number": "INPA-0000012364",
     "gateway": {
-        "refunded_amount": "1000",
-        "merchantReferenceCode": "INPA-0000004016",
-        "requestID": "5174123027446613604012",
+        "capture_token": "9615786e-52c9-7733-39db-5bf5d600e5d6",
+        "payment_flow": "express_checkout",
+        "installments_number": "1",
+        "merchantReferenceCode": "INPA-0000012364",
+        "requestID": "5233771897036565504009",
         "decision": "ACCEPT",
         "reasonCode": "100",
-        "requestToken": "Ahj/7wSTGH1hp8i0HvasiiDBlYjWmcWPKh2odODViJb5Pf7egClvk9/uIEwK+h9fhk0ky9GK5fliBOTGH1g8w7SqEvqAXgPw",
+        "requestToken": "Ahj//wSTG7ktAqSOzeAJig9GgwYMGDlLi7x5j7AUuLvHmPsmBsZR+khk0ky3SA32gQMCcmN3JaBUkdm8ASAA4yx9",
         "purchaseTotals": {
             "currency": "CLP"
         },
-        "ccCreditReply": {
+        "ccAuthReply": {
             "reasonCode": "100",
-            "requestDateTime": "2018-01-31T15:25:02Z",
-            "amount": "1000",
-            "reconciliationID": "02XFZ3EGJCZCSAUD"
-        }
+            "amount": "4500",
+            "authorizationCode": "155328",
+            "avsCode": "1",
+            "cvCode": "3",
+            "authorizedDateTime": "2018-04-10T16:19:56Z",
+            "processorResponse": "0",
+            "reconciliationID": "QP00009",
+            "ownerMerchantID": "falabella_cl",
+            "processorTransactionID": "eeda1fd175e8e86b582e8934290f4e5dbfb50ba05d7a968b8afb93277a97aa55"
+        },
+        "ccCaptureReply": {
+            "reasonCode": "100",
+            "requestDateTime": "2018-04-10T16:19:56Z",
+            "amount": "4500",
+            "reconciliationID": "QP00009"
+        },
+        "additionalProcessorResponse": "2d13b5c5-1159-406b-8eaa-17c00d50b24d",
+        "capture_data": {
+            "panFirst6": "411111",
+            "panLast4": "1111"
+        },
+        "resume": {
+            "_id": "5acce42c8d0f81000f9c5f5e",
+            "card_number": {
+                "pan_last4": "1111",
+                "pan_first6": "411111"
+            },
+            "authorizations": {
+                "code": "155328"
+            },
+            "transaction": {
+                "gateway_id": "5233771897036565504009",
+                "type": "CREDIT",
+                "date": "2018-04-10T16:19:56.250Z",
+                "currency": "CLP",
+                "buy_order": "INPA-0000012364",
+                "amount": 4500,
+                "installments_number": 1
+            },
+            "response": {
+                "code": 100
+            }
+        },
+        "refunds": [
+            {
+                "refunded_amount": "4500",
+                "merchantReferenceCode": "INPA-0000012364",
+                "requestID": "5233776001606850204009",
+                "decision": "ACCEPT",
+                "reasonCode": "100",
+                "requestToken": "Ahj/7wSTG7k7l7pMlFFpig9GgwYMGDlLi7x5j7AUuLvHmiomBsZR+khk0ky3SA32gSBOTG7ktAqSOzeAJAAA8gfZ",
+                "purchaseTotals": {
+                    "currency": "CLP"
+                },
+                "ccCreditReply": {
+                    "reasonCode": "100",
+                    "requestDateTime": "2018-04-10T16:26:40Z",
+                    "amount": "4500",
+                    "reconciliationID": "QP00009"
+                }
+            }
+        ]
     }
 }
 ```
 | State    | Definición                               |
 | -------- | ---------------------------------------- |
-| refunded | La devolución se completó exitosamente   |
+| refunded | La devolución se completó exitosamente por el monto total de la compra   |
+| partially_refunded | Tiene al menos una devolución asociada por monto menor al total de la compra  |
 
 Al consultar el estado de la transacción (self):
 

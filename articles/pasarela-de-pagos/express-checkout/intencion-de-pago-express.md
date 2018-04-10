@@ -125,7 +125,7 @@ Como respuesta obtendrás la siguiente información:
     },
     "links": [
         {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/7423a57f-c1aa-4c75-8319-c835c8b90e49",
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/a8a7e32e-adeb-431a-95c2-68b691f10d06",
             "rel": "self",
             "security": [
                 "ApiKey"
@@ -133,17 +133,17 @@ Como respuesta obtendrás la siguiente información:
             "method": "GET"
         },
         {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/7423a57f-c1aa-4c75-8319-c835c8b90e49/pay",
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/a8a7e32e-adeb-431a-95c2-68b691f10d06/pay",
             "rel": "approval_url",
             "method": "REDIRECT"
         },
         {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/7423a57f-c1aa-4c75-8319-c835c8b90e49/edit",
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/a8a7e32e-adeb-431a-95c2-68b691f10d06/edit",
             "rel": "update_url",
             "method": "PUT"
         },
         {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/7423a57f-c1aa-4c75-8319-c835c8b90e49/silent",
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/a8a7e32e-adeb-431a-95c2-68b691f10d06/silent",
             "rel": "silent_charge",
             "security": [
                 "Jwt"
@@ -151,7 +151,7 @@ Como respuesta obtendrás la siguiente información:
             "method": "POST"
         },
         {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/7423a57f-c1aa-4c75-8319-c835c8b90e49/refund",
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/a8a7e32e-adeb-431a-95c2-68b691f10d06/refund",
             "rel": "refund_method",
             "security": [
                 "Jwt"
@@ -167,12 +167,12 @@ Como respuesta obtendrás la siguiente información:
             "method": "GET"
         }
     ],
-    "id": "7423a57f-c1aa-4c75-8319-c835c8b90e49",
-    "expiration_date": "2018-04-13T12:36:04.652Z",
-    "create_time": "2018-04-10T12:36:04.726Z",
-    "update_time": "2018-04-10T12:36:04.726Z",
+    "id": "a8a7e32e-adeb-431a-95c2-68b691f10d06",
+    "expiration_date": "2018-04-13T16:10:05.974Z",
+    "create_time": "2018-04-10T16:10:05.982Z",
+    "update_time": "2018-04-10T16:10:05.982Z",
     "state": "created",
-    "invoice_number": "INPA-0000012331"
+    "invoice_number": "INPA-0000012363"
 }
 ```
 

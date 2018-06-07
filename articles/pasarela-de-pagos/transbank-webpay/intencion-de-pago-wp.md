@@ -19,6 +19,7 @@ curl -X POST 'https://api.sandbox.connect.fif.tech/checkout/payments' \
      "payment_method": "TRANSBANK_WEBPAY"
    }, 
    "transaction": { 
+     "gateway_order": "PEI00000000000000020",
      "reference_id": "OD0000233", 
      "description": "Transaction detailed description", 
      "soft_descriptor": "Short Description", 

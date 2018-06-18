@@ -66,43 +66,45 @@ Como respuesta obtendrás la siguiente información:
 
 ```
 {
-    "intent": "sale",
-    "application": "6d717967-8288-0089-69d1-a6a0b7cce54e",
+    "application": "5ae72af3b6a973000fabfd35",
+    "_id": "5b27c6b9e95b680015c7171c",
     "redirect_urls": {
-        "return_url": "https://requestb.in/sfoogtsf",
-        "cancel_url": "https://chao.com"
+        "return_url": "http://portal.sandbox.connect.fif.tech",
+        "cancel_url": "http://portal.sandbox.connect.fif.tech"
     },
     "transaction": {
+        "gateway_order": "PEI00000000000000020",
         "reference_id": "OD0000233",
         "description": "Transaction detailed description",
-        "soft_descriptor": "Short Description",
+        "soft_descriptor": "Transaction Short description",
         "item_list": {
             "shipping_method": "DIGITAL",
             "items": [
                 {
-                    "sku": "1231232",
-                    "name": "Destornillador 2344",
-                    "description": "Destornillador SCL - ONT",
-                    "quantity": 1,
-                    "price": 4500,
+                    "thumbnail": "http://portal.sandbox.connect.fif.tech/bundles/app/css/images/e-commerce-demo/product-icon.png",
+                    "sku": "TRK345-2",
+                    "name": "Flight 2344",
+                    "description": "Flight SCL - ONT",
+                    "quantity": 2,
+                    "price": 500,
                     "tax": 0
                 }
             ],
             "shipping_address": {
-                "line1": "Miraflores 222",
+                "line1": "General Carol Urzua 1020, Depto 102A",
                 "city": "Santiago",
                 "country_code": "CL",
-                "phone": "+56 9 1234 5674",
+                "phone": "+56 9 8762 1244",
                 "type": "HOME_OR_WORK",
-                "recipient_name": "JL Prueba 1"
+                "recipient_name": "Jhon Doe Son"
             }
         },
         "amount": {
             "currency": "CLP",
-            "total": 4500,
+            "total": 1000,
             "details": {
-                "subtotal": 810,
-                "tax": 190,
+                "subtotal": 1000,
+                "tax": 0,
                 "shipping": 0,
                 "shipping_discount": 0
             }
@@ -110,49 +112,49 @@ Como respuesta obtendrás la siguiente información:
     },
     "payer": {
         "payer_info": {
-            "documentType": "RUT",
-            "documentNumber": "123123123",
+            "document_type": "RUT",
+            "document_number": "107872388",
             "country": "CL",
-            "full_name": "JL Prueba 1",
-            "email": "jlprueba1@quickpay.com"
+            "full_name": "Andres Roa",
+            "email": "aroa@gmail.com"
         },
         "payment_method": "TRANSBANK_WEBPAY"
     },
     "links": [
         {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/d8536e18-3632-fdcb-f2ed-45d8390e8ab9",
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/5b27c6b9e95b680015c7171c",
             "rel": "self",
-            "security": [
-                "ApiKey"
-            ],
             "method": "GET"
         },
         {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/transbank/webpay/d8536e18-3632-fdcb-f2ed-45d8390e8ab9/pay",
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/transbank/webpay/5b27c6b9e95b680015c7171c/pay",
             "rel": "approval_url",
             "method": "REDIRECT"
         },
         {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/transbank/webpay/d8536e18-3632-fdcb-f2ed-45d8390e8ab9/reverse",
-            "rel": "reverse_method",
-            "security": [
-                "Jwt"
-            ],
-            "method": "POST"
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/5b27c6b9e95b680015c7171c/edit",
+            "rel": "update_url",
+            "method": "PUT"
+        },
+        {
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/Numero_unico",
+            "rel": "self_by_gateway_order",
+            "method": "GET"
         }
     ],
-    "id": "d8536e18-3632-fdcb-f2ed-45d8390e8ab9",
-    "create_time": "2017-11-20T16:09:20.944Z",
-    "update_time": "2017-11-20T16:09:20.944Z",
+    "update_time": "2018-06-18T14:50:33.919Z",
+    "create_time": "2018-06-18T14:50:33.919Z",
+    "invoice_number": "INPA-1529333433919",
     "state": "created",
-    "invoice_number": "INPA-50000000499"
+    "intent": "sale",
+    "id": "5b27c6b9e95b680015c7171c"
 }
 ```
 
 Obtendrás los Links:
 
 - **self**: desde esta URL puedes consultar la información de la captura.
-- **approval_url**: debes desplegar esta URL al cliente para que pueda continuar con el pago.
-- **reverse_method**: te permite anular la transacción.
+- **approval_url**: debes desplegar esta URL al cliente para que pueda continuar con el pago (formulario Webpay).
+- **update_url**: te permite actualizar la intención de pago siempre y cuando esta se encuentre en **state:created**.
 
 Ir al paso [3. Mostrar Formulario de Pago Transbank Webpay](formulario-pago-transbank.md)

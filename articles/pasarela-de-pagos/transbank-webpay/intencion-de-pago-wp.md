@@ -158,4 +158,4 @@ Obtendrás los Links:
 - **approval_url**: debes desplegar esta URL al cliente para que pueda continuar con el pago.
 - **self_by_gateway_order**: desde esta URL también puedes consultar la información del pago utilizando el gateway_order.
 
-Ir al paso [3. Mostrar Formulario de Pago Express Checkout](formulario-express-checkout.md)
+Ir al paso [3. Mostrar Formulario de Pago Express Checkout](formulario-pago-transbank.md)

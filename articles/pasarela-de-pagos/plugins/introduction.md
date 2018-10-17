@@ -1,3 +1,0 @@
-- [Prestashop](../../../../../../peinau-plugin-prestashop/blob/master/README.md)
-- [VTEX](vtex/introduction.md)
-- [WooCommerce](woocommerce/introduction.md)

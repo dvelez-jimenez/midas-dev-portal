@@ -6,59 +6,59 @@ Para contiunar con el proceso de pago debes ingresar el **access_token** generad
 curl -X POST 'https://api.sandbox.connect.fif.tech/checkout/payments' \
  -H "Content-Type: application/json" \
  -H "Authorization: Bearer access_token" \
- -d '{ 
-   "intent": "sale", 
-   "payer": { 
-     "payer_info": { 
-       "email": "jlprueba1@quickpay.com", 
+ -d '{
+   "intent": "sale",
+   "payer": {
+     "payer_info": {
+       "email": "jlprueba1@quickpay.com",
        "full_name": "JL Prueba 1",
        "country": "CL",
        "documentNumber": "123123123",
        "documentType": "RUT"
-     }, 
-     "payment_method": "TRANSBANK_WEBPAY"
-   }, 
-   "transaction": { 
+     },
+     "payment_method": "EVE_PRESTO"
+   },
+   "transaction": {
      "gateway_order": "PEI00000000000000020",
-     "reference_id": "OD0000233", 
-     "description": "Transaction detailed description", 
-     "soft_descriptor": "Short Description", 
-     "amount": { 
-       "currency": "CLP", 
-       "total": 4500, 
-       "details": { 
-         "subtotal": 810, 
-         "tax": 190, 
-         "shipping": 0, 
-         "shipping_discount": 0 
-       } 
-     }, 
-     "item_list": { 
-       "shipping_address": { 
-         "line1": "Miraflores 222", 
-         "city": "Santiago", 
-         "country_code": "CL", 
-         "phone": "+56 9 1234 5674", 
-         "type": "HOME_OR_WORK", 
-         "recipient_name": "JL Prueba 1" 
-       }, 
-       "shipping_method": "DIGITAL", 
-       "items": [ 
-         { 
-           "sku": "1231232", 
-           "name": "Destornillador 2344", 
-           "description": "Destornillador SCL - ONT", 
-           "quantity": 1, 
-           "price": 4500, 
-           "tax": 0 
-         } 
-       ] 
-     } 
-   }, 
-   "redirect_urls": { 
-     "return_url": "https://requestb.in/sfoogtsf", 
-     "cancel_url": "https://chao.com" 
-   } 
+     "reference_id": "OD0000233",
+     "description": "Transaction detailed description",
+     "soft_descriptor": "Short Description",
+     "amount": {
+       "currency": "CLP",
+       "total": 4500,
+       "details": {
+         "subtotal": 810,
+         "tax": 190,
+         "shipping": 0,
+         "shipping_discount": 0
+       }
+     },
+     "item_list": {
+       "shipping_address": {
+         "line1": "Miraflores 222",
+         "city": "Santiago",
+         "country_code": "CL",
+         "phone": "+56 9 1234 5674",
+         "type": "HOME_OR_WORK",
+         "recipient_name": "JL Prueba 1"
+       },
+       "shipping_method": "DIGITAL",
+       "items": [
+         {
+           "sku": "1231232",
+           "name": "Destornillador 2344",
+           "description": "Destornillador SCL - ONT",
+           "quantity": 1,
+           "price": 4500,
+           "tax": 0
+         }
+       ]
+     }
+   },
+   "redirect_urls": {
+     "return_url": "https://requestb.in/sfoogtsf",
+     "cancel_url": "https://chao.com"
+   }
  }' | json_pp
 ```
 

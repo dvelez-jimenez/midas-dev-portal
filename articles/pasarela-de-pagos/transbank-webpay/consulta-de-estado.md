@@ -63,7 +63,7 @@ Obtendrás una respuesta similar a:
         "reconciliation_unique_number": "PEI001"
     },
     "redirect_urls": {
-        "return_url": "https://peinau.azureedge.net/redirections/payment_success.html",
+        "return_url": "https://Midas.azureedge.net/redirections/payment_success.html",
         "cancel_url": "http://portal.sandbox.connect.fif.tech"
     },
     "transaction": {

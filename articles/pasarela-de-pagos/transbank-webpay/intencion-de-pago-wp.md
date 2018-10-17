@@ -1,64 +1,65 @@
 ## 2. Intención de Pago
 
-Para contiunar con el proceso de pago debes ingresar el **access_token** generado en el [paso 1](obtener-token-acceso.md) y hacer el llamado de la siguiente forma:
+Para contiunar con el proceso de pago debes ingresar el **access_token** generado en el [paso 1](obtener-token-acceso.md) en el header de la petición y hacer el llamado de la siguiente forma:
 
 ```
 curl -X POST 'https://api.sandbox.connect.fif.tech/checkout/payments' \
  -H "Content-Type: application/json" \
- -H "Authorization: Bearer access_token" \
- -d '{
-   "intent": "sale",
-   "payer": {
-     "payer_info": {
-       "email": "jlprueba1@quickpay.com",
-       "full_name": "JL Prueba 1",
+ -H "Authorization: Bearer REEMPLAZAR AQUI EL ACCESS TOKEN" \
+ -d '{ 
+{ 
+   "intent": "sale", 
+   "payer": { 
+     "payer_info": { 
+       "email": "jlprueba1@quickpay.com", 
+       "full_name": "Andres Roa",
        "country": "CL",
-       "documentNumber": "123123123",
-       "documentType": "RUT"
-     },
-     "payment_method": "EVE_PRESTO"
-   },
+       "document_number": "123123123",
+       "document_type": "RUT"
+     }, 
+     "payment_method": "QUICKPAY_TOKEN"
+   }, 
    "transaction": {
-     "gateway_order": "PEI00000000000000020",
-     "reference_id": "OD0000233",
-     "description": "Transaction detailed description",
-     "soft_descriptor": "Short Description",
-     "amount": {
-       "currency": "CLP",
-       "total": 4500,
-       "details": {
-         "subtotal": 810,
-         "tax": 190,
-         "shipping": 0,
-         "shipping_discount": 0
-       }
-     },
-     "item_list": {
-       "shipping_address": {
-         "line1": "Miraflores 222",
-         "city": "Santiago",
-         "country_code": "CL",
-         "phone": "+56 9 1234 5674",
-         "type": "HOME_OR_WORK",
-         "recipient_name": "JL Prueba 1"
-       },
-       "shipping_method": "DIGITAL",
-       "items": [
-         {
-           "sku": "1231232",
-           "name": "Destornillador 2344",
-           "description": "Destornillador SCL - ONT",
-           "quantity": 1,
-           "price": 4500,
-           "tax": 0
-         }
-       ]
-     }
+     "description": "Transaction detailed description", 
+     "soft_descriptor": "Short Description", 
+     "amount": { 
+       "currency": "CLP", 
+       "total": 4500, 
+       "details": { 
+         "subtotal": 810, 
+         "tax": 190, 
+         "shipping": 0, 
+         "shipping_discount": 0 
+       } 
+     }, 
+     "item_list": { 
+       "shipping_address": { 
+         "line1": "Miraflores 222", 
+         "city": "Santiago", 
+         "country_code": "CL", 
+         "phone": "+56 9 1234 5674", 
+         "type": "HOME_OR_WORK", 
+         "recipient_name": "Andres Roa" 
+       }, 
+       "shipping_method": "DIGITAL", 
+       "items": [ 
+         { 
+           "sku": "1231232", 
+           "name": "Destornillador 2344", 
+           "description": "Destornillador SCL - ONT", 
+           "quantity": 1, 
+           "price": 4500, 
+           "tax": 0 
+         } 
+       ] 
+     } 
+   }, 
+   "redirect_urls": { 
+     "return_url": "https://peinau.azureedge.net/redirections/payment_success.html", 
+     "cancel_url": "https://chao.com" 
    },
-   "redirect_urls": {
-     "return_url": "https://requestb.in/sfoogtsf",
-     "cancel_url": "https://chao.com"
-   }
+   "additional_attributes": {
+  }
  }' | json_pp
 ```
 
@@ -66,45 +67,45 @@ Como respuesta obtendrás la siguiente información:
 
 ```
 {
-    "application": "5ae72af3b6a973000fabfd35",
-    "_id": "5b27c6b9e95b680015c7171c",
+    "intent": "sale",
+    "_id": "5bc629b9c3321465a0783b0c",
+    "application": "ff462a80-f2a8-1390-06cf-57d5f9728b8d",
     "redirect_urls": {
-        "return_url": "http://portal.sandbox.connect.fif.tech",
-        "cancel_url": "http://portal.sandbox.connect.fif.tech"
+        "return_url": "https://peinau.azureedge.net/redirections/payment_success.html",
+        "cancel_url": "https://chao.com"
     },
     "transaction": {
-        "gateway_order": "PEI00000000000000020",
         "reference_id": "OD0000233",
+        "gateway_order": "QP00009",
         "description": "Transaction detailed description",
-        "soft_descriptor": "Transaction Short description",
+        "soft_descriptor": "Short Description",
         "item_list": {
             "shipping_method": "DIGITAL",
             "items": [
                 {
-                    "thumbnail": "http://portal.sandbox.connect.fif.tech/bundles/app/css/images/e-commerce-demo/product-icon.png",
-                    "sku": "TRK345-2",
-                    "name": "Flight 2344",
-                    "description": "Flight SCL - ONT",
-                    "quantity": 2,
-                    "price": 500,
+                    "sku": "1231232",
+                    "name": "Destornillador 2344",
+                    "description": "Destornillador SCL - ONT",
+                    "quantity": 1,
+                    "price": 4500,
                     "tax": 0
                 }
             ],
             "shipping_address": {
-                "line1": "General Carol Urzua 1020, Depto 102A",
+                "line1": "Miraflores 222",
                 "city": "Santiago",
                 "country_code": "CL",
-                "phone": "+56 9 8762 1244",
+                "phone": "+56 9 1234 5674",
                 "type": "HOME_OR_WORK",
-                "recipient_name": "Jhon Doe Son"
+                "recipient_name": "Andres Roa"
             }
         },
         "amount": {
             "currency": "CLP",
-            "total": 1000,
+            "total": 4500,
             "details": {
-                "subtotal": 1000,
-                "tax": 0,
+                "subtotal": 810,
+                "tax": 190,
                 "shipping": 0,
                 "shipping_discount": 0
             }
@@ -113,48 +114,48 @@ Como respuesta obtendrás la siguiente información:
     "payer": {
         "payer_info": {
             "document_type": "RUT",
-            "document_number": "107872388",
+            "document_number": "123123123",
             "country": "CL",
             "full_name": "Andres Roa",
-            "email": "aroa@gmail.com"
+            "email": "jlprueba1@quickpay.com"
         },
-        "payment_method": "TRANSBANK_WEBPAY"
+        "payment_method": "QUICKPAY_TOKEN"
     },
     "links": [
         {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/5b27c6b9e95b680015c7171c",
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/19a516df-b027-443e-be15-e44a41dbd94f",
             "rel": "self",
+            "security": [
+                "ApiKey"
+            ],
             "method": "GET"
         },
         {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/transbank/webpay/5b27c6b9e95b680015c7171c/pay",
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/19a516df-b027-443e-be15-e44a41dbd94f/pay",
             "rel": "approval_url",
             "method": "REDIRECT"
         },
         {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/5b27c6b9e95b680015c7171c/edit",
-            "rel": "update_url",
-            "method": "PUT"
-        },
-        {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/Numero_unico",
+            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/QP00009",
             "rel": "self_by_gateway_order",
+            "security": [
+                "ApiKey"
+            ],
             "method": "GET"
         }
     ],
-    "update_time": "2018-06-18T14:50:33.919Z",
-    "create_time": "2018-06-18T14:50:33.919Z",
-    "invoice_number": "INPA-1529333433919",
+    "id": "19a516df-b027-443e-be15-e44a41dbd94f",
+    "create_at": "2018-04-10T16:14:05.309Z",
+    "updated_at": "2018-04-10T16:14:05.309Z",
     "state": "created",
-    "intent": "sale",
-    "id": "5b27c6b9e95b680015c7171c"
+    "invoice_number": "INPA-0000012364"
 }
 ```
 
 Obtendrás los Links:
 
-- **self**: desde esta URL puedes consultar la información de la captura.
-- **approval_url**: debes desplegar esta URL al cliente para que pueda continuar con el pago (formulario Webpay).
-- **update_url**: te permite actualizar la intención de pago siempre y cuando esta se encuentre en **state:created**.
+- **self**: desde esta URL puedes consultar la información del pago.
+- **approval_url**: debes desplegar esta URL al cliente para que pueda continuar con el pago.
+- **self_by_gateway_order**: desde esta URL también puedes consultar la información del pago utilizando el gateway_order.
 
-Ir al paso [3. Mostrar Formulario de Pago Transbank Webpay](formulario-pago-transbank.md)
+Ir al paso [3. Mostrar Formulario de Pago Express Checkout](formulario-express-checkout.md)

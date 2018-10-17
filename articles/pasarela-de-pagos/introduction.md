@@ -6,8 +6,8 @@ Te ofrecemos diversas opciones de integración para que puedas adaptar nuestro p
 
 ## API Checkout
 
-- [](transbank-webpay/introduction.md)
+- [Pasarela de pagos](transbank-webpay/introduction.md)
 
 ## SDKs
 
-- [SDK Javascript](https://github.com/Midas/midas-javascript/blob/master/README.md)
+- [SDK Javascript](https://github.com/walmartdigital/midas-dev-portal/blob/master/README.md) 

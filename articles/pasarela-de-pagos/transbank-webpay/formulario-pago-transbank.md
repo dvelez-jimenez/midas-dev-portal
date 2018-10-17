@@ -1,8 +1,10 @@
 ## 3. Mostrar Formulario de Pago Transbank Webpay
 
-Con la **approval_url** obtenida en el [paso 2](intencion-de-pago-wp.md) puedes desplegar el formulario de pago con Transbank Webpay.
+Con la **approval_url** obtenida en el [paso 2](intencion-de-pago-express.md) puedes desplegar el formulario del medio de pago seleccionado por el cliente.
 
-![Ejemplo de Formulario Transbank](images/transbank-1.PNG)
+![Ejemplo de presto](images/prestopagoenlinea.png)
+![Ejemplo de transbank credito](images/transbankcd.png)
+![Ejemplo de transbank debito](images/transbankd.png)
 
 **Datos de prueba WebPay plus:**
 
@@ -10,8 +12,11 @@ Con la **approval_url** obtenida en el [paso 2](intencion-de-pago-wp.md) puedes 
 > |---|---|---|
 > |4051885600446623|11.111.111-1|123|
 
-Desde este punto, el cliente interactua directamente con WebPay plus. 
+El cliente debe ingresar los datos de la tarjeta, seleccionar las cuotas y aprobar el pago para que nuestro sistema pueda ejecutar el cargo a la tarjeta de crédito. 
 
-Una vez finalizada la transacción, Midas devuelve el resultado de esta a la URL que indicaste en el request a la API **intención de pago** [(paso 2)](intencion-de-pago-wp.md).
+El sistema redireccionará la url de éxito o error, según sea la respuesta recibida en la ejecución del pago.
 
-Ir al paso [4. Consultar Estado de la Transacción](consulta-de-estado.md)
+> **Importante** Las urls anteriormente mencionadas son las que el comercio envió en el [paso 2](intencion-de-pago-express.md) en los atributos **"redirect_urls.return_url"** y **"redirect_urls.cancel_url"**.
+
+Para finalizar debes consultar el estado de la transacción como se explica a continuación:
+[4. Consultar Estado de la Transacción](consulta-de-estado-express.md)

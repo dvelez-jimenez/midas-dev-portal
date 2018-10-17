@@ -2,7 +2,7 @@
 
 Al completar el registro de la aplicación (Alta del Comercio), obtendrás dos llaves con las cuales te podrás autenticar en el sistema, a estas les llamamos **client_id** (identificador) y **client_secret** (Clave Secreta).
 
-![Ejemplo de client_id y client_secret](images/portal-1.png)
+![Ejemplo de client_id y client_secret](images/configuracion-app.png)
 
 Con estas credenciales podrás obtener el **token de acceso** llamando a la **API de Autenticación** de la siguiente forma:
 
@@ -30,4 +30,4 @@ Como respuesta obtendrás el **access_token**:
 
 Con el **access_token** generado, ya puedes comenzar a usar nuestras APIs para completar los pasos siguientes. 
 
-Ir al paso [2. Intención de Pago](intencion-de-pago-wp.md)
+Ir al paso [2. Intención de Pago](intencion-de-pago-express.md)

@@ -11,3 +11,4 @@ Te ofrecemos la(s) siguientes soluciones:
 - [Pasarela de pagos](articles/pasarela-de-pagos/introduction.md)
 
 ¿Quieres contribuir con el contenido de Midas? [Más Info Aquí](articles/contribuciones/introduccion.md)
+

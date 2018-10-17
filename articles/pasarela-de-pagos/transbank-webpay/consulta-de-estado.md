@@ -1,6 +1,6 @@
 ## 4. Consulta de Estado de la Transacción
 
-Debes consultar el estado (state) de la transacción, para esto necesitas enviar el **access_token** (en el header de la petición) obtenido en la **Autenticación**, la **url self** obtenida en el [paso 2](intencion-de-pago-express.md) y ejecutar la consulta de la siguiente forma:
+Debes consultar el estado (state) de la transacción, para esto necesitas enviar el **access_token** (en el header de la petición) obtenido en la **Autenticación**, la **url self** obtenida en el [paso 2](intencion-de-pago-wp.md) y ejecutar la consulta de la siguiente forma:
 
 ```
 curl -X GET \
@@ -9,7 +9,7 @@ curl -X GET \
   -H 'Authorization: Bearer REEMPLAZAR AQUI EL ACCESS TOKEN'
 ```
 
-Tambien puedes consultar el estado (state) de la transacción, para esto necesitas enviar el **access_token** (en el header de la petición) obtenido en la **Autenticación**, la **transaction.gateway_order** obtenida en el [paso 2](intencion-de-pago-express.md) y ejecutar la consulta de la siguiente forma:
+Tambien puedes consultar el estado (state) de la transacción, para esto necesitas enviar el **access_token** (en el header de la petición) obtenido en la **Autenticación**, la **transaction.gateway_order** obtenida en el [paso 2](intencion-de-pago-wp.md) y ejecutar la consulta de la siguiente forma:
 
 ```
 curl -X GET \

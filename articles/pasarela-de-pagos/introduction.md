@@ -6,7 +6,7 @@ Te ofrecemos diversas opciones de integración para que puedas adaptar nuestro p
 
 ## API Checkout
 
-- [Pasarela de pagos](transbank-webpay/introduction.md)
+- [transbank-webpay](transbank-webpay/introduction.md)
 
 ## SDKs
 

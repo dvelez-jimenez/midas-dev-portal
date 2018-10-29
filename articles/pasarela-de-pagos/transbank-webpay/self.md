@@ -4,7 +4,7 @@ Debes llamar al self obtenido en la respuesta de la intención de pago de la sig
 
 ```
 curl -X GET \
-  https://api.test.peinau.fif.tech/checkout/payments/{id} \
+  http://api.staging-v2.walmartdigital.cl/checkout/payments/{id} \
   -H 'authorization: access_token' \
  ```
 
@@ -12,17 +12,30 @@ Obtendrás una respuesta similar a:
 
 ```
 {
+    "_id": "5bc6449365a8b10028f43369",
     "intent": "sale",
     "additional_attributes": {
-        "capture_token": "cb9268d1-d966-0ae4-0d6d-8909c078c3d7"
+        "client_id": "163875586",
+        "channel": "EC-GR-D",
+        "local_id": "83",
+        "shipping_groups": [
+            {
+                "id": "sg8008480046",
+                "date": "20180906",
+                "interval": "900-21:1000",
+                "amount": "4500",
+                "local_id": "83"
+            }
+        ]
     },
-    "application": "195d24b8-ff4b-1803-a405-cbcd5e8a8b7d",
+    "application": "5b635b3b71cd29001c5043ae",
     "redirect_urls": {
-        "return_url": "https://requestb.in/sfoogtsf",
-        "cancel_url": "https://chao.com"
+        "return_url": "http://localhost:8081/payments/static_redirection.html",
+        "cancel_url": "http://localhost:8081/payments/static_redirection.html"
     },
     "transaction": {
-        "reference_id": "OD0000233",
+        "gateway_order": "INPA-85001539720339417",
+        "reference_id": "1",
         "description": "Transaction detailed description",
         "soft_descriptor": "Short Description",
         "item_list": {
@@ -34,8 +47,7 @@ Obtendrás una respuesta similar a:
                     "description": "Destornillador SCL - ONT",
                     "quantity": 1,
                     "price": 4500,
-                    "tax": 0,
-                    "_id": "5a5ce2ca25d349000f7ed52e"
+                    "tax": 0
                 }
             ],
             "shipping_address": {
@@ -51,85 +63,78 @@ Obtendrás una respuesta similar a:
             "currency": "CLP",
             "total": 4500,
             "details": {
-                "subtotal": 810,
-                "tax": 190,
+                "subtotal": 4000,
+                "tax": 500,
                 "shipping": 0,
                 "shipping_discount": 0
             }
         }
     },
     "payer": {
+        "payment_method": "EVE_PRESTO",
         "payer_info": {
-            "documentType": "RUT",
-            "documentNumber": "123123123",
+            "email": "jlprueba1@quickpay.com",
+            "full_name": "David Muñoz",
             "country": "CL",
-            "full_name": "Andres Roa",
-            "email": "jlprueba1@quickpay.com"
-        },
-        "payment_method": "QUICKPAY_TOKEN"
+            "document_number": "123123123",
+            "document_type": "RUT"
+        }
     },
-    "links": [],
-    "id": "78f5a033-2b76-b20f-59dc-b624495db45c",
-    "create_time": "2018-01-15T17:20:10.893Z",
-    "update_time": "2018-01-15T17:20:47.003Z",
+    "links": [
+        {
+            "href": "http://api.staging-v2.walmartdigital.cl/checkout/payments/5bc6449365a8b10028f43369",
+            "rel": "self",
+            "method": "GET"
+        },
+        {
+            "href": "http://api.staging-v2.walmartdigital.cl/checkout/payments/gateways/eve/presto/5bc6449365a8b10028f43369/pay",
+            "rel": "approval_url",
+            "method": "REDIRECT"
+        }
+    ],
+    "updated_at": "2018-10-16T20:06:36.418Z",
+    "created_at": "2018-10-16T20:05:39.417Z",
+    "invoice_number": "INPA-85001539720339417",
     "state": "paid",
-    "invoice_number": "INPA-0000003441",
+    "id": "5bc6449365a8b10028f43369",
     "gateway": {
-        "payment_flow": "with_token",
-        "installments_number": "1",
-        "merchantReferenceCode": "INPA-0000003441",
-        "requestID": "5160368463946965504008",
-        "decision": "ACCEPT",
-        "reasonCode": "100",
-        "requestToken": "Ahj//wSTF75/oSfnCtAIiiDBlYjWmcqPKhWY82rXbJclx8ZUwClyXHxlTEwNjKPp8MmkmXoxXL8sBgTkxe+f6En5wrQCAAAA1QRt",
-        "purchaseTotals": {
-            "currency": "CLP"
-        },
-        "ccAuthReply": {
-            "reasonCode": "100",
-            "amount": "4500",
-            "authorizationCode": "570110",
-            "avsCode": "1",
-            "authorizedDateTime": "2018-01-15T17:20:46Z",
-            "processorResponse": "1",
-            "reconciliationID": "02XFZ3JGJBYGMUW6",
-            "paymentNetworkTransactionID": "111222",
-            "ownerMerchantID": "falabella2",
-            "processorTransactionID": "745153081f0d48fd8c55e4926a948729"
-        },
-        "ccCaptureReply": {
-            "reasonCode": "100",
-            "requestDateTime": "2018-01-15T17:20:46Z",
-            "amount": "4500",
-            "reconciliationID": "02XFZ3JGJBYGMUW6"
-        },
-        "additionalProcessorResponse": "3fb78121-eff5-45ff-8337-b0ea038e54f8",
-        "capture_token": "cb9268d1-d966-0ae4-0d6d-8909c078c3d7",
+        "orderId": "INPA-85001539720339417",
+        "codRespuesta": "0",
+        "medioPago": "PRESTO",
+        "codTransaccion": "714810",
+        "codAutorizacion": "999999",
+        "idSesion": "",
+        "montoTransaccion": "4500",
+        "numCuotas": "0",
+        "fechaTransaccion": "20181016",
+        "horaTransaccion": "170457",
+        "tipoTransaccion": "TR_NORMAL",
+        "tipoPago": "VC",
+        "resTransaccion": "DUMMY-EXITO",
+        "digitosTc": "",
+        "fechaContable": "20181016",
+        "commercialCode": "714",
+        "firma": "455492897152fb28dab23f104abc3d47feab9dd6915790e9a3e5c823bbeca6a9",
         "resume": {
-            "_id": "5a5ce2ef25d349000f7ed530",
-            "card_number": {
-                "pan_last4": 1111,
-                "pan_first6": 411111
-            },
-            "authorizations": {
-                "code": "570110"
+            "response": {
+                "code": 0
             },
             "transaction": {
-                "gateway_id": "5160368463946965504008",
-                "type": "CREDIT",
-                "date": "2018-01-15T17:20:47.002Z",
-                "currency": "CLP",
-                "buy_order": "INPA-0000003441",
+                "installments_number": 0,
                 "amount": 4500,
-                "installments_number": 1
+                "buy_order": "INPA-85001539720339417",
+                "currency": "CLP",
+                "date": "2018-10-16T20:06:36.417Z",
+                "type": "CREDIT",
+                "gateway_id": "714810"
             },
-            "response": {
-                "code": 100
-            }
+            "authorizations": {
+                "code": "999999"
+            },
+            "_id": "5bc644cc65a8b10028f4336c"
         }
     }
 }
-
 ```
 
 # Ejemplo de Self rechazado
@@ -138,10 +143,21 @@ Enviando un id incorrecto
 
 ```
 curl -X GET \
-  https://api.test.peinau.fif.tech/checkout/payments/{id_incorrecto} \
+  http://api.staging-v2.walmartdigital.cl/checkout/payments/{id_incorrecto} \
   -H 'authorization: access_token' \
  ```
 
-La respuesta obtenida es: 
+La respuesta obtenida es:
+``` 
+{
+    "error_code": "DOCUMENT_NOT_FOUND",
+    "error_description": "the document you requested is not found",
+    "meta_data": {
+        "id_not_found": "INPA-85001539720339417asd",
+        "collection_name": "intention"
+    }
+}
+```
+
 * Status http **500**
 * Glosa: **"DOCUMENT_NOT_FOUND"**

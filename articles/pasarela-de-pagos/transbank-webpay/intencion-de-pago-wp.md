@@ -9,59 +9,73 @@ curl -X POST \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -H 'postman-token: fdd285bc-5f48-7c71-b306-19ee7d04941e' \
-  -d '{ 
-   "intent": "sale", 
-   "payer": { 
-     "payer_info": { 
-       "email": "david.munoz@peanuthub.cl", 
-       "full_name": "David Muñoz",
-       "country": "CL",
-       "document_number": "123123123",
-       "document_type": "RUT"
-     }, 
-     "payment_method": "EVE_PRESTO"
-   }, 
-   "transaction": { 
-     "reference_id": "OD0000233", 
-     "description": "Transaction detailed description", 
-     "soft_descriptor": "Short Description", 
-     "amount": { 
-       "currency": "CLP", 
-       "total": 4500, 
-       "details": { 
-         "subtotal": 810, 
-         "tax": 190, 
-         "shipping": 0, 
-         "shipping_discount": 0 
-       } 
-     }, 
-     "item_list": { 
-       "shipping_address": { 
-         "line1": "Miraflores 222", 
-         "city": "Santiago", 
-         "country_code": "CL", 
-         "phone": "+56 9 1234 5674", 
-         "type": "HOME_OR_WORK", 
-         "recipient_name": "David Muñoz" 
-       }, 
-       "shipping_method": "DIGITAL", 
-       "items": [ 
-         { 
-           "sku": "1231232", 
-           "name": "Destornillador 2344", 
-           "description": "Destornillador SCL - ONT", 
-           "quantity": 1, 
-           "price": 4500, 
-           "tax": 0 
-         } 
-       ] 
-     } 
-   }, 
-   "redirect_urls": { 
-     "return_url": "https://checkout.peanuthub.com/redirections/payment_success.html", 
-     "cancel_url": "https://chao.com" 
-   }
- }'
+  -d '{
+  "intent": "sale",
+  "payer": {
+    "payer_info": {
+      "email": "jlprueba1@quickpay.com",
+      "full_name": "David Muñoz",
+      "country": "CL",
+      "document_number": "123123123",
+      "document_type": "RUT"
+    },
+    "payment_method": "EVE_PRESTO"
+  },
+  "transaction": {
+  	"reference_id":1,
+    "description": "Transaction detailed description",
+    "soft_descriptor": "Short Description",
+    "amount": {
+      "currency": "CLP",
+      "total": 4500,
+      "details": {
+        "subtotal": 4000,
+        "tax": 500,
+        "shipping": 0,
+        "shipping_discount": 0
+      }
+    },
+    "item_list": {
+      "shipping_address": {
+        "line1": "Miraflores 222",
+        "city": "Santiago",
+        "country_code": "CL",
+        "phone": "+56 9 1234 5674",
+        "type": "HOME_OR_WORK",
+        "recipient_name": "Andres Roa"
+      },
+      "shipping_method": "DIGITAL",
+      "items": [
+        {
+          "sku": "1231232",
+          "name": "Destornillador 2344",
+          "description": "Destornillador SCL - ONT",
+          "quantity": 1,
+          "price": 4500,
+          "tax": 0
+        }
+      ]
+    }
+  },
+  "redirect_urls": {
+    "return_url": "{{api}}/payments/static_redirection.html",
+    "cancel_url": "{{api}}/payments/static_redirection.html"
+  },
+  "additional_attributes": {
+    "client_id": "163875586",
+    "channel":"EC-GR-D",
+    "local_id":"83",
+    "shipping_groups": [
+      {
+        "id":"sg8008480046",
+        "date":"20180906",
+        "interval":"900-21:1000",
+        "amount": "4500",
+        "local_id":"83"
+      }
+    ]
+  }
+}'
  ```
 **Detalle de los Campos de la Petición**
 
@@ -120,15 +134,15 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 ```
 {
     "intent": "sale",
-    "additional_attributes": {
-    },
-    "application": "28adb999-7a2e-70b8-c092-e4c16a9e9e0a",
+    "_id": "5bd6eda61a30be002a4625d8",
+    "application": "5b635b3b71cd29001c5043ae",
     "redirect_urls": {
-        "return_url": "https://checkout.peanuthub.com/redirections/payment_success.html",
-        "cancel_url": "https://chao.com"
+        "return_url": "http://api.staging-v2.walmartdigital.cl/checkout/payments/static_redirection.html",
+        "cancel_url": "http://api.staging-v2.walmartdigital.cl/checkout/payments/static_redirection.html"
     },
     "transaction": {
-        "reference_id": "OD0000233",
+        "gateway_order": "INPA-54731540812198469",
+        "reference_id": "1",
         "description": "Transaction detailed description",
         "soft_descriptor": "Short Description",
         "item_list": {
@@ -149,71 +163,66 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
                 "country_code": "CL",
                 "phone": "+56 9 1234 5674",
                 "type": "HOME_OR_WORK",
-                "recipient_name": "David Muñoz"
+                "recipient_name": "Andres Roa"
             }
         },
         "amount": {
             "currency": "CLP",
             "total": 4500,
             "details": {
-                "subtotal": 810,
-                "tax": 190,
+                "subtotal": 4000,
+                "tax": 500,
                 "shipping": 0,
                 "shipping_discount": 0
             }
         }
     },
     "payer": {
+        "payment_method": "EVE_PRESTO",
         "payer_info": {
-            "document_type": "RUT",
-            "document_number": "123123123",
-            "country": "CL",
+            "email": "jlprueba1@quickpay.com",
             "full_name": "David Muñoz",
-            "email": "jlprueba1@peanuthub.cl"
-        },
-        "payment_method": "EVE_PRESTO"
+            "country": "CL",
+            "document_number": "123123123",
+            "document_type": "RUT"
+        }
     },
     "links": [
         {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/aedac5dc-49a2-87db-e373-aa44675951a7",
+            "href": "http://api.staging-v2.walmartdigital.cl/checkout/payments/5bd6eda61a30be002a4625d8",
             "rel": "self",
-            "security": [
-                "ApiKey"
-            ],
             "method": "GET"
         },
         {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/aedac5dc-49a2-87db-e373-aa44675951a7/pay",
+            "href": "http://api.staging-v2.walmartdigital.cl/checkout/payments/gateways/eve/presto/5bd6eda61a30be002a4625d8/pay",
             "rel": "approval_url",
             "method": "REDIRECT"
         },
         {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/aedac5dc-49a2-87db-e373-aa44675951a7/edit",
-            "rel": "update_url",
-            "method": "PUT"
-        },
-        {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/aedac5dc-49a2-87db-e373-aa44675951a7/silent",
-            "rel": "silent_charge",
-            "security": [
-                "Jwt"
-            ],
-            "method": "POST"
-        },
-        {
-            "href": "https://api.sandbox.connect.fif.tech/checkout/payments/gateways/quickpay/token/aedac5dc-49a2-87db-e373-aa44675951a7/refund",
-            "rel": "refund_method",
-            "security": [
-                "Jwt"
-            ],
-            "method": "POST"
+            "href": "http://api.staging-v2.walmartdigital.cl/checkout/payments/INPA-54731540812198469",
+            "rel": "self_by_gateway_order",
+            "method": "GET"
         }
     ],
-    "id": "aedac5dc-49a2-87db-e373-aa44675951a7",
-    "create_time": "2018-01-15T15:57:20.191Z",
-    "update_time": "2018-01-15T15:57:20.191Z",
+    "updated_at": "2018-10-29T11:23:18.469Z",
+    "created_at": "2018-10-29T11:23:18.469Z",
+    "invoice_number": "INPA-54731540812198469",
     "state": "created",
-    "invoice_number": "INPA-1244430504601613"
+    "id": "5bd6eda61a30be002a4625d8",
+    "additional_attributes": {
+        "shipping_groups": [
+            {
+                "local_id": "83",
+                "amount": "4500",
+                "interval": "900-21:1000",
+                "date": "20180906",
+                "id": "sg8008480046"
+            }
+        ],
+        "local_id": "83",
+        "channel": "EC-GR-D",
+        "client_id": "163875586"
+    }
 }
 ```
 **Detalle de los campos agregados a la Respuesta**

@@ -4,7 +4,7 @@ Puedes consultar el estado del servicio de la siguiente forma:
 
 ```
 curl -X GET \
-  https://api.sandbox.connect.fif.tech/checkout/health
+  http://api.staging-v2.walmartdigital.cl/checkout/health
   
 ```
 
@@ -18,6 +18,7 @@ Cuando el status del servicio es **UP** recibirás una respuesta similar a:
         "profile": "PROD",
         "name": "midas-checkout",
         "version": "1.0.0",
+        "routePrefix":"/checkout"
         "logging": {
             "level": "info"
         }

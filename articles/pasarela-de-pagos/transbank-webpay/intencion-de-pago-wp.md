@@ -111,7 +111,7 @@ curl -X POST \
 | redirect_urls.cancel_url                 | URL de notificación de pago fallido      | string (url) |  Sí         |
 | **additional_attributes**                | **Grupo de campos de uso exclusivo**     | **objeto**   |  Opcional         |
 | additional_attributes.order_number       | Numero de Orden Asociado                 | string       |  Sí         |
-| **meta_da**                              | **Objeto para almacenar datos de la integración**     | **objeto**   || 
+| **meta_data**                              | **Objeto para almacenar datos de la integración**     | **objeto**   || 
 
 El resultado de la llamada a la API de checkout, será una intención de pago en su estado inicial (created), que contendrá el, o los links HATEOAS relacionados con la llamada.
 

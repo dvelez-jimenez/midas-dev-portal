@@ -251,4 +251,4 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
 
 [Consultar estado del servicio (Health Check)](health-checkout.md)
 
-Ir al paso [3. Mostrar Formulario de Pago Express Checkout](formulario-pago-transbank.md)
+Ir al paso [3. Mostrar Formulario de Pago Express Checkout](formulario-pago.md)

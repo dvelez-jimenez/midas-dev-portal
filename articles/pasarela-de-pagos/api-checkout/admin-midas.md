@@ -1,6 +1,16 @@
-## 1. Obtener un Token de Acceso
+## 1. Registro de Aplicación en Midas
 
-Al completar el registro de la aplicación (Alta del Comercio), obtendrás dos llaves con las cuales te podrás autenticar en el sistema, a estas les llamamos **client_id** (identificador) y **client_secret** (Clave Secreta).
+Débe ingresar por medio de su navegador en la siguiennte url:
+
+```
+    https://adm-checkout.staging-v2.walmartdigital.cl/apikeys
+```
+
+Generar el registro en el sistema con su cuenta de Facebook, Google o GitHub
+
+![Ejemplo de admin Midas](images/midas-Admin.png)
+
+Al generar el registro de la aplicación (Alta del Comercio), obtendrás dos llaves con las cuales te podrás autenticar en el sistema, a estas les llamamos **client_id** (identificador) y **client_secret** (Clave Secreta).
 
 ![Ejemplo de client_id y client_secret](images/configuracion-app.png)
 

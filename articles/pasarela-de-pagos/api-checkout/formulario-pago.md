@@ -4,6 +4,7 @@ Con la **approval_url** obtenida en el [paso 2](intencion-de-pago-wp.md) puedes 
 
 ![Ejemplo de transbank credito](images/transbankcd.png)
 ![Ejemplo de transbank debito](images/transbankd.png)
+![Ejemplo Presto LiderMaster Card](images/prestopagoenlinea.png)
 
 **Datos de prueba WebPay plus:**
 

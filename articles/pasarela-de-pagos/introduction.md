@@ -1,6 +1,6 @@
 # Pasarela de pagos
 
-Esta solución permite recibir pagos de tus clientes en tu sitio de e-commerce.
+Midas es una solución que te permite recibir pagos de tus clientes desde tus sitio de e-commerce.
 
 Te ofrecemos diversas opciones de integración para que puedas adaptar nuestro producto a las necesidades de tu negocio.
 
@@ -10,4 +10,4 @@ Te ofrecemos diversas opciones de integración para que puedas adaptar nuestro p
 
 ## API Checkout
 
-- [transbank-webpay (RedCompra / Crédito)](transbank-webpay/introduction.md)
+- [Integración de MIDAS](api-checkout/introduction.md)

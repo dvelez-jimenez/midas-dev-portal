@@ -1,4 +1,4 @@
-# RedCompra Checkout con Webpay plus o Presto
+# Checkout con Webpay plus o Presto
 
 Recibe pagos online con la solución Transbank Webpay (RedCompra/ Crédito) o Presto a través de Midas.
 

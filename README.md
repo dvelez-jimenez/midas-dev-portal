@@ -2,10 +2,9 @@
 
 Bienvenido al portal de desarrolladores de Midas
 
-Si quieres integrar un botón de pagos en tu sitio web de forma fácil, rápida y segura, somos tu mejor opción.
+Si quieres realizar pagos digitales por un botón de pago en tu sitio web de forma fácil, rápida y segura, somos tu mejor opción.
 
-Además, utilizando Midas podrás usar los medios de pago más populares disponibles a tan solo un variable de configuración.
-
+Además, utilizando Midas podrás implementar los medios de pago disponibles para tu comercio, realizando una única configuración.
 
 Te ofrecemos la(s) siguientes soluciones:
 

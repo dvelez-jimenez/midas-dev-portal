@@ -3,12 +3,13 @@
 Para completar el pago con el **token de la tarjeta** debes ingresar el **id** obtenido previamente de la **return_url** en el campo **capture_token** de la petición a la API de **Intención de Pago /payments**, el **access_token** generado en el [paso 1](obtener-token-acceso.md) y hacer el llamado de la siguiente forma:
 
 ```
+export URL_API_MIDAS=http://api.staging-v2.walmartdigital.cl/checkout
+export ACCESS_TOKEN= 'eyJhbGciO...duYw'
 curl -X POST \
-  http://api.staging-v2.walmartdigital.cl/checkout/payments \
-  -H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcmltYXJ5c2lkIjoiMjhhZGI5OTktN2EyZS03MGI4LWMwOTItZTRjMTZhOWU5ZTBhIiwidW5pcXVlX25hbWUiOiJUb2lwYXRvLmNvbSIsImdyb3Vwc2lkIjoiQVBQTCIsImlzcyI6IkZhbGFiZWxsYSIsImF1ZCI6IldlYiIsInR5cGUiOiJCZWFyZXIiLCJzY29wZSI6W10sImlhdCI6MTUxMzE3Nzk1OCwiZXhwIjoxNTEzMTc4ODU4fQ.OYBksN1EvNBU012fJt4IhUnQ5g0szPXPmivD2GvprLczjbG6Pd7HeSyWddSCVOAwAXfycNMzwn0nb_6VdYMqbSzE3T9Bu0Oqzih4b_BfLLb4EwpRQ3L0ObFNkJTI2hfIMUNJQ5ohT8b2yR-1SiehAUd0Tlkb3zrh2aDP9AYVZGqkjLdnwQOpBtXVs6VmntXnb3_MklOU7U0BylB1kVG40t9qfSxf79DYTcr3JWs6LdCFDThkudMZtJfnjYsOoqt--Iv8BzhCU7Eft1Isf2Qfqn_1-p778E7r4yQY1GREuAsXPNfnnHxi7gOVVQ1owq1aekqt4m4ML-VLow8pUx5duYw' \
+  "$URL_API_MIDAS/payments" \
+  -H 'authorization: Bearer $ACCESS_TOKEN' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
-  -H 'postman-token: fdd285bc-5f48-7c71-b306-19ee7d04941e' \
   -d '{
   "intent": "sale",
   "payer": {
@@ -58,8 +59,8 @@ curl -X POST \
     }
   },
   "redirect_urls": {
-    "return_url": "{{api}}/payments/static_redirection.html",
-    "cancel_url": "{{api}}/payments/static_redirection.html"
+    "return_url": "{{URL_RESPUESTA_PAGO}}",
+    "cancel_url": "{{URL_RESPUESTA_PAGO}}"
   },
   "additional_attributes": {
     "client_id": "163875586",
@@ -77,6 +78,13 @@ curl -X POST \
   }
 }'
  ```
+
+> El **URL_API_MIDAS**, **ACCESS_TOKEN** y **URL_NEGOCIO** utilizados en esta petición son datos de prueba.
+> **{{URL_API_MIDAS}}/payments** 
+> el campo **URL_RESPUESTA_PAGO** de la petición sera la url para notificar la respuesta del pago realizado / si el cliente no dispone de una url puede enviar la url por defecto de midas **{{URL_API_MIDAS}}/payments/static_redirection.html**.
+
+/
+
 **Detalle de los Campos de la Petición**
 
 | Nombre                                   | Descripción                              | Tipo         | Requerido   |
@@ -137,8 +145,8 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
     "_id": "5bd6eda61a30be002a4625d8",
     "application": "5b635b3b71cd29001c5043ae",
     "redirect_urls": {
-        "return_url": "http://api.staging-v2.walmartdigital.cl/checkout/payments/static_redirection.html",
-        "cancel_url": "http://api.staging-v2.walmartdigital.cl/checkout/payments/static_redirection.html"
+        "return_url": "{{URL_RESPUESTA_PAGO}}",
+        "cancel_url": "{{URL_RESPUESTA_PAGO}}"
     },
     "transaction": {
         "gateway_order": "INPA-54731540812198469",
@@ -189,17 +197,17 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
     },
     "links": [
         {
-            "href": "http://api.staging-v2.walmartdigital.cl/checkout/payments/5bd6eda61a30be002a4625d8",
+            "href": "{{URL_API_MIDAS}}/payments/5bd6eda61a30be002a4625d8",
             "rel": "self",
             "method": "GET"
         },
         {
-            "href": "http://api.staging-v2.walmartdigital.cl/checkout/payments/gateways/eve/presto/5bd6eda61a30be002a4625d8/pay",
+            "href": "{{URL_API_MIDAS}}/payments/gateways/eve/presto/5bd6eda61a30be002a4625d8/pay",
             "rel": "approval_url",
             "method": "REDIRECT"
         },
         {
-            "href": "http://api.staging-v2.walmartdigital.cl/checkout/payments/INPA-54731540812198469",
+            "href": "{{URL_API_MIDAS}}/payments/INPA-54731540812198469",
             "rel": "self_by_gateway_order",
             "method": "GET"
         }
@@ -225,6 +233,10 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
     }
 }
 ```
+
+> El **{{URL_API_MIDAS}}** mostrados en esta respuesta corresponde a la url de la integración de MIDAS.
+> el campo **URL_RESPUESTA_PAGO** de la petición sera la url para notificar la respuesta del pago realizado / si el cliente no dispone de una url puede enviar la url por defecto de midas **{{URL_API_MIDAS}}/payments/static_redirection.html**.
+
 **Detalle de los campos agregados a la Respuesta**
 
 | Nombre                                   | Descripción                              | Tipo         |

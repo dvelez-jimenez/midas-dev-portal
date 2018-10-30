@@ -5,8 +5,9 @@ Débe ingresar por medio de su navegador en la siguiennte url:
 ```
     https://adm-checkout.staging-v2.walmartdigital.cl/apikeys
 ```
+> **URL** utilizada son datos de prueba del servidor de staging walmartdigital.
 
-Generar el registro en el sistema con su cuenta de Facebook, Google o GitHub
+Generar el registro en el sistema con su cuenta de Google
 
 ![Ejemplo de admin Midas](images/midas-Admin.png)
 
@@ -19,13 +20,15 @@ Con estas credenciales podrás obtener el **token de acceso** llamando a la **AP
 ```
 export CLIENT_ID=641281901508761220281
 export CLIENT_SECRET=B8WKRXMiWHHrMCectt9Rg3ju4Y8GNheEa50gx6365sBV
-curl -v -X POST http://api.staging-v2.walmartdigital.cl/sso/oauth2/v2/token \
+export URL_API_SSO="http://api.staging-v2.walmartdigital.cl/sso"
+curl -v -X POST "$URL_API_SSO/oauth2/v2/token" \
  -H "Content-Type:application/x-www-form-urlencoded" \
  -H "Authorization: Basic $CLIENT_ID:$CLIENT_SECRET" \
  -d "grant_type=client_credentials" | json_pp
 ```
 
-> El **CLIENT_ID** y **CLIENT_SECRET** utilizados en esta petición son datos de prueba.
+> El **CLIENT_ID**, **CLIENT_SECRET** y **URL** utilizados en esta petición son datos de prueba.
+> **{{URL_API_SSO}}/oauth2/v2/token** 
 
 Como respuesta obtendrás el **access_token**:
 

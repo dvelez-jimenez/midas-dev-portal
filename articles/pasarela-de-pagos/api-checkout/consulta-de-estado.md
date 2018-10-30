@@ -3,20 +3,26 @@
 Debes consultar el estado (state) de la transacción, para esto necesitas enviar el **access_token** (en el header de la petición) obtenido en la **Autenticación**, la **url self** obtenida en el [paso 2](intencion-de-pago-wp.md) y ejecutar la consulta de la siguiente forma:
 
 ```
+export URL_API_MIDAS=http://api.staging-v2.walmartdigital.cl/checkout
+export ACCESS_TOKEN= 'eyJhbGciO...duYw'
 curl -X GET \
-  http://api.staging-v2.walmartdigital.cl/checkout/payments/{id} \
+  "$URL_API_MIDAS/payments/{id}" \
   -H 'cache-control: no-cache' \
-  -H 'Authorization: Bearer REEMPLAZAR AQUI EL ACCESS TOKEN'
+  -H 'Authorization: Bearer $ACCESS_TOKEN'
 ```
 
 Tambien puedes consultar el estado (state) de la transacción, para esto necesitas enviar el **access_token** (en el header de la petición) obtenido en la **Autenticación**, la **transaction.gateway_order** obtenida en el [paso 2](intencion-de-pago-wp.md) y ejecutar la consulta de la siguiente forma:
 
 ```
+export URL_API_MIDAS=http://api.staging-v2.walmartdigital.cl/checkout
+export ACCESS_TOKEN= 'eyJhbGciO...duYw'
 curl -X GET \
-  http://api.staging-v2.walmartdigital.cl/checkout/payments/{invoice_number} \
+  "$URL_API_MIDAS/payments/{invoice_number}" \
   -H 'cache-control: no-cache' \
-  -H 'Authorization: Bearer REEMPLAZAR AQUI EL ACCESS TOKEN'
+  -H 'Authorization: Bearer $ACCESS_TOKEN'
 ```
+
+> El **URL_API_MIDAS** y **ACCESS_TOKEN** utilizados en esta petición son datos de prueba.
 
 
 Obtendrás una respuesta silimar a:
@@ -41,8 +47,8 @@ Obtendrás una respuesta silimar a:
     },
     "application": "5b635b3b71cd29001c5043ae",
     "redirect_urls": {
-        "return_url": "http://localhost:8081/payments/static_redirection.html",
-        "cancel_url": "http://localhost:8081/payments/static_redirection.html"
+        "return_url": "{{URL_RESPUESTA_PAGO}}",
+        "cancel_url": "{{URL_RESPUESTA_PAGO}}"
     },
     "transaction": {
         "gateway_order": "INPA-85001539720339417",
@@ -93,12 +99,12 @@ Obtendrás una respuesta silimar a:
     },
     "links": [
         {
-            "href": "http://api.staging-v2.walmartdigital.cl/checkout/payments/5bc6449365a8b10028f43369",
+            "href": "{{URL_API_MIDAS}}/payments/5bc6449365a8b10028f43369",
             "rel": "self",
             "method": "GET"
         },
         {
-            "href": "http://api.staging-v2.walmartdigital.cl/checkout/payments/gateways/eve/presto/5bc6449365a8b10028f43369/pay",
+            "href": "{{URL_API_MIDAS}}}}/payments/gateways/eve/presto/5bc6449365a8b10028f43369/pay",
             "rel": "approval_url",
             "method": "REDIRECT"
         }
@@ -147,6 +153,10 @@ Obtendrás una respuesta silimar a:
     }
 }
 ```
+
+> El **URL_API_MIDAS** mostrados en esta respuesta corresponde a la url de la integración de MIDAS.
+> el campo **URL_RESPUESTA_PAGO** de la petición sera la url para notificar la respuesta del pago realizado / si el cliente no dispone de una url puede enviar la url por defecto de midas **{{URL_API_MIDAS}}/payments/static_redirection.html**.
+
 Posibles estados de la transacción hasta este punto:
   
 | State    | Definición                               |

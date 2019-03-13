@@ -63,6 +63,7 @@ curl -X POST \
     "cancel_url": "{{URL_RESPUESTA_PAGO}}"
   },
   "additional_attributes": {
+    "order_number": "{{Numero_orden_cliente}}",
     "client_id": "163875586",
     "channel":"EC-GR-D",
     "local_id":"83",
@@ -131,8 +132,9 @@ curl -X POST \
 | **redirect_urls**                        | **Url de redirección dependiendo del estado de la captura una vez  finalizado el proceso de captura** | **objeto**   |
 | redirect_urls.return_url                 | URL de notificación de pago exitoso      | string (url) |  Sí         |
 | redirect_urls.cancel_url                 | URL de notificación de pago fallido      | string (url) |  Sí         |
-| **additional_attributes**                | **Grupo de campos de uso exclusivo**     | **objeto**   |  Opcional         |
+| **additional_attributes**                | **Grupo de campos de uso exclusivo**     | **objeto**   |  Sí         |
 | additional_attributes.order_number       | Numero de Orden Asociado                 | string       |  Sí         |
+| additional_attributes.shipping_groups    | Arreglo de objetos                       | **object**   |  Presto/webpay   |
 | **meta_data**                              | **Objeto para almacenar datos de la integración**     | **objeto**   || 
 
 El resultado de la llamada a la API de checkout, será una intención de pago en su estado inicial (created), que contendrá el, o los links HATEOAS relacionados con la llamada.
@@ -218,6 +220,7 @@ A continuación se presenta ejemplo de un JSON como respuesta al crear una inten
     "state": "created",
     "id": "5bd6eda61a30be002a4625d8",
     "additional_attributes": {
+        "order_number": "{{Numero_orden_cliente}}",
         "shipping_groups": [
             {
                 "local_id": "83",
